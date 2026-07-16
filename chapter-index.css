@@ -754,6 +754,23 @@
   fill: #7d8740;
 }
 
+.chapter-index-card.is-chapter-fifteen::before {
+  background: #c04c78;
+}
+
+.chapter-index-card.is-chapter-fifteen .chapter-index-number,
+.chapter-index-card.is-chapter-fifteen .chapter-index-stars {
+  color: #a33e66;
+}
+
+.chapter-index-card.is-chapter-fifteen .index-motif-svg .index-accent {
+  stroke: #c04c78;
+}
+
+.chapter-index-card.is-chapter-fifteen .index-motif-svg .index-dot {
+  fill: #c04c78;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -804,6 +821,11 @@
 
 .chapter-index-estimation {
   background: #e4e7d7;
+}
+
+.chapter-index-probability,
+.chapter-index-original-extension {
+  background: #eadce3;
 }
 
 .chapter-index-footer {
@@ -941,6 +963,55 @@
 
 .master-chapter-card.is-live.is-estimation {
   background: #414a25;
+}
+
+.master-chapter-card.is-live.is-probability {
+  background: #6f2946;
+}
+
+.master-chapter-card.is-original-extension {
+  outline-color: #b65a7e;
+}
+
+.master-chapter-card.is-future.is-original-extension {
+  background: #eadde4;
+}
+
+.master-chapter-card.is-original-extension .master-chapter-number,
+.master-chapter-card.is-original-extension .master-chapter-status {
+  color: #9d3d64;
+}
+
+.master-chapter-card.is-live.is-original-extension .master-chapter-number,
+.master-chapter-card.is-live.is-original-extension .master-chapter-status {
+  color: #ffd9e7;
+}
+
+.master-original-extension {
+  background: #f0e5eb;
+  border-top: 8px solid #6f2946;
+}
+
+.original-extension-boundary {
+  align-items: center;
+  background: #282132;
+  color: white;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: space-between;
+  margin: 0 0 2rem;
+  padding: 1.1rem 1.3rem;
+}
+
+.original-extension-boundary strong {
+  color: #ffd9e7;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.original-extension-boundary span {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .master-chapter-card.is-live:hover,
@@ -1248,6 +1319,19 @@
   color: #707a39;
 }
 
+.chapter-landing-hero.is-probability .chapter-index-hero-figure {
+  background: #6f2946;
+}
+
+.chapter-landing-hero.is-probability .chapter-index-stats {
+  background: #c04c78;
+}
+
+.chapter-landing-hero.is-probability h1 em,
+.chapter-contents-heading.is-probability span {
+  color: #a33e66;
+}
+
 .chapter-contents-heading {
   align-items: end;
   border-top: 1px solid var(--line);
@@ -1338,6 +1422,11 @@
   .chapter-index-stats dd {
     font-size: 0.54rem;
     line-height: 1.35;
+  }
+
+  .original-extension-boundary {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .chapter-index-section {

@@ -289,7 +289,16 @@
     { number: "14.6", title: "Do we get lighter by breathing?", stars: "★★", difficulty: "Two star difficulty", teaser: "Track inhaled and exhaled gas mass, oxygen uptake and carbon dioxide release across one breath and a whole day.", motif: "breathing", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems];
+  const chapterFifteenProblems = [
+    { number: "15.1", title: "The Crowded Cloakroom", stars: "★", difficulty: "One star difficulty", teaser: "Compare seeded arrivals with the exact complement product for the first repeated cloakroom label.", motif: "cloakroom-collision", source: "extension" },
+    { number: "15.2", title: "The Meteor Siren Lies Politely", stars: "★★", difficulty: "Two star difficulty", teaser: "Turn prior odds, sensitivity and false alarms into the probability that an alarm really means meteor.", motif: "meteor-bayes", source: "extension" },
+    { number: "15.3", title: "The Last Red Tile", stars: "★★", difficulty: "Two star difficulty", teaser: "Shuffle marked tiles and connect the last red position to an exact discrete order statistic.", motif: "last-red", source: "extension" },
+    { number: "15.4", title: "Firefly Between Two Fountains", stars: "★★★", difficulty: "Three star difficulty", teaser: "Animate an absorbing random walk and solve its hitting probability and expected duration recurrences.", motif: "firefly-walk", source: "extension" },
+    { number: "15.5", title: "The Missing Constellation", stars: "★★★", difficulty: "Three star difficulty", teaser: "Collect randomized star types and watch the coupon-collector harmonic expectation emerge.", motif: "constellation-coupons", source: "extension" },
+    { number: "15.6", title: "The Chord Factory", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Switch between three equally plausible random-chord factories and expose three different answers.", motif: "chord-factory", source: "extension" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -306,6 +315,12 @@
     { number: "12", title: "Heat", count: 5, page: 305, live: true, summary: "Thermal energy, scaling, refrigeration and phase change" },
     { number: "13", title: "Buoyancy and hydrostatics", count: 8, page: 322, live: true, summary: "Buoyant force, pressure, stability and hydraulic work" },
     { number: "14", title: "Estimation", count: 6, page: 351, live: true, summary: "Scaling, bounds, sensitivity and Fermi reasoning" },
+    { number: "15", title: "Probability and randomness", count: 6, live: true, extension: true, summary: "Exact chance, simulation, Bayesian evidence and random processes" },
+    { number: "16", title: "Proof, induction and invariants", count: 6, extension: true, summary: "Planned original extension" },
+    { number: "17", title: "Combinatorics and networks", count: 6, extension: true, summary: "Planned original extension" },
+    { number: "18", title: "Waves and sound", count: 6, extension: true, summary: "Planned original extension" },
+    { number: "19", title: "Magnetism and fields", count: 6, extension: true, summary: "Planned original extension" },
+    { number: "20", title: "Relativity and spacetime", count: 6, extension: true, summary: "Planned original extension" },
   ];
 
   const chapterDetails = {
@@ -406,6 +421,14 @@
       status: "6 reconstructed activities",
       introduction: "Choose assumptions you can defend, expose the powers of ten and test sensitivity. A good estimate is an argument whose uncertainty stays visible.",
       heroClass: "is-estimation",
+    },
+    "15": {
+      title: "Probability and randomness",
+      count: 6,
+      status: "6 original-extension activities",
+      introduction: "Run repeatable trials, then separate what the simulation suggests from what the exact probability measure proves.",
+      heroClass: "is-probability",
+      extension: true,
     },
   };
 
@@ -524,6 +547,12 @@
       'great-pyramid': '<path d="M15 82 80 10l65 72zM80 10v72M15 82h130"/><path class="index-accent" d="M32 63h96M48 45h64M64 27h32"/><circle class="index-dot" cx="80" cy="10" r="4"/>',
       lawnchair: '<path d="M58 63h44v20H58zM65 83v9m30-9v9M80 63V42"/><circle cx="49" cy="23" r="18"/><circle cx="80" cy="18" r="18"/><circle cx="111" cy="23" r="18"/><path class="index-accent" d="M49 41 80 63M80 36v27M111 41 80 63"/>',
       breathing: '<path d="M80 12v34M80 31 57 44M80 31l23 13"/><path d="M57 44c-24 3-30 35-8 41 17 5 27-12 31-39M103 44c24 3 30 35 8 41-17 5-27-12-31-39"/><path class="index-accent" d="M19 20h31m-9-9 9 9-9 9M110 20h31m-22-9-9 9 9 9"/>',
+      'cloakroom-collision': '<path d="M18 20h124M30 20v62m25-62v62m25-62v62m25-62v62m25-62v62"/><path class="index-accent" d="M55 42h25M55 61h25"/><circle class="index-dot" cx="67" cy="42" r="4"/><circle class="index-dot" cx="67" cy="61" r="4"/>',
+      'meteor-bayes': '<path d="M18 48h33M51 48 91 23M51 48l40 25M91 23h50M91 73h50"/><path class="index-accent" d="M91 23h50"/><circle class="index-dot" cx="51" cy="48" r="4"/><path d="m115 10 4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/>',
+      'last-red': '<rect x="16" y="33" width="16" height="30"/><rect x="36" y="33" width="16" height="30"/><rect x="56" y="33" width="16" height="30"/><rect x="76" y="33" width="16" height="30"/><rect x="96" y="33" width="16" height="30"/><rect x="116" y="33" width="16" height="30"/><path class="index-accent" d="M16 33h16v30H16zm40 0h16v30H56zm60 0h16v30h-16z"/><path d="M124 22v-9m-6 5 6-5 6 5"/>',
+      'firefly-walk': '<path d="M15 72h130M28 65V79m26-14V79m26-14V79m26-14V79m26-14V79"/><path class="index-accent" d="m28 50 26-18 26 20 26-31 26 29"/><circle class="index-dot" cx="80" cy="52" r="6"/>',
+      'constellation-coupons': '<path d="m25 18 5 10 11 1-8 8 2 11-10-5-10 5 2-11-8-8 11-1zm55 17 5 10 11 1-8 8 2 11-10-5-10 5 2-11-8-8 11-1zm50-23 5 10 11 1-8 8 2 11-10-5-10 5 2-11-8-8 11-1"/><path class="index-accent" d="M25 75h105"/><circle class="index-dot" cx="105" cy="75" r="5"/>',
+      'chord-factory': '<circle cx="80" cy="48" r="39"/><path d="M43 37 116 66M80 9v78M42 48h76"/><path class="index-accent" d="M43 37 116 66"/><circle class="index-dot" cx="80" cy="48" r="4"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -542,8 +571,9 @@
     const chapterTwelve = problem.number.startsWith("12.");
     const chapterThirteen = problem.number.startsWith("13.");
     const chapterFourteen = problem.number.startsWith("14.");
+    const chapterFifteen = problem.number.startsWith("15.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -554,7 +584,7 @@
           <p>${problem.teaser}</p>
         </div>
         <div class="chapter-index-card-footer">
-          <span>${problem.source === "reconstructed" ? "Reconstructed activity" : "Source-backed adaptation"}</span>
+          <span>${problem.source === "extension" ? "Original extension · not in the book" : problem.source === "reconstructed" ? "Reconstructed activity" : "Source-backed adaptation"}</span>
           <strong>Open <span aria-hidden="true">→</span></strong>
         </div>
       </a>`;
@@ -575,8 +605,9 @@
     const heat = chapter === "12";
     const buoyancy = chapter === "13";
     const estimation = chapter === "14";
+    const probability = chapter === "15";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -591,11 +622,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=14">Open Estimation <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=15">Open Probability <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> All fourteen chapters live</span>
+        <span class="chapter-index-complete"><i></i> 14 source chapters complete · original extension</span>
         ${action}
       </header>`;
   }
@@ -619,48 +650,50 @@
     const body = `
       <div class="master-chapter-card-top">
         <span class="master-chapter-number">${number}</span>
-        <span class="master-chapter-status">${chapter.live ? "Interactive now" : "To be built"}</span>
+        <span class="master-chapter-status">${chapter.extension ? chapter.live ? "Original extension" : "Planned extension" : "Interactive now"}</span>
       </div>
       <h2>${chapter.title}</h2>
       ${chapter.summary ? `<p>${chapter.summary}</p>` : '<p>Mapped from the full book contents.</p>'}
       <div class="master-chapter-card-footer">
         <span>${chapter.count} problems</span>
-        <span>Book p. ${chapter.page}</span>
-        <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
+        <span>${chapter.extension ? "Not in the source book" : `Book p. ${chapter.page}`}</span>
+        <strong>${chapter.live ? "Open chapter →" : chapter.extension ? "Original chapter planned" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
-      : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
+      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      : `<article class="master-chapter-card is-future ${chapter.extension ? "is-original-extension" : ""}" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
   function renderMaster() {
+    const sourceChapters = bookChapters.filter((chapter) => !chapter.extension);
+    const extensionChapters = bookChapters.filter((chapter) => chapter.extension);
     return `
       <main class="chapter-index-shell master-index-shell">
         ${siteHeader(null)}
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
-            <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>All are alive.</em></h1>
-            <p>This is the front door to the whole project: every indexed problem in all fourteen source chapters now has an interactive route.</p>
+            <div class="eyebrow">The complete book · plus an original extension</div>
+            <h1>The book is complete.<br><em>The extension begins.</em></h1>
+            <p>All 109 indexed source-book problems remain together and complete. Chapters 15–20 are a visibly separate curriculum created for this project—not chapters from the original book.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=14">Open Estimation →</a>
+              <a href="?view=chapter&amp;chapter=15">Open Probability →</a>
             </div>
           </div>
-          ${heroFigure("01 → 14")}
+          ${heroFigure("01 → 20")}
           <dl class="chapter-index-stats">
-            <div><dt>14</dt><dd>chapters in the book</dd></div>
-            <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>109</dt><dd>interactive now</dd></div>
+            <div><dt>14</dt><dd>source-book chapters complete</dd></div>
+            <div><dt>109</dt><dd>source-book problems interactive</dd></div>
+            <div><dt>115</dt><dd>total interactive routes</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
-            <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
+            <div><div class="eyebrow">The complete source book</div><h2 id="master-chapters-title">Chapters 1–14</h2></div>
             <p>Every chapter opens into an interactive contents page. Problems 1.1–1.10 adapt the available sample; all remaining routes are clearly labelled independent reconstructions.</p>
           </header>
-          <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
+          <div class="master-chapter-grid">${sourceChapters.map(masterChapterCard).join("")}</div>
         </section>
 
         <aside class="master-epilogue">
@@ -668,9 +701,18 @@
           <p>The book closes with its puzzle-points game and endnote. They are mapped here, but are not yet interactive.</p>
         </aside>
 
+        <section class="master-chapters master-original-extension" id="original-extension" aria-labelledby="original-extension-title">
+          <header class="master-chapters-heading">
+            <div><div class="eyebrow">Beyond the source book</div><h2 id="original-extension-title">Original extension</h2></div>
+            <p><strong>Chapters 15–20 do not appear in <em>Professor Povey's Perplexing Problems</em>.</strong> Their chapter names, problem titles, scenarios, diagrams and solutions are original work created for this project.</p>
+          </header>
+          <div class="original-extension-boundary"><strong>Not from the original book</strong><span>A new six-chapter curriculum: probability, proof, networks, waves, magnetism and relativity.</span></div>
+          <div class="master-chapter-grid">${extensionChapters.map(masterChapterCard).join("")}</div>
+        </section>
+
         <footer class="chapter-index-footer">
-          <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a><a href="?view=chapter&amp;chapter=8">Kinematics →</a><a href="?view=chapter&amp;chapter=9">Electricity →</a><a href="?view=chapter&amp;chapter=10">Gravity →</a><a href="?view=chapter&amp;chapter=11">Optics →</a><a href="?view=chapter&amp;chapter=12">Heat →</a><a href="?view=chapter&amp;chapter=13">Buoyancy →</a><a href="?view=chapter&amp;chapter=14">Estimation →</a></div>
+          <p><strong>An unofficial educational prototype.</strong> Chapters 15–20 are original extensions and are not part of the source book.</p>
+          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Original extension →</a></div>
         </footer>
       </main>`;
   }
@@ -706,17 +748,23 @@
                             ? sectionMarkup({ chapter: "12", source: "reconstructed", eyebrow: "Problems 12.1–12.5", title: "An original heat laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 12. Every thermal system, energy audit and solution here is independently written and explicitly labelled.", id: "index-chapter-twelve-reconstructed" })
                             : chapter === "13"
                               ? sectionMarkup({ chapter: "13", source: "reconstructed", eyebrow: "Problems 13.1–13.8", title: "An original buoyancy laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 13. Every vessel, immersed body, pressure field and solution here is independently written and explicitly labelled.", id: "index-chapter-thirteen-reconstructed" })
-                              : sectionMarkup({ chapter: "14", source: "reconstructed", eyebrow: "Problems 14.1–14.6", title: "An original estimation laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 14. Every scenario, assumption ladder, sensitivity test and solution here is independently written and explicitly labelled.", id: "index-chapter-fourteen-reconstructed" });
-    const sourceCount = chapter === "1" ? "10" : details.count;
-    const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
-    const thirdCount = chapter === "1" ? "7" : "1";
-    const thirdLabel = chapter === "1" ? "labelled reconstructions" : "complete chapter";
+                              : chapter === "14"
+                                ? sectionMarkup({ chapter: "14", source: "reconstructed", eyebrow: "Problems 14.1–14.6", title: "An original estimation laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 14. Every scenario, assumption ladder, sensitivity test and solution here is independently written and explicitly labelled.", id: "index-chapter-fourteen-reconstructed" })
+                                : sectionMarkup({ chapter: "15", source: "extension", eyebrow: "Original extension · Problems 15.1–15.6", title: "Probability beyond the source book", copy: "Chapter 15 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and are not reconstructions of missing book material.", id: "index-chapter-fifteen-extension" });
+    const sourceCount = details.extension ? details.count : chapter === "1" ? "10" : details.count;
+    const sourceLabel = details.extension ? "original-extension activities" : chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
+    const thirdCount = details.extension ? "0" : chapter === "1" ? "7" : "1";
+    const thirdLabel = details.extension ? "source-book problems" : chapter === "1" ? "labelled reconstructions" : "complete chapter";
+    const chapterEyebrow = details.extension ? `Original extension · Chapter ${chapter} · Not in the book` : `Chapter ${chapter} · Interactive contents`;
+    const footerBoundary = details.extension
+      ? "This chapter was created for this project and is not part of the source book."
+      : "Original book rights remain with their respective holder.";
     return `
       <main class="chapter-index-shell chapter-contents-shell ${details.heroClass}">
         ${siteHeader(chapter)}
         <section class="chapter-index-hero chapter-landing-hero ${details.heroClass}">
           <div class="chapter-index-hero-copy">
-            <div class="eyebrow">Chapter ${chapter} · Interactive contents</div>
+            <div class="eyebrow">${chapterEyebrow}</div>
             <h1>${details.title}.<br><em>${details.count} problems.</em></h1>
             <p>${details.introduction}</p>
             <div class="chapter-index-hero-actions">
@@ -739,7 +787,7 @@
         ${sections}
 
         <footer class="chapter-index-footer">
-          <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
+          <p><strong>${details.extension ? "Not from the original book." : "An unofficial educational prototype."}</strong> ${footerBoundary}</p>
           <div><a href="./">← All chapters</a><a href="${problemHref(firstProblem)}">Start ${details.title} →</a></div>
         </footer>
       </main>`;

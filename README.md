@@ -1,12 +1,12 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed chapters contain 109 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original six-chapter extension begins at Chapter 15.
 
 ## Live prototype
 
 [Open the master chapter index](https://tommytoolman.github.io/perplexing-problems-prototype/)
 
-The prototype has three navigation levels: the complete 14-chapter book map, a contents page for each interactive chapter, and the individual problem pages.
+The prototype has three navigation levels: the complete 14-chapter source-book map plus original extension, a contents page for each interactive chapter, and the individual problem pages.
 
 - [Chapter 1 · Geometry contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=1)
 - [Chapter 2 · Mathematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=2)
@@ -22,6 +22,10 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 12 · Heat contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=12)
 - [Chapter 13 · Buoyancy and hydrostatics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=13)
 - [Chapter 14 · Estimation contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=14)
+
+Original extension — not in the source book:
+
+- [Chapter 15 · Probability and randomness contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=15)
 
 Review individual problems:
 
@@ -176,6 +180,19 @@ Review individual problems:
 - [14.5 Lawnchair Larry](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.5)
 - [14.6 Do we get lighter by breathing?](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.6)
 
+## Original extension — not in the book
+
+Chapters 15–20 are created for this project. They do not appear in *Professor Povey's Perplexing Problems*. See [ORIGINAL_EXTENSION.md](ORIGINAL_EXTENSION.md) for the complete curriculum and labeling contract.
+
+### Chapter 15 · Probability and randomness
+
+- [15.1 The Crowded Cloakroom](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.1)
+- [15.2 The Meteor Siren Lies Politely](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.2)
+- [15.3 The Last Red Tile](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.3)
+- [15.4 Firefly Between Two Fountains](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.4)
+- [15.5 The Missing Constellation](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.5)
+- [15.6 The Chord Factory](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.6)
+
 ## Run locally
 
 ```sh
@@ -215,5 +232,7 @@ Chapter 12 contains five independently written heat activities reconstructed fro
 Chapter 13 contains eight independently written buoyancy and hydrostatics activities reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapters 15–20 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
