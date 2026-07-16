@@ -222,7 +222,13 @@
     { number: "7.6", title: "The curious wheel", stars: "★★★", difficulty: "Three star difficulty", teaser: "Audit centre-of-mass height, torque and reset work in a wheel that claims to accelerate itself.", motif: "curious-wheel", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems];
+  const chapterEightProblems = [
+    { number: "8.1", title: "Professor Lazy", stars: "★★", difficulty: "Two star difficulty", teaser: "Delay, accelerate, cruise and solve the correct branch of a piecewise pursuit before the deadline.", motif: "lazy-pursuit", source: "reconstructed" },
+    { number: "8.2", title: "The Unflinching Aviator", stars: "★", difficulty: "One star difficulty", teaser: "Aim an aircraft through crosswind by building the velocity triangle that reaches the target.", motif: "aviator", source: "reconstructed" },
+    { number: "8.3", title: "Target shooting", stars: "★", difficulty: "One star difficulty", teaser: "Intercept a moving target and choose between the low, high or impossible projectile paths.", motif: "target", source: "reconstructed" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -232,7 +238,7 @@
     { number: "5", title: "Circular motion", count: 7, page: 150, live: true, summary: "Centripetal force, banking, loops and rotating walls" },
     { number: "6", title: "Simple harmonic motion", count: 5, page: 176, live: true, summary: "Oscillators, phase, energy and normal modes" },
     { number: "7", title: "Mad inventions and perpetual motion", count: 6, page: 196, live: true, summary: "Energy audits, paradoxes and impossible machines" },
-    { number: "8", title: "Kinematics", count: 3, page: 219 },
+    { number: "8", title: "Kinematics", count: 3, page: 219, live: true, summary: "Pursuit, relative velocity and projectile interception" },
     { number: "9", title: "Electricity", count: 7, page: 228 },
     { number: "10", title: "Gravity", count: 12, page: 242 },
     { number: "11", title: "Optics", count: 5, page: 285 },
@@ -290,6 +296,13 @@
       status: "6 reconstructed activities",
       introduction: "Interrogate ingenious machines one energy transfer at a time. Every apparent surplus eventually reveals a matching cost, loss or limit.",
       heroClass: "is-inventions",
+    },
+    "8": {
+      title: "Kinematics",
+      count: 3,
+      status: "3 reconstructed activities",
+      introduction: "Draw motion as geometry in time. Piecewise pursuit, crosswind vectors and moving-target projectiles all become solvable paths.",
+      heroClass: "is-kinematics",
     },
   };
 
@@ -362,6 +375,9 @@
       syphon: '<path d="M17 66h47v20H17zm79 0h47v20H96z"/><path class="index-accent" d="M49 66V23c0-17 62-17 62 0v59"/><path d="m104 73 7 9 7-9"/>',
       vase: '<path d="M37 18h86l-9 66H46z"/><path d="M47 55h67"/><path class="index-accent" d="M71 55V26h47v-9M91 55v24"/><path d="m84 70 7 9 7-9"/>',
       'curious-wheel': '<circle cx="80" cy="49" r="39"/><path d="M80 10v78M41 49h78"/><path class="index-accent" d="M80 49 112 27M80 49 56 76"/><circle class="index-dot" cx="112" cy="27" r="8"/><circle cx="56" cy="76" r="5"/>',
+      'lazy-pursuit': '<path d="M14 78h132M27 69 72 52 132 20"/><path class="index-accent" d="M27 69h27c19 0 22-31 42-31h36"/><circle class="index-dot" cx="96" cy="38" r="5"/>',
+      aviator: '<path d="m80 12 13 33 35 4-28 20 9 18-29-13-29 13 9-18-28-20 35-4z"/><path class="index-accent" d="M21 79 80 36m-9 2 9-2-3 9"/>',
+      target: '<circle cx="124" cy="28" r="20"/><circle cx="124" cy="28" r="11"/><circle class="index-dot" cx="124" cy="28" r="4"/><path class="index-accent" d="M18 78c32-60 71-67 106-50"/><path d="M14 87h134"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -373,8 +389,9 @@
     const chapterFive = problem.number.startsWith("5.");
     const chapterSix = problem.number.startsWith("6.");
     const chapterSeven = problem.number.startsWith("7.");
+    const chapterEight = problem.number.startsWith("8.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -399,8 +416,9 @@
     const circular = chapter === "5";
     const oscillation = chapter === "6";
     const inventions = chapter === "7";
+    const kinematics = chapter === "8";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -415,11 +433,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=7">Open Inventions <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=8">Open Kinematics <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> Seven chapters live</span>
+        <span class="chapter-index-complete"><i></i> Eight chapters live</span>
         ${action}
       </header>`;
   }
@@ -453,7 +471,7 @@
         <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -464,25 +482,25 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>Seven are alive.</em></h1>
-            <p>This is the front door to the whole project: every chapter in the source book, the seven interactive chapters available now, and a clear view of what comes next.</p>
+            <h1>Fourteen chapters.<br><em>Eight are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the eight interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=7">Open Mad inventions →</a>
+              <a href="?view=chapter&amp;chapter=8">Open Kinematics →</a>
             </div>
           </div>
           ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>chapters in the book</dd></div>
             <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>63</dt><dd>interactive now</dd></div>
+            <div><dt>66</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
-            <p>Chapters 1–7 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+            <p>Chapters 1–8 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
           </header>
           <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
         </section>
@@ -494,7 +512,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a><a href="?view=chapter&amp;chapter=8">Kinematics →</a></div>
         </footer>
       </main>`;
   }
@@ -516,7 +534,9 @@
               ? sectionMarkup({ chapter: "5", source: "reconstructed", eyebrow: "Problems 5.1–5.7", title: "An original circular-motion laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 5. Every corner, loop, rotating wall and solution here is independently written and explicitly labelled.", id: "index-chapter-five-reconstructed" })
               : chapter === "6"
                 ? sectionMarkup({ chapter: "6", source: "reconstructed", eyebrow: "Problems 6.1–6.5", title: "An original oscillation laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 6. Every oscillator, intervention, coupled mode and solution here is independently written and explicitly labelled.", id: "index-chapter-six-reconstructed" })
-                : sectionMarkup({ chapter: "7", source: "reconstructed", eyebrow: "Problems 7.1–7.6", title: "An original impossible-machines workshop", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 7. Every invention, energy audit and solution here is independently written and explicitly labelled.", id: "index-chapter-seven-reconstructed" });
+                : chapter === "7"
+                  ? sectionMarkup({ chapter: "7", source: "reconstructed", eyebrow: "Problems 7.1–7.6", title: "An original impossible-machines workshop", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 7. Every invention, energy audit and solution here is independently written and explicitly labelled.", id: "index-chapter-seven-reconstructed" })
+                  : sectionMarkup({ chapter: "8", source: "reconstructed", eyebrow: "Problems 8.1–8.3", title: "An original kinematics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 8. Every pursuit, flight path, intercept and solution here is independently written and explicitly labelled.", id: "index-chapter-eight-reconstructed" });
     const sourceCount = chapter === "1" ? "10" : details.count;
     const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = chapter === "1" ? "7" : "1";

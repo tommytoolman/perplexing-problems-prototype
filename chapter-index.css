@@ -635,6 +635,23 @@
   fill: #668d3b;
 }
 
+.chapter-index-card.is-chapter-eight::before {
+  background: #3977a6;
+}
+
+.chapter-index-card.is-chapter-eight .chapter-index-number,
+.chapter-index-card.is-chapter-eight .chapter-index-stars {
+  color: #326a95;
+}
+
+.chapter-index-card.is-chapter-eight .index-motif-svg .index-accent {
+  stroke: #3977a6;
+}
+
+.chapter-index-card.is-chapter-eight .index-motif-svg .index-dot {
+  fill: #3977a6;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -657,6 +674,10 @@
 
 .chapter-index-inventions {
   background: #dfe8d5;
+}
+
+.chapter-index-kinematics {
+  background: #dbe6ef;
 }
 
 .chapter-index-footer {
@@ -766,6 +787,10 @@
 
 .master-chapter-card.is-live.is-inventions {
   background: #344d22;
+}
+
+.master-chapter-card.is-live.is-kinematics {
+  background: #244b6a;
 }
 
 .master-chapter-card.is-live:hover,
@@ -980,6 +1005,19 @@
 .chapter-landing-hero.is-inventions h1 em,
 .chapter-contents-heading.is-inventions span {
   color: #668d3b;
+}
+
+.chapter-landing-hero.is-kinematics .chapter-index-hero-figure {
+  background: #244b6a;
+}
+
+.chapter-landing-hero.is-kinematics .chapter-index-stats {
+  background: #3977a6;
+}
+
+.chapter-landing-hero.is-kinematics h1 em,
+.chapter-contents-heading.is-kinematics span {
+  color: #3977a6;
 }
 
 .chapter-contents-heading {
