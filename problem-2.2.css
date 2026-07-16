@@ -1,0 +1,251 @@
+.p22-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.p22-stage {
+  align-content: center;
+}
+
+.p22-stages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.p22-stages .chip-button {
+  font-size: 0.68rem;
+}
+
+.p22-ledger {
+  background: var(--blue);
+  border-radius: 15px;
+  color: white;
+  overflow: hidden;
+}
+
+.p22-ledger-line {
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+  display: flex;
+  justify-content: space-between;
+  min-height: 62px;
+  opacity: 0.28;
+  padding: 0.8rem 1rem;
+  transition: opacity 180ms ease;
+}
+
+.p22-ledger-line:last-child {
+  border-bottom: 0;
+}
+
+.p22-ledger-line.is-reported,
+.p22-ledger-line.is-active {
+  opacity: 1;
+}
+
+.p22-ledger-line span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.p22-ledger-line strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.p22-ledger-line s {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.p22-ledger-line em {
+  color: var(--math2-cyan);
+  font-style: normal;
+  margin-left: 0.5rem;
+}
+
+.p22-distribution {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+  margin-top: 0.65rem;
+}
+
+.p22-mean-block {
+  align-items: center;
+  background: rgba(63, 91, 216, 0.07);
+  border: 1px solid rgba(63, 91, 216, 0.16);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 74px;
+  padding: 0.45rem;
+}
+
+.p22-mean-block span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.p22-mean-block small {
+  color: var(--math2-accent);
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.p22-mean-block strong {
+  animation: p22-rise 260ms ease both;
+  animation-delay: var(--p22-delay);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+}
+
+@keyframes p22-rise {
+  from { opacity: 0; transform: translateY(5px); }
+}
+
+.p22-config {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.p22-stepper {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0.65rem;
+}
+
+.p22-stepper > span {
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.p22-stepper > div {
+  align-items: center;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.p22-stepper button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(63, 91, 216, 0.28);
+  border-radius: 50%;
+  color: var(--math2-accent-dark);
+  display: flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+.p22-stepper button:disabled {
+  opacity: 0.3;
+}
+
+.p22-stepper strong {
+  min-width: 2.2rem;
+  text-align: center;
+}
+
+.p22-comparison {
+  background: rgba(239, 61, 85, 0.08);
+  border-left: 3px solid var(--red);
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+}
+
+.p22-comparison span,
+.p22-comparison small {
+  color: var(--muted);
+  display: block;
+  font-size: 0.62rem;
+}
+
+.p22-comparison strong {
+  color: var(--red-dark);
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  margin: 0.2rem 0;
+}
+
+.p22-answer-row {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.p22-answer-row input {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  min-width: 0;
+}
+
+.p22-explanation {
+  border: 0;
+  display: grid;
+  gap: 0.45rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.p22-explanation legend {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+}
+
+.p22-explanation-option {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--ink);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  padding: 0.65rem;
+  text-align: left;
+}
+
+.p22-explanation-option.active {
+  background: rgba(63, 91, 216, 0.1);
+  border-color: var(--math2-accent);
+  color: var(--math2-accent-dark);
+}
+
+@media (max-width: 520px) {
+  .p22-config {
+    grid-template-columns: 1fr;
+  }
+
+  .p22-ledger-line {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p22-mean-block strong {
+    animation: none;
+  }
+}

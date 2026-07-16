@@ -11,7 +11,20 @@ const variantMeta = {
   C: { name: "Guided tutor", short: "Conversation first" },
 };
 
-const chapterProblems = Array.from({ length: 17 }, (_, index) => `1.${index + 1}`);
+const chapterCatalog = {
+  "1": {
+    number: "1",
+    title: "Geometry",
+    problems: Array.from({ length: 17 }, (_, index) => `1.${index + 1}`),
+  },
+  "2": {
+    number: "2",
+    title: "Mathematics",
+    problems: Array.from({ length: 12 }, (_, index) => `2.${index + 1}`),
+  },
+};
+
+const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);
 
 const hints = [
   "A route across the surface becomes easier to compare if two neighbouring faces are laid flat.",
@@ -88,6 +101,10 @@ function currentVariant() {
 function currentProblem() {
   const problem = new URLSearchParams(window.location.search).get("problem");
   return chapterProblems.includes(problem) ? problem : "1.1";
+}
+
+function chapterForProblem(problem) {
+  return Object.values(chapterCatalog).find((chapter) => chapter.problems.includes(problem)) || chapterCatalog["1"];
 }
 
 function shouldRenderChapterIndex() {
@@ -172,7 +189,7 @@ function debugPanel(label, snapshot) {
 }
 
 function warning() {
-  return '<div class="prototype-warning">Throwaway prototype · private source study · not for publication</div>';
+  return '<div class="prototype-warning">Unofficial educational prototype · adapted and independently reconstructed activities</div>';
 }
 
 function slider() {
@@ -293,29 +310,38 @@ function problemHref(problem) {
 }
 
 function problemHeaderActions(current, resetControl) {
-  const index = chapterProblems.indexOf(current);
-  const next = chapterProblems[index + 1];
+  const chapter = chapterForProblem(current);
+  const index = chapter.problems.indexOf(current);
+  const next = chapter.problems[index + 1];
   const nextLink = next
     ? `<a class="problem-nav-link header-next" href="${problemHref(next).replaceAll("&", "&amp;")}">Next · ${next} →</a>`
     : "";
   return `<div class="book-actions button-row"><a class="problem-nav-link header-contents" href="./">Contents</a>${nextLink}${resetControl}</div>`;
 }
 
+function problemProgress(current) {
+  const chapter = chapterForProblem(current);
+  const index = chapter.problems.indexOf(current);
+  const progress = ((index + 1) / chapter.problems.length) * 100;
+  return `Chapter ${chapter.number} · ${chapter.title}<div class="book-progress-bar"><span style="width: ${progress.toFixed(3)}%"></span></div>`;
+}
+
 function problemNav(current) {
-  const index = chapterProblems.indexOf(current);
+  const chapter = chapterForProblem(current);
+  const index = chapter.problems.indexOf(current);
   const toLink = (problem, direction) => problem
     ? {
         label: direction === "previous" ? `← ${problem}` : `${problem} →`,
         href: problemHref(problem),
       }
     : null;
-  const previous = toLink(chapterProblems[index - 1], "previous");
-  const next = toLink(chapterProblems[index + 1], "next");
+  const previous = toLink(chapter.problems[index - 1], "previous");
+  const next = toLink(chapter.problems[index + 1], "next");
   const position = index + 1;
   return `
     <nav class="problem-nav" aria-label="Problem navigation">
       ${previous ? `<a class="problem-nav-link" href="${previous.href.replaceAll("&", "&amp;")}">${previous.label}</a>` : '<span class="problem-nav-spacer"></span>'}
-      <span class="problem-nav-position">${position} of 17 · Geometry</span>
+      <span class="problem-nav-position">${position} of ${chapter.problems.length} · ${chapter.title}</span>
       ${next ? `<a class="problem-nav-link" href="${next.href.replaceAll("&", "&amp;")}">${next.label}</a>` : '<span class="problem-nav-spacer"></span>'}
     </nav>`;
 }
@@ -797,7 +823,7 @@ function renderSwitcher(variant) {
 
 function render() {
   if (shouldRenderChapterIndex()) {
-    document.title = "Chapter 1 · Geometry — Perplexing Problems";
+    document.title = "Interactive problem library — Perplexing Problems";
     document.getElementById("app").innerHTML = window.poveyChapterIndex.render();
     document.getElementById("prototype-switcher").innerHTML = "";
     return;

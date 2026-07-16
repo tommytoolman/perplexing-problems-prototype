@@ -1,0 +1,352 @@
+/* Problem 2.9 - Dr Bletchley's PIN */
+
+.p29-problem-page,
+.p29-coach {
+  align-content: start;
+}
+
+.p29-title {
+  font-size: clamp(2.1rem, 3.15vw, 4.2rem);
+}
+
+.p29-reconstruction-note {
+  margin-top: 1rem;
+}
+
+.p29-clue-wrap {
+  margin-top: 1.2rem;
+}
+
+.p29-clue-table {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.p29-clue-table caption {
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.4;
+  padding: 0 0 0.55rem;
+  text-align: left;
+}
+
+.p29-clue-table th:not(:first-child),
+.p29-clue-table td {
+  text-align: center;
+}
+
+.p29-clue-table tbody tr {
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.p29-clue-table tbody tr.is-applied {
+  background: rgba(63, 91, 216, 0.08);
+  color: var(--math2-accent-dark);
+}
+
+.p29-attempt {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+}
+
+.p29-rule-note {
+  margin-top: 1.1rem;
+}
+
+.p29-rule-note p {
+  line-height: 1.55;
+}
+
+.p29-stage {
+  align-content: start;
+  display: grid;
+  gap: 1rem;
+}
+
+.p29-stage-card {
+  padding: clamp(1rem, 2vw, 1.45rem);
+}
+
+.p29-pin-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.p29-pin-fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.p29-pin-fieldset legend {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+}
+
+.p29-pin-slots {
+  display: grid;
+  gap: clamp(0.38rem, 1.2vw, 0.72rem);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 25rem;
+}
+
+.p29-pin-slot {
+  appearance: textfield;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 244, 255, 0.95));
+  border: 2px solid rgba(63, 91, 216, 0.28);
+  border-radius: 15px;
+  box-shadow: inset 0 -3px 0 rgba(38, 58, 156, 0.07);
+  color: var(--math2-accent-dark);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 750;
+  height: clamp(3.8rem, 8vw, 5.15rem);
+  min-width: 0;
+  text-align: center;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+  width: 100%;
+}
+
+.p29-pin-slot:focus {
+  border-color: var(--math2-accent);
+  box-shadow: 0 0 0 4px rgba(63, 91, 216, 0.14);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.p29-pin-help {
+  color: var(--muted);
+  font-size: 0.65rem;
+  margin: 0.45rem 0 0;
+  text-align: center;
+}
+
+.p29-keypad {
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 23rem;
+  width: 100%;
+}
+
+.p29-keypad button {
+  align-items: center;
+  background: rgba(63, 91, 216, 0.055);
+  border: 1px solid rgba(63, 91, 216, 0.22);
+  border-radius: 11px;
+  color: var(--math2-accent-dark);
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 2.55rem;
+  padding: 0.45rem;
+  touch-action: manipulation;
+}
+
+.p29-keypad button:hover {
+  background: rgba(63, 91, 216, 0.12);
+}
+
+.p29-keypad button:focus-visible {
+  outline: 3px solid rgba(63, 91, 216, 0.35);
+  outline-offset: 2px;
+}
+
+.p29-keypad .p29-keypad-command {
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+}
+
+.p29-submit {
+  justify-self: stretch;
+  min-height: 2.75rem;
+}
+
+.p29-filter-card {
+  background: var(--blue);
+  border-radius: 19px;
+  color: white;
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.p29-filter-heading {
+  align-items: start;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.p29-filter-heading .eyebrow {
+  color: var(--math2-cyan);
+}
+
+.p29-filter-heading h2 {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  margin: 0.28rem 0 0;
+}
+
+.p29-stage-badge {
+  background: rgba(148, 227, 221, 0.12);
+  border: 1px solid rgba(148, 227, 221, 0.22);
+  border-radius: 999px;
+  color: var(--math2-cyan);
+  flex: 0 0 auto;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.42rem 0.58rem;
+  text-transform: uppercase;
+}
+
+.p29-filter-label,
+.p29-filter-note {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.67rem;
+  line-height: 1.45;
+}
+
+.p29-filter-label {
+  margin: 0.45rem 0 0.9rem;
+}
+
+.p29-count-track {
+  display: grid;
+  gap: 0.32rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.p29-count-track li {
+  border-top: 3px solid rgba(255, 255, 255, 0.16);
+  min-width: 0;
+  padding-top: 0.48rem;
+}
+
+.p29-count-track li.is-complete,
+.p29-count-track li.is-current {
+  border-color: var(--math2-cyan);
+}
+
+.p29-count-track span,
+.p29-count-track small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.p29-count-track span {
+  color: rgba(255, 255, 255, 0.42);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(0.62rem, 1.25vw, 0.78rem);
+  font-weight: 800;
+}
+
+.p29-count-track .is-complete span,
+.p29-count-track .is-current span {
+  color: white;
+}
+
+.p29-count-track small {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.5rem;
+  margin-top: 0.18rem;
+  text-transform: uppercase;
+}
+
+.p29-filter-actions {
+  margin-top: 0.9rem;
+}
+
+.p29-filter-actions .secondary-button {
+  background: var(--math2-cyan);
+  border-color: var(--math2-cyan);
+  color: var(--blue);
+}
+
+.p29-filter-actions .ghost-button {
+  border-color: rgba(255, 255, 255, 0.24);
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.p29-filter-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.p29-filter-note {
+  margin: 0.7rem 0 0;
+}
+
+.p29-coach-copy {
+  color: var(--muted);
+  font-size: 0.73rem;
+  line-height: 1.55;
+}
+
+.p29-help-row {
+  margin-top: 1rem;
+}
+
+.p29-hints {
+  margin-top: 1rem;
+}
+
+.p29-candidate-list {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0.8rem 0;
+}
+
+.p29-candidate-list span,
+.p29-candidate-list strong {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.55rem 0.25rem;
+  text-align: center;
+}
+
+.p29-candidate-list strong {
+  background: var(--math2-cyan);
+  color: var(--blue);
+}
+
+@media (max-width: 520px) {
+  .p29-pin-slot {
+    border-radius: 11px;
+    font-size: 1.65rem;
+    height: 3.55rem;
+  }
+
+  .p29-count-track {
+    gap: 0.2rem;
+  }
+
+  .p29-count-track span {
+    font-size: 0.56rem;
+  }
+
+  .p29-candidate-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

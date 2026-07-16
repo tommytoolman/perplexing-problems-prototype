@@ -1,0 +1,374 @@
+/* Problem 2.6 - Ant on a cube III */
+
+.p26-title {
+  font-size: clamp(2.2rem, 3.3vw, 4.5rem);
+}
+
+.p26-stage {
+  align-content: start;
+  padding: clamp(1.25rem, 2.2vw, 2.5rem);
+}
+
+.p26-stage-card {
+  padding: clamp(0.9rem, 1.8vw, 1.45rem);
+}
+
+.p26-stage-heading {
+  align-items: center;
+}
+
+.p26-mode-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.4rem;
+}
+
+.p26-mode-tabs button {
+  min-height: 42px;
+  padding-inline: 0.75rem;
+}
+
+.p26-cube-wrap {
+  background:
+    radial-gradient(circle at 53% 46%, rgba(148, 227, 221, 0.14), transparent 40%),
+    var(--blue);
+  border-radius: 18px;
+  min-height: 315px;
+  overflow: hidden;
+  position: relative;
+}
+
+.p26-cube-wrap::after {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  content: "";
+  inset: 10px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.p26-cube {
+  display: block;
+  height: auto;
+  max-height: 390px;
+  min-height: 315px;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.p26-edge {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-linecap: round;
+  stroke-width: 4;
+  transition: stroke 150ms ease, stroke-width 150ms ease;
+}
+
+.p26-edge.is-covered {
+  stroke: var(--math2-cyan);
+  stroke-width: 6;
+}
+
+.p26-edge.is-repeated,
+.p26-edge.is-selected {
+  stroke: var(--math2-gold);
+  stroke-width: 9;
+}
+
+.p26-vertex > circle {
+  fill: var(--paper-2);
+  stroke: var(--blue);
+  stroke-width: 4;
+}
+
+.p26-vertex > text {
+  fill: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.p26-vertex.is-start > circle {
+  fill: var(--math2-cyan);
+}
+
+.p26-vertex.is-current > circle {
+  fill: var(--red);
+  stroke: white;
+  stroke-width: 5;
+}
+
+.p26-vertex.can-move > circle {
+  filter: drop-shadow(0 0 8px rgba(148, 227, 221, 0.85));
+}
+
+.p26-node-hit {
+  cursor: pointer;
+  fill: transparent;
+  opacity: 0;
+  stroke: none;
+}
+
+.p26-node-hit:focus-visible {
+  opacity: 1;
+  outline: none;
+  stroke: #7fb2ff;
+  stroke-width: 3;
+}
+
+.p26-cube-legend {
+  bottom: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.58rem;
+  font-weight: 800;
+  gap: 0.75rem;
+  left: 0.85rem;
+  letter-spacing: 0.05em;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.p26-cube-legend span {
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.p26-cube-legend i {
+  background: var(--math2-cyan);
+  border-radius: 999px;
+  height: 7px;
+  width: 17px;
+}
+
+.p26-cube-legend i.is-repeated {
+  background: var(--math2-gold);
+}
+
+.p26-cube-legend i.is-ant {
+  background: var(--red);
+  height: 9px;
+  width: 9px;
+}
+
+.p26-edge-hits line {
+  cursor: pointer;
+  pointer-events: stroke;
+  stroke: transparent;
+  stroke-linecap: round;
+  stroke-width: 28;
+}
+
+.p26-edge-hits line:focus-visible {
+  outline: none;
+  stroke: rgba(127, 178, 255, 0.58);
+  stroke-width: 18;
+}
+
+.p26-parity-badge rect {
+  fill: #f3bb64;
+  stroke: var(--blue);
+  stroke-width: 2;
+}
+
+.p26-parity-badge text {
+  fill: #4c350c;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.p26-parity-badge.is-even rect {
+  fill: var(--math2-cyan);
+}
+
+.p26-parity-badge.is-even text {
+  fill: #174f53;
+}
+
+.p26-parity-instruction {
+  bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.61rem;
+  left: 0;
+  letter-spacing: 0.05em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.p26-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0.75rem 0;
+}
+
+.p26-metrics .math2-metric {
+  padding: 0.6rem;
+}
+
+.p26-metrics .math2-metric strong {
+  font-size: 1.05rem;
+}
+
+.p26-activity-status {
+  margin: 0.75rem 0;
+}
+
+.p26-stage-actions {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.p26-stage-actions button {
+  min-height: 44px;
+  min-width: 0;
+  padding-inline: 0.5rem;
+}
+
+.p26-stage-actions .primary-button {
+  box-shadow: 0 4px 0 var(--red-dark);
+}
+
+.p26-stage-actions button:disabled,
+.p26-mode-tabs button:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.p26-coach {
+  min-width: 0;
+}
+
+.p26-answer-form {
+  margin: 1rem 0;
+}
+
+.p26-answer-row {
+  align-items: stretch;
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.p26-answer-row input {
+  min-width: 0;
+  width: 100%;
+}
+
+.p26-help-row {
+  margin-top: 0.8rem;
+}
+
+.p26-hints {
+  margin-top: 0.9rem;
+}
+
+.p26-solution {
+  overflow: hidden;
+}
+
+.p26-solution .math2-equation {
+  font-size: 1.05rem;
+}
+
+.p26-matching-list {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0.85rem 0;
+}
+
+.p26-matching-list span {
+  background: rgba(148, 227, 221, 0.1);
+  border: 1px solid rgba(148, 227, 221, 0.22);
+  border-radius: 8px;
+  color: var(--math2-cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.p26-route-proof {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 9px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow-wrap: anywhere;
+  padding: 0.65rem;
+}
+
+@media (max-width: 1240px) {
+  .p26-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .p26-stage {
+    padding: 1.25rem;
+  }
+
+  .p26-cube,
+  .p26-cube-wrap {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 600px) {
+  .p26-stage-heading {
+    align-items: flex-start;
+  }
+
+  .p26-mode-tabs {
+    width: 100%;
+  }
+
+  .p26-mode-tabs button {
+    flex: 1;
+  }
+
+  .p26-stage-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .p26-stage {
+    padding: 0.85rem;
+  }
+
+  .p26-stage-card {
+    padding: 0.72rem;
+  }
+
+  .p26-cube,
+  .p26-cube-wrap {
+    min-height: 250px;
+  }
+
+  .p26-cube-legend {
+    gap: 0.45rem;
+  }
+
+  .p26-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .p26-answer-row {
+    grid-template-columns: 1fr;
+  }
+
+  .p26-answer-row button {
+    min-height: 44px;
+  }
+
+  .p26-matching-list {
+    grid-template-columns: 1fr;
+  }
+}

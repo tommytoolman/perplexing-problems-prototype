@@ -1,12 +1,14 @@
-# Perplexing Problems — interactive chapter prototype
+# Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics problem book can become an active reading experience. Chapter 1 contains 17 interactive geometry problems with manipulable diagrams, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first two chapters contain 29 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
 [Open the Chapter 1 contents page](https://tommytoolman.github.io/perplexing-problems-prototype/)
 
 Review individual problems:
+
+### Chapter 1 · Geometry
 
 - [1.1 Shortest walk](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A)
 - [1.2 Intercontinental telephone cable](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.2)
@@ -26,6 +28,21 @@ Review individual problems:
 - [1.16 An easyish fencing problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.16)
 - [1.17 A hardish fencing problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.17)
 
+### Chapter 2 · Mathematics
+
+- [2.1 Human calculator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.1)
+- [2.2 Professor Fuddlethumbs' reports](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.2)
+- [2.3 More of Professor Fuddlethumbs' reports](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.3)
+- [2.4 Ant on a cube I](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.4)
+- [2.5 Ant on a cube II](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.5)
+- [2.6 Ant on a cube III](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.6)
+- [2.7 A falling raindrop](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.7)
+- [2.8 The Three Door Problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.8)
+- [2.9 Dr Bletchley's PIN](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.9)
+- [2.10 Mr Smith's coins](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.10)
+- [2.11 The three envelope problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.11)
+- [2.12 A card game](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.12)
+
 ## Run locally
 
 ```sh
@@ -38,6 +55,8 @@ Everything is static HTML, CSS, JavaScript, and SVG. No build step or server-sid
 
 ## Source boundary
 
-Problems 1.1–1.10 are interactive adaptations of the material available in the supplied chapter sample of *Professor Povey's Perplexing Problems* by Thomas Povey. The available source stops after 1.10. Problems 1.11–1.17 are new reconstructed activities inspired by the index titles and difficulty ratings; each is explicitly labelled as reconstructed in the interface and is not presented as Povey's original wording or solution.
+Problems 1.1–1.10 are interactive adaptations of the material available in the supplied chapter sample of *Professor Povey's Perplexing Problems* by Thomas Povey. The available source stops after 1.10. Problems 1.11–1.17 are new reconstructed activities inspired by the index titles and difficulty ratings.
+
+For Chapter 2, the available PDF, attached OCR, public mirrors, and exact-title searches expose only the twelve titles and difficulty ratings. Problems 2.1–2.12 are therefore independently written reconstructions. Every reconstructed page is explicitly labelled and is not presented as Povey's original wording or solution.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

@@ -1,0 +1,303 @@
+/* Problem 2.1 - Human calculator */
+
+.p21-title {
+  font-size: clamp(2.35rem, 3.6vw, 4.8rem);
+}
+
+.p21-stage {
+  align-content: center;
+  padding-inline: clamp(1.25rem, 2.7vw, 3rem);
+}
+
+.p21-stage-card {
+  overflow: hidden;
+}
+
+.p21-factor-visual {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(148, 227, 221, 0.17), transparent 38%),
+    var(--blue);
+  border-radius: 18px;
+  color: white;
+  min-height: 245px;
+  overflow: hidden;
+  padding: 1.3rem clamp(0.8rem, 2.2vw, 1.6rem) 1rem;
+  position: relative;
+}
+
+.p21-factor-visual::after {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  content: "";
+  inset: 10px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.p21-number-line {
+  height: 126px;
+  margin: 0 auto;
+  max-width: 560px;
+  position: relative;
+}
+
+.p21-number-line-rule {
+  background: rgba(255, 255, 255, 0.3);
+  height: 2px;
+  left: 12%;
+  position: absolute;
+  right: 12%;
+  top: 75px;
+}
+
+.p21-number-node {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: var(--p21-x);
+  position: absolute;
+  top: 31px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.p21-number-node::after {
+  background: var(--math2-gold);
+  border: 4px solid var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.36);
+  content: "";
+  height: 13px;
+  margin-top: 9px;
+  width: 13px;
+}
+
+.p21-number-node small {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.p21-number-node strong {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+
+.p21-number-centre::after {
+  background: var(--math2-cyan);
+  height: 18px;
+  width: 18px;
+}
+
+.p21-number-centre strong {
+  color: var(--math2-cyan);
+}
+
+.p21-distance {
+  height: 25px;
+  position: absolute;
+  top: 89px;
+  width: var(--p21-width);
+}
+
+.p21-distance-left {
+  left: calc(50% - var(--p21-width));
+}
+
+.p21-distance-right {
+  left: 50%;
+}
+
+.p21-distance i {
+  border-left: 1px solid rgba(255, 255, 255, 0.34);
+  border-right: 1px solid rgba(255, 255, 255, 0.34);
+  border-top: 1px solid rgba(255, 255, 255, 0.34);
+  display: block;
+  height: 7px;
+  width: 100%;
+}
+
+.p21-distance b {
+  color: var(--math2-gold);
+  display: block;
+  font-size: 0.67rem;
+  margin-top: 0.22rem;
+  text-align: center;
+}
+
+.p21-product-readout {
+  align-items: center;
+  display: flex;
+  font-family: Georgia, "Times New Roman", serif;
+  gap: clamp(0.7rem, 2vw, 1.25rem);
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.p21-product-readout span {
+  color: var(--math2-cyan);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.p21-product-readout i {
+  color: var(--math2-gold);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: normal;
+}
+
+.p21-controls {
+  margin-top: 1.1rem;
+}
+
+.p21-range-row {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.p21-slider-label {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.p21-range-row strong {
+  color: var(--muted);
+  font-size: 0.61rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.p21-range-row output {
+  color: var(--math2-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.p21-drag-slider {
+  min-height: 28px;
+  touch-action: none;
+}
+
+.p21-drag-slider .drag-slider-fill,
+.p21-drag-slider .drag-slider-handle {
+  background: var(--math2-accent);
+}
+
+.p21-drag-slider .drag-slider-handle {
+  border-color: var(--paper-2);
+  box-shadow: 0 0 0 1px var(--math2-accent-dark);
+}
+
+.p21-drag-slider:focus-visible {
+  border-radius: 999px;
+  outline: 3px solid rgba(63, 91, 216, 0.28);
+  outline-offset: 2px;
+}
+
+.p21-presets {
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.p21-presets .chip-button {
+  min-height: 44px;
+  min-width: 0;
+  padding-inline: 0.35rem;
+}
+
+.p21-metrics {
+  margin-bottom: 0;
+}
+
+.p21-metrics strong b {
+  font-weight: inherit;
+}
+
+.p21-coach {
+  min-width: 0;
+}
+
+.p21-help-row {
+  margin-bottom: 0.9rem;
+}
+
+.p21-hints {
+  margin-top: 0.9rem;
+}
+
+.p21-worked-equation {
+  display: grid;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  gap: 0.36rem;
+  margin: 0.85rem 0;
+}
+
+.p21-worked-equation span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.p21-worked-equation b {
+  font-weight: 500;
+}
+
+.p21-worked-equation > strong {
+  color: var(--math2-cyan);
+  font-size: 1.45rem;
+}
+
+@media (max-width: 1120px) {
+  .p21-coach {
+    grid-column: 1 / -1;
+  }
+
+  .p21-presets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .p21-stage,
+  .p21-coach {
+    padding-block: 2rem;
+  }
+
+  .p21-factor-visual {
+    min-height: 225px;
+  }
+}
+
+@media (max-width: 430px) {
+  .p21-factor-visual {
+    margin-inline: -0.35rem;
+    padding-inline: 0.45rem;
+  }
+
+  .p21-number-node small {
+    font-size: 0.48rem;
+  }
+
+  .p21-number-node strong {
+    font-size: 1.25rem;
+  }
+
+  .p21-product-readout span {
+    font-size: 2.65rem;
+  }
+
+  .p21-presets {
+    grid-template-columns: 1fr 1fr;
+  }
+}

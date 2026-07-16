@@ -1,0 +1,212 @@
+.p24-stage {
+  align-content: center;
+}
+
+.p24-bit-key {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.p24-bit-key span {
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.7rem;
+  padding: 0.45rem 0;
+}
+
+.p24-bit-key b {
+  color: var(--math2-accent-dark);
+  margin-right: 0.25rem;
+}
+
+.p24-cube-wrap {
+  background: var(--blue);
+  border-radius: 17px;
+  overflow: hidden;
+  position: relative;
+}
+
+.p24-cube {
+  display: block;
+  height: auto;
+  max-height: 410px;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.p24-edge {
+  stroke: rgba(255, 255, 255, 0.32);
+  stroke-width: 4;
+}
+
+.p24-edge.is-traversed {
+  stroke: rgba(148, 227, 221, 0.72);
+  stroke-width: 6;
+}
+
+.p24-route {
+  fill: none;
+  stroke: var(--red);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 9;
+}
+
+.p24-vertex circle {
+  fill: var(--paper-2);
+  stroke: var(--blue);
+  stroke-width: 4;
+}
+
+.p24-vertex text {
+  fill: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.p24-vertex.is-start circle {
+  fill: var(--math2-cyan);
+}
+
+.p24-vertex.is-target circle {
+  fill: var(--math2-gold);
+}
+
+.p24-vertex.is-current circle {
+  stroke: var(--red);
+  stroke-width: 6;
+}
+
+.p24-vertex.can-move circle {
+  filter: drop-shadow(0 0 8px rgba(148, 227, 221, 0.8));
+}
+
+.p24-vertex .p24-hit {
+  cursor: pointer;
+  fill: transparent;
+  opacity: 0;
+  stroke: none;
+}
+
+.p24-vertex .p24-hit:focus {
+  opacity: 1;
+  stroke: #7fb2ff;
+  stroke-width: 3;
+}
+
+.p24-cube-legend {
+  bottom: 0.7rem;
+  color: rgba(255, 255, 255, 0.62);
+  display: flex;
+  font-size: 0.6rem;
+  gap: 0.8rem;
+  left: 0.8rem;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.p24-cube-legend span {
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.p24-cube-legend i {
+  background: var(--math2-cyan);
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+
+.p24-cube-legend i.is-target {
+  background: var(--math2-gold);
+}
+
+.p24-route-strip {
+  align-items: center;
+  display: flex;
+  gap: 0.35rem;
+  margin: 0.8rem 0;
+  min-height: 38px;
+  overflow-x: auto;
+}
+
+.p24-route-start,
+.p24-route-move b {
+  background: rgba(63, 91, 216, 0.08);
+  border-radius: 8px;
+  color: var(--math2-accent-dark);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  padding: 0.45rem;
+  white-space: nowrap;
+}
+
+.p24-route-move {
+  align-items: center;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.p24-route-move i {
+  color: var(--red);
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.p24-step-count {
+  color: var(--muted);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+}
+
+.p24-step-count strong {
+  color: var(--math2-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  margin-right: 0.2rem;
+}
+
+.p24-discovered {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1rem 0;
+}
+
+.p24-discovered span {
+  background: rgba(23, 23, 19, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  padding: 0.55rem 0.3rem;
+  text-align: center;
+}
+
+.p24-discovered span.is-found {
+  background: rgba(37, 130, 86, 0.11);
+  border-color: rgba(37, 130, 86, 0.28);
+  color: #17633f;
+  font-weight: 800;
+}
+
+.p24-answer-row {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 0.8rem;
+}
+
+.p24-answer-row input {
+  min-width: 0;
+}
+
+@media (max-width: 520px) {
+  .p24-cube {
+    min-height: 260px;
+  }
+}

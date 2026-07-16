@@ -1,0 +1,367 @@
+/* Problem 2.7 - A falling raindrop */
+
+.p27-title {
+  font-size: clamp(2.2rem, 3.45vw, 4.65rem);
+}
+
+.p27-stage {
+  align-content: start;
+  padding: clamp(1.2rem, 2.2vw, 2.4rem);
+}
+
+.p27-stage-card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.p27-stage-tabs {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.p27-stage-tabs .chip-button {
+  min-height: 42px;
+  min-width: 0;
+  padding-inline: 0.35rem;
+}
+
+.p27-stage-card .math2-stage-heading {
+  margin-bottom: 0;
+}
+
+.p27-board-wrap {
+  margin: 0 auto;
+  max-width: 590px;
+  min-width: 0;
+  width: 100%;
+}
+
+.p27-board-svg {
+  aspect-ratio: 1;
+  display: block;
+  max-width: 100%;
+  touch-action: none;
+  width: 100%;
+}
+
+.p27-board-paper {
+  fill: #fffdf5;
+  stroke: var(--blue);
+  stroke-width: 4;
+}
+
+.p27-board-grid {
+  fill: url(#p27-grid);
+  pointer-events: none;
+}
+
+.p27-exact-region {
+  fill: url(#p27-success-fill);
+  pointer-events: none;
+  stroke: var(--math2-accent);
+  stroke-width: 3;
+}
+
+.p27-symmetry-lines line {
+  pointer-events: none;
+  stroke: rgba(38, 58, 156, 0.46);
+  stroke-dasharray: 7 6;
+  stroke-width: 2;
+}
+
+.p27-wedge-region {
+  fill: rgba(240, 184, 90, 0.66);
+  pointer-events: none;
+  stroke: #9a650f;
+  stroke-width: 3;
+}
+
+.p27-wedge-label {
+  fill: #76500f;
+  font-size: 13px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.p27-centre-mark circle {
+  fill: var(--blue);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.p27-centre-mark line {
+  stroke: var(--blue);
+  stroke-width: 2;
+}
+
+.p27-centre-mark text {
+  fill: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.p27-distance-line {
+  pointer-events: none;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.p27-distance-line.is-centre {
+  stroke: var(--math2-accent);
+}
+
+.p27-distance-line.is-edge {
+  stroke: var(--red);
+  stroke-dasharray: 6 5;
+}
+
+.p27-edge-point {
+  fill: var(--red);
+  pointer-events: none;
+}
+
+.p27-drop {
+  cursor: grab;
+  fill: var(--math2-gold);
+  pointer-events: none;
+  stroke: var(--blue);
+  stroke-width: 4;
+}
+
+.p27-drop.is-centre {
+  fill: var(--math2-cyan);
+  stroke: #176b64;
+}
+
+.p27-drop.is-edge {
+  fill: #ffb18e;
+  stroke: var(--red-dark);
+}
+
+.p27-drop.is-tie {
+  fill: var(--math2-gold);
+  stroke: #82580d;
+}
+
+.p27-drop:focus-visible {
+  outline: none;
+  stroke: white;
+  stroke-width: 7;
+}
+
+.p27-hit-zone {
+  cursor: crosshair;
+  fill: transparent;
+  touch-action: none;
+}
+
+.p27-sample-dot {
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+.p27-sample-dot.is-centre {
+  fill: #16745e;
+}
+
+.p27-sample-dot.is-edge {
+  fill: var(--red);
+}
+
+.p27-sample-dot.is-tie {
+  fill: #8b620f;
+}
+
+.p27-axis-labels text {
+  fill: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.p27-live-metrics {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 0.8fr 0.8fr 1.4fr;
+}
+
+.p27-live-metrics > div {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  min-width: 0;
+  padding: 0.62rem;
+}
+
+.p27-live-metrics span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.22rem;
+  text-transform: uppercase;
+}
+
+.p27-live-metrics strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.p27-live-metrics .is-centre {
+  background: rgba(148, 227, 221, 0.22);
+  border-color: rgba(23, 107, 100, 0.25);
+  color: #176b64;
+}
+
+.p27-live-metrics .is-edge {
+  background: rgba(239, 61, 85, 0.08);
+  border-color: rgba(239, 61, 85, 0.24);
+  color: var(--red-dark);
+}
+
+.p27-live-metrics .is-tie {
+  background: rgba(240, 184, 90, 0.2);
+  color: #76500f;
+}
+
+.p27-simulation {
+  align-items: end;
+  background: rgba(63, 91, 216, 0.06);
+  border: 1px solid rgba(63, 91, 216, 0.16);
+  border-radius: 14px;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: minmax(130px, 1fr) auto minmax(110px, 0.6fr);
+  padding: 0.75rem;
+}
+
+.p27-simulation p {
+  color: var(--muted);
+  font-size: 0.62rem;
+  line-height: 1.42;
+  margin: 0;
+}
+
+.p27-simulation-buttons {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.p27-simulation-buttons .chip-button {
+  min-height: 42px;
+  padding-inline: 0.55rem;
+  white-space: nowrap;
+}
+
+.p27-simulation-result {
+  border-left: 1px solid rgba(63, 91, 216, 0.2);
+  display: grid;
+  padding-left: 0.7rem;
+}
+
+.p27-simulation-result span,
+.p27-simulation-result small {
+  color: var(--muted);
+  font-size: 0.52rem;
+}
+
+.p27-simulation-result strong {
+  color: var(--math2-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+}
+
+.p27-boundary-note {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+}
+
+.p27-boundary-note strong {
+  color: var(--math2-accent-dark);
+  font-size: 0.63rem;
+  text-transform: uppercase;
+}
+
+.p27-boundary-note span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.p27-help-row {
+  margin-block: 0.9rem;
+}
+
+.p27-hints {
+  margin-top: 0.8rem;
+}
+
+.p27-integral,
+.p27-final-equation {
+  font-size: clamp(0.92rem, 1.4vw, 1.14rem);
+}
+
+@media (max-width: 1280px) {
+  .p27-simulation {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .p27-simulation-result {
+    border-left: 0;
+    border-top: 1px solid rgba(63, 91, 216, 0.2);
+    padding-left: 0;
+    padding-top: 0.55rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .p27-coach {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 820px) {
+  .p27-stage,
+  .p27-coach {
+    padding-block: 2rem;
+  }
+
+  .p27-board-wrap {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 520px) {
+  .p27-stage-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .p27-stage-tabs .chip-button {
+    min-height: 40px;
+  }
+
+  .p27-live-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .p27-live-metrics > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .p27-simulation-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .p27-simulation-buttons .chip-button {
+    min-width: 0;
+    padding-inline: 0.25rem;
+    white-space: normal;
+  }
+}
