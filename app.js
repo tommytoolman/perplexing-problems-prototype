@@ -77,6 +77,11 @@ const chapterCatalog = {
     title: "Buoyancy and hydrostatics",
     problems: Array.from({ length: 8 }, (_, index) => `13.${index + 1}`),
   },
+  "14": {
+    number: "14",
+    title: "Estimation",
+    problems: Array.from({ length: 6 }, (_, index) => `14.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

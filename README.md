@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first thirteen chapters contain 103 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed chapters contain 109 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -21,6 +21,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 11 · Optics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=11)
 - [Chapter 12 · Heat contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=12)
 - [Chapter 13 · Buoyancy and hydrostatics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=13)
+- [Chapter 14 · Estimation contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=14)
 
 Review individual problems:
 
@@ -166,6 +167,15 @@ Review individual problems:
 - [13.7 A quantitative piston puzzle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.7)
 - [13.8 The floating bar](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.8)
 
+### Chapter 14 · Estimation
+
+- [14.1 Mile-high tower](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.1)
+- [14.2 How long do we have left?](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.2)
+- [14.3 Midas’ storeroom](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.3)
+- [14.4 Napoleon Bonaparte and the Great Pyramid](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.4)
+- [14.5 Lawnchair Larry](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.5)
+- [14.6 Do we get lighter by breathing?](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=14.6)
+
 ## Run locally
 
 ```sh
@@ -203,5 +213,7 @@ Chapter 11 contains five independently written optics activities reconstructed f
 Chapter 12 contains five independently written heat activities reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 13 contains eight independently written buoyancy and hydrostatics activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
