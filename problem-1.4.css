@@ -1,0 +1,296 @@
+/* Problem 1.4 - probability on a hexagonal floor */
+
+.hex-progress span {
+  width: 24%;
+}
+
+.hex-book-title {
+  font-size: clamp(2rem, 3.15vw, 4.2rem);
+  overflow-wrap: anywhere;
+}
+
+.hex-stage {
+  gap: 0.75rem;
+}
+
+.hex-floor-svg {
+  max-height: 44vh;
+  overflow: visible;
+}
+
+.hex-cell {
+  stroke: rgba(23, 23, 19, 0.47);
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.hex-cell.colour-0 {
+  fill: #f2d68f;
+}
+
+.hex-cell.colour-1 {
+  fill: #badfce;
+}
+
+.hex-cell.colour-2 {
+  fill: #bac8e2;
+}
+
+.hex-focus-tile {
+  fill: rgba(255, 253, 245, 0.34);
+  pointer-events: none;
+  stroke: #9b4f00;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.hex-safe-locus {
+  fill: rgba(33, 123, 88, 0.3);
+  pointer-events: none;
+  stroke: #146743;
+  stroke-dasharray: 6 4;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.hex-safe-point {
+  fill: #146743;
+  pointer-events: none;
+  stroke: var(--paper-2);
+  stroke-width: 2;
+}
+
+.hex-safe-locus[hidden],
+.hex-safe-point[hidden] {
+  display: none;
+}
+
+.hex-hoop-ring {
+  fill: rgba(239, 61, 85, 0.15);
+  pointer-events: none;
+  stroke: var(--red);
+  stroke-width: 5;
+}
+
+.hex-hoop-ring.safe {
+  fill: rgba(33, 129, 94, 0.16);
+  stroke: #176f4f;
+}
+
+.hex-hoop-centre {
+  fill: var(--paper-2);
+  pointer-events: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.hex-diameter-line {
+  pointer-events: none;
+  stroke: var(--ink);
+  stroke-dasharray: 4 3;
+  stroke-width: 2;
+}
+
+.hex-diameter-label {
+  fill: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.hex-drag-zone {
+  cursor: move;
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 4;
+  touch-action: none;
+}
+
+.hex-drag-zone:focus-visible {
+  outline: none;
+  stroke: #276fc1;
+  stroke-dasharray: 8 5;
+}
+
+.hex-trial-dot {
+  pointer-events: none;
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 0.7;
+}
+
+.hex-trial-dot.crosses {
+  fill: #c51f39;
+}
+
+.hex-trial-dot.safe {
+  fill: #08784f;
+}
+
+.hex-side-measure line {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.hex-side-measure text,
+.hex-svg-status text {
+  fill: var(--ink);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.hex-svg-status circle {
+  fill: var(--red);
+}
+
+.hex-svg-status.safe circle {
+  fill: #176f4f;
+}
+
+.hex-svg-status.safe text {
+  fill: #145d44;
+}
+
+.hex-caption {
+  align-items: start;
+}
+
+.hex-caption-copy {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 430px;
+}
+
+.book-stage-caption .hex-representative-note {
+  border-left: 3px solid var(--gold);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  padding-left: 0.7rem;
+}
+
+.hex-representative-note strong {
+  color: var(--ink);
+}
+
+.hex-landing-status {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  max-width: 170px;
+}
+
+.hex-landing-status.crosses {
+  color: var(--red-dark);
+}
+
+.hex-landing-status.safe {
+  color: #145d44;
+}
+
+.hex-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+.hex-presets .chip-button {
+  font-size: 0.68rem;
+  padding: 0.42rem 0.62rem;
+}
+
+.hex-simulation-row {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-top: 0.8rem;
+}
+
+.hex-trial-summary {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.hex-trial-summary > div {
+  border-left: 1px solid var(--line);
+  min-width: 78px;
+  padding-left: 0.7rem;
+}
+
+.hex-trial-summary small {
+  color: var(--muted);
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hex-trial-summary strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  margin-top: 0.15rem;
+}
+
+.hex-exact-readout strong {
+  min-width: 84px;
+  text-align: right;
+}
+
+.hex-solution .equation {
+  font-size: 0.98rem;
+  line-height: 1.35;
+  margin: 0.38rem 0;
+}
+
+.hex-solution p:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  margin-top: 0.8rem;
+  padding-top: 0.75rem;
+}
+
+.hex-sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 820px) {
+  .hex-floor-svg {
+    max-height: none;
+  }
+
+  .hex-presets {
+    justify-content: flex-start;
+  }
+
+  .hex-simulation-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hex-trial-summary {
+    width: 100%;
+  }
+
+  .hex-trial-summary > div {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hex-book-shell * {
+    scroll-behavior: auto;
+  }
+}
