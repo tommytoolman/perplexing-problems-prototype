@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first nine chapters contain 73 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first ten chapters contain 85 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -17,6 +17,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 7 · Mad inventions and perpetual motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=7)
 - [Chapter 8 · Kinematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=8)
 - [Chapter 9 · Electricity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=9)
+- [Chapter 10 · Gravity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=10)
 
 Review individual problems:
 
@@ -120,6 +121,21 @@ Review individual problems:
 - [9.6 RMS power](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.6)
 - [9.7 Boiling time](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.7)
 
+### Chapter 10 · Gravity
+
+- [10.1 The hollow moon](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.1)
+- [10.2 Lowest-energy circular orbit](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.2)
+- [10.3 Weightless in space](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.3)
+- [10.4 Jump into space](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.4)
+- [10.5 Space graveyard](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.5)
+- [10.6 Newton’s cannonball](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.6)
+- [10.7 De la Terre a la Lune](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.7)
+- [10.8 Professor Plumb’s Astrolabe-Plumb](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.8)
+- [10.9 Jet aircraft diet](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.9)
+- [10.10 Escape velocity from the Solar System](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.10)
+- [10.11 Mr Megalopolis’ expanding Moon](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.11)
+- [10.12 Asteroid games](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.12)
+
 ## Run locally
 
 ```sh
@@ -149,5 +165,7 @@ Chapter 7 contains six independently written energy and impossible-machine audit
 Chapter 8 contains three independently written kinematics activities reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 9 contains seven independently written electricity activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 10 contains twelve independently written gravity activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

@@ -1,0 +1,635 @@
+/* Problem 10.8 - plumb-line gravimetry and inverse mass inference */
+
+.p108-shell {
+  --p108-accent: #86652e;
+  --p108-accent-dark: #5d4319;
+  --p108-earth: #8fc9df;
+  --p108-horizontal: #efbd5d;
+  --p108-resultant: #91d1b7;
+  --p108-mass: #bd8750;
+  --p108-violet: #b9a5df;
+  --p108-night: #243b48;
+}
+
+.p108-shell .problem-number,
+.p108-shell .difficulty,
+.p108-shell .eyebrow {
+  color: var(--p108-accent);
+}
+
+.p108-shell .book-progress-bar span,
+.p108-shell .coach-kicker::before {
+  background: var(--p108-accent);
+}
+
+.p108-spread {
+  grid-template-columns: minmax(250px, 0.76fr) minmax(525px, 1.68fr) minmax(285px, 0.9fr);
+}
+
+.p108-problem-page,
+.p108-coach {
+  align-content: start;
+  min-width: 0;
+}
+
+.p108-title {
+  font-size: clamp(1.75rem, 2.75vw, 3.7rem);
+  overflow-wrap: anywhere;
+}
+
+.p108-reconstruction-note {
+  background: rgba(134, 101, 46, 0.08);
+  border-left: 3px solid var(--p108-accent);
+  color: #5d574d;
+  font-size: 0.69rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  padding: 0.78rem 0.86rem;
+}
+
+.p108-reconstruction-note strong {
+  color: var(--p108-accent-dark);
+}
+
+.p108-model-card {
+  background: rgba(134, 101, 46, 0.07);
+  border-radius: 11px;
+  margin-top: 1rem;
+  padding: 0.75rem 0.82rem;
+}
+
+.p108-model-card strong {
+  color: var(--p108-accent-dark);
+  font-size: 0.59rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.p108-model-card p {
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.48;
+  margin: 0.3rem 0 0;
+}
+
+.p108-stage {
+  align-content: start;
+  background:
+    linear-gradient(rgba(134, 101, 46, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(134, 101, 46, 0.035) 1px, transparent 1px),
+    var(--paper-2);
+  background-size: 24px 24px;
+  display: grid;
+  gap: 0.72rem;
+  min-width: 0;
+}
+
+.p108-stage-heading {
+  align-items: end;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: minmax(190px, 0.85fr) minmax(250px, 1.15fr);
+}
+
+.p108-stage-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.2rem 0 0;
+}
+
+.p108-stage-heading p {
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.p108-dynamic,
+.p108-apparatus-wrap,
+.p108-controls {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.p108-apparatus-wrap {
+  background: var(--p108-night);
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+}
+
+.p108-apparatus {
+  display: block;
+  max-height: 53vh;
+  min-height: 315px;
+  width: 100%;
+}
+
+.p108-divider {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1.5;
+}
+
+.p108-panel-title {
+  fill: rgba(255, 255, 255, 0.58);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+}
+
+.p108-support {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-linecap: round;
+  stroke-width: 8;
+}
+
+.p108-pivot {
+  fill: var(--p108-accent);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.p108-true-vertical {
+  stroke: rgba(143, 201, 223, 0.38);
+  stroke-dasharray: 5 5;
+  stroke-width: 2;
+}
+
+.p108-string {
+  stroke: var(--p108-resultant);
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.p108-angle-arc {
+  fill: none;
+  stroke: var(--p108-horizontal);
+  stroke-width: 3;
+}
+
+.p108-angle-label,
+.p108-distance-label,
+.p108-mass-label,
+.p108-schematic-note,
+.p108-vector-label {
+  fill: rgba(255, 255, 255, 0.76);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: var(--p108-night);
+  stroke-width: 3px;
+}
+
+.p108-angle-label {
+  fill: var(--p108-horizontal);
+}
+
+.p108-bob {
+  fill: var(--p108-resultant);
+  stroke: white;
+  stroke-width: 3;
+}
+
+.p108-distance-line {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-dasharray: 4 4;
+  stroke-width: 2;
+}
+
+.p108-distance-label {
+  fill: rgba(255, 255, 255, 0.59);
+}
+
+.p108-nearby-mass {
+  fill: url(#p108-mass-gradient);
+  stroke: var(--p108-horizontal);
+  stroke-width: 2.5;
+}
+
+.p108-mass-label {
+  fill: var(--p108-horizontal);
+}
+
+.p108-schematic-note {
+  fill: var(--p108-violet);
+  font-size: 7px;
+  letter-spacing: 0.07em;
+}
+
+.p108-vector-panel {
+  pointer-events: none;
+}
+
+.p108-vector-vertical,
+.p108-vector-horizontal,
+.p108-vector-resultant {
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.p108-vector-vertical {
+  stroke: var(--p108-earth);
+}
+
+.p108-vector-horizontal {
+  stroke: var(--p108-horizontal);
+}
+
+.p108-vector-resultant {
+  stroke: var(--p108-resultant);
+  stroke-dasharray: 6 4;
+}
+
+#p108-arrow-earth path {
+  fill: var(--p108-earth);
+}
+
+#p108-arrow-horizontal path {
+  fill: var(--p108-horizontal);
+}
+
+#p108-arrow-resultant path {
+  fill: var(--p108-resultant);
+}
+
+.p108-vector-label.is-vertical {
+  fill: var(--p108-earth);
+}
+
+.p108-vector-label.is-horizontal {
+  fill: var(--p108-horizontal);
+}
+
+.p108-vector-label.is-resultant {
+  fill: var(--p108-resultant);
+}
+
+.p108-equation-box {
+  fill: rgba(255, 255, 255, 0.07);
+  stroke: rgba(185, 165, 223, 0.4);
+  stroke-width: 1.5;
+}
+
+.p108-equation-kicker,
+.p108-equation-value {
+  fill: rgba(255, 255, 255, 0.57);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.p108-equation-value {
+  fill: var(--p108-violet);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  letter-spacing: normal;
+}
+
+.p108-status-strip {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.065);
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-between;
+  padding: 0.68rem 0.82rem;
+}
+
+.p108-status-strip strong {
+  color: var(--p108-resultant);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.p108-apparatus.is-inverse + .p108-status-strip strong {
+  color: var(--p108-horizontal);
+}
+
+.p108-status-strip span {
+  color: var(--p108-violet);
+  font-size: 0.5rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.p108-readings {
+  background: rgba(255, 253, 245, 0.96);
+  border: 1px solid rgba(23, 23, 19, 0.13);
+  border-radius: 0 0 14px 14px;
+  border-top: 0;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0.7rem;
+}
+
+.p108-readings > div {
+  border-left: 3px solid rgba(134, 101, 46, 0.23);
+  min-width: 0;
+  padding: 0.36rem 0.45rem;
+}
+
+.p108-readings > div:nth-child(3) {
+  border-left-color: var(--p108-resultant);
+}
+
+.p108-readings > div:nth-child(4) {
+  border-left-color: var(--p108-horizontal);
+}
+
+.p108-readings span,
+.p108-readings strong,
+.p108-readings small {
+  display: block;
+}
+
+.p108-readings span {
+  color: var(--muted);
+  font-size: 0.43rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.p108-readings strong {
+  color: var(--p108-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.71rem;
+  margin-top: 0.17rem;
+  overflow-wrap: anywhere;
+}
+
+.p108-readings small {
+  color: var(--muted);
+  font-size: 0.43rem;
+  line-height: 1.35;
+  margin-top: 0.17rem;
+}
+
+.p108-controls {
+  background: rgba(255, 253, 245, 0.94);
+  border: 1px solid rgba(23, 23, 19, 0.12);
+  border-radius: 14px;
+  padding: 0.72rem;
+}
+
+.p108-mode-picker {
+  display: grid;
+  gap: 0.36rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.p108-mode-picker button {
+  color: var(--p108-accent-dark);
+  font-size: 0.52rem;
+  min-height: 40px;
+  min-width: 0;
+}
+
+.p108-mode-picker button.active,
+.p108-mode-picker button[aria-pressed="true"] {
+  background: var(--p108-accent);
+  border-color: var(--p108-accent);
+  color: white;
+}
+
+.p108-control-grid {
+  display: grid;
+  gap: 0.48rem 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.58rem;
+}
+
+.p108-control-grid label {
+  display: grid;
+  min-width: 0;
+}
+
+.p108-control-grid label > span {
+  align-items: baseline;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.49rem;
+  font-weight: 800;
+  gap: 0.35rem;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.p108-control-grid output {
+  color: var(--p108-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.7rem;
+  text-transform: none;
+}
+
+.p108-control-grid input {
+  accent-color: var(--p108-accent);
+  min-height: 35px;
+  touch-action: pan-y;
+  width: 100%;
+}
+
+.p108-presets {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 0.55rem;
+}
+
+.p108-presets button {
+  border-color: rgba(134, 101, 46, 0.25);
+  color: var(--p108-accent-dark);
+  font-size: 0.46rem;
+  min-height: 42px;
+  min-width: 0;
+  padding-inline: 0.3rem;
+}
+
+.p108-presets button.active,
+.p108-presets button[aria-pressed="true"] {
+  background: var(--p108-accent);
+  border-color: var(--p108-accent);
+  color: white;
+}
+
+.p108-answer-form {
+  margin: 1rem 0;
+}
+
+.p108-answer-form > label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 800;
+  margin-bottom: 0.42rem;
+  text-transform: uppercase;
+}
+
+.p108-answer-form > div {
+  align-items: center;
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.p108-answer-form input {
+  min-width: 0;
+  width: 100%;
+}
+
+.p108-answer-form span {
+  color: var(--muted);
+  font-size: 0.53rem;
+  font-weight: 800;
+}
+
+.p108-feedback {
+  border-radius: 11px;
+  font-size: 0.73rem;
+  line-height: 1.48;
+  margin: 0.85rem 0;
+  padding: 0.78rem;
+}
+
+.p108-feedback.is-neutral {
+  background: rgba(134, 101, 46, 0.09);
+  color: var(--p108-accent-dark);
+}
+
+.p108-feedback.is-success {
+  background: rgba(145, 209, 183, 0.23);
+  color: #245f4f;
+}
+
+.p108-feedback.is-warn {
+  background: rgba(239, 189, 93, 0.25);
+  color: #71500f;
+}
+
+.p108-help-row,
+.p108-hints,
+.p108-debug {
+  margin-top: 0.9rem;
+}
+
+.p108-solution {
+  background: var(--p108-night);
+  border-radius: 15px;
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.p108-solution h3 {
+  color: var(--p108-resultant);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.p108-solution p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.69rem;
+  line-height: 1.53;
+}
+
+.p108-equation {
+  background: rgba(143, 201, 223, 0.09);
+  border-left: 3px solid var(--p108-earth);
+  color: #bce5f0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  margin: 0.65rem 0;
+  overflow-wrap: anywhere;
+  padding: 0.64rem 0.7rem;
+}
+
+.p108-equation.is-answer {
+  border-left-color: var(--p108-horizontal);
+  color: #f1cf82;
+  font-size: 1rem;
+}
+
+.p108-limits {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 0 !important;
+  padding-top: 0.65rem;
+}
+
+@media (max-width: 1180px) {
+  .p108-spread {
+    grid-template-columns: minmax(235px, 0.7fr) minmax(505px, 1.43fr);
+  }
+
+  .p108-presets {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .p108-spread {
+    display: block;
+  }
+
+  .p108-apparatus {
+    max-height: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .p108-stage-heading,
+  .p108-control-grid,
+  .p108-readings {
+    grid-template-columns: 1fr;
+  }
+
+  .p108-apparatus {
+    min-height: 250px;
+  }
+
+  .p108-presets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .p108-status-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .p108-status-strip span {
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .p108-mode-picker,
+  .p108-presets {
+    grid-template-columns: 1fr;
+  }
+
+  .p108-answer-form > div {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .p108-answer-form button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p108-string,
+  .p108-angle-arc,
+  .p108-bob,
+  .p108-nearby-mass,
+  .p108-vector-horizontal,
+  .p108-vector-resultant {
+    transition: none;
+  }
+}

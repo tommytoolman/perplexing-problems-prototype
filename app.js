@@ -57,6 +57,11 @@ const chapterCatalog = {
     title: "Electricity",
     problems: Array.from({ length: 7 }, (_, index) => `9.${index + 1}`),
   },
+  "10": {
+    number: "10",
+    title: "Gravity",
+    problems: Array.from({ length: 12 }, (_, index) => `10.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);
