@@ -27,6 +27,7 @@ Original extension — not in the source book:
 
 - [Chapter 15 · Probability and randomness contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=15)
 - [Chapter 16 · Proof, induction and invariants contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=16)
+- [Chapter 17 · Combinatorics and networks contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=17)
 
 Review individual problems:
 
@@ -202,6 +203,15 @@ Chapters 15–20 are created for this project. They do not appear in *Professor 
 - [16.4 Euclid’s Shrinking Rectangle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.4)
 - [16.5 The Village of Odd Doorways](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.5)
 - [16.6 The Bellhop’s Impossible Suitcase](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.6)
+
+### Chapter 17 · Combinatorics and networks
+
+- [17.1 Twelve Lamps, Eighteen Wires](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.1)
+- [17.2 Dominoes at the Long Table](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.2)
+- [17.3 The Spy Who Wouldn’t Sit Next Door](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.3)
+- [17.4 The Midnight Radio Wheel](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.4)
+- [17.5 The Two-Route Lifeboat Network](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.5)
+- [17.6 The Eleven-Crate Bottleneck](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.6)
 
 ## Run locally
 

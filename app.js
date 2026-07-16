@@ -92,6 +92,11 @@ const chapterCatalog = {
     title: "Proof, induction and invariants",
     problems: Array.from({ length: 6 }, (_, index) => `16.${index + 1}`),
   },
+  "17": {
+    number: "17",
+    title: "Combinatorics and networks",
+    problems: Array.from({ length: 6 }, (_, index) => `17.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

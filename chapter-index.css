@@ -788,6 +788,23 @@
   fill: #596bb8;
 }
 
+.chapter-index-card.is-chapter-seventeen::before {
+  background: #3f8a68;
+}
+
+.chapter-index-card.is-chapter-seventeen .chapter-index-number,
+.chapter-index-card.is-chapter-seventeen .chapter-index-stars {
+  color: #2f7354;
+}
+
+.chapter-index-card.is-chapter-seventeen .index-motif-svg .index-accent {
+  stroke: #3f8a68;
+}
+
+.chapter-index-card.is-chapter-seventeen .index-motif-svg .index-dot {
+  fill: #3f8a68;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -847,6 +864,10 @@
 
 .chapter-index-proof {
   background: #dee1ef;
+}
+
+.chapter-index-combinatorics {
+  background: #dce9e1;
 }
 
 .chapter-index-footer {
@@ -992,6 +1013,10 @@
 
 .master-chapter-card.is-live.is-proof {
   background: #303b72;
+}
+
+.master-chapter-card.is-live.is-combinatorics {
+  background: #24543f;
 }
 
 .master-chapter-card.is-original-extension {
@@ -1368,6 +1393,19 @@
 .chapter-landing-hero.is-proof h1 em,
 .chapter-contents-heading.is-proof span {
   color: #4d5fa8;
+}
+
+.chapter-landing-hero.is-combinatorics .chapter-index-hero-figure {
+  background: #24543f;
+}
+
+.chapter-landing-hero.is-combinatorics .chapter-index-stats {
+  background: #3f8a68;
+}
+
+.chapter-landing-hero.is-combinatorics h1 em,
+.chapter-contents-heading.is-combinatorics span {
+  color: #2f7354;
 }
 
 .chapter-contents-heading {
