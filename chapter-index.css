@@ -686,6 +686,23 @@
   fill: #b45a3c;
 }
 
+.chapter-index-card.is-chapter-eleven::before {
+  background: #2b7c83;
+}
+
+.chapter-index-card.is-chapter-eleven .chapter-index-number,
+.chapter-index-card.is-chapter-eleven .chapter-index-stars {
+  color: #236970;
+}
+
+.chapter-index-card.is-chapter-eleven .index-motif-svg .index-accent {
+  stroke: #2b7c83;
+}
+
+.chapter-index-card.is-chapter-eleven .index-motif-svg .index-dot {
+  fill: #2b7c83;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -720,6 +737,10 @@
 
 .chapter-index-gravity {
   background: #eadfd9;
+}
+
+.chapter-index-optics {
+  background: #d9e7e7;
 }
 
 .chapter-index-footer {
@@ -841,6 +862,10 @@
 
 .master-chapter-card.is-live.is-gravity {
   background: #5d3025;
+}
+
+.master-chapter-card.is-live.is-optics {
+  background: #1d5055;
 }
 
 .master-chapter-card.is-live:hover,
@@ -1094,6 +1119,19 @@
 .chapter-landing-hero.is-gravity h1 em,
 .chapter-contents-heading.is-gravity span {
   color: #a74f35;
+}
+
+.chapter-landing-hero.is-optics .chapter-index-hero-figure {
+  background: #1d5055;
+}
+
+.chapter-landing-hero.is-optics .chapter-index-stats {
+  background: #2b7c83;
+}
+
+.chapter-landing-hero.is-optics h1 em,
+.chapter-contents-heading.is-optics span {
+  color: #2b747b;
 }
 
 .chapter-contents-heading {

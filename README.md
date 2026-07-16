@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first ten chapters contain 85 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first eleven chapters contain 90 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -18,6 +18,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 8 · Kinematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=8)
 - [Chapter 9 · Electricity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=9)
 - [Chapter 10 · Gravity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=10)
+- [Chapter 11 · Optics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=11)
 
 Review individual problems:
 
@@ -136,6 +137,14 @@ Review individual problems:
 - [10.11 Mr Megalopolis’ expanding Moon](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.11)
 - [10.12 Asteroid games](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=10.12)
 
+### Chapter 11 · Optics
+
+- [11.1 Mote in a sphere](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.1)
+- [11.2 Diminishing rings of light](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.2)
+- [11.3 Floating pigs](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.3)
+- [11.4 The Martian and the caveman](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.4)
+- [11.5 Strange fish](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.5)
+
 ## Run locally
 
 ```sh
@@ -167,5 +176,7 @@ Chapter 8 contains three independently written kinematics activities reconstruct
 Chapter 9 contains seven independently written electricity activities reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 10 contains twelve independently written gravity activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 11 contains five independently written optics activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

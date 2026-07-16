@@ -253,7 +253,15 @@
     { number: "10.12", title: "Asteroid games", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Redirect an asteroid with a carefully timed impulse, then judge miss distance, energy cost and planetary risk.", motif: "asteroid", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems];
+  const chapterElevenProblems = [
+    { number: "11.1", title: "Mote in a sphere", stars: "★", difficulty: "One star difficulty", teaser: "Trace rays from a tiny inclusion through a curved surface and locate the virtual image an observer sees.", motif: "mote-sphere", source: "reconstructed" },
+    { number: "11.2", title: "Diminishing rings of light", stars: "★★★", difficulty: "Three star difficulty", teaser: "Turn thin-film path difference into concentric ring radii, then explain why the pattern fades.", motif: "light-rings", source: "reconstructed" },
+    { number: "11.3", title: "Floating pigs", stars: "★★★", difficulty: "Three star difficulty", teaser: "Hide a toy below a concave mirror and ray-trace the real image that seems to float in space.", motif: "floating-image", source: "reconstructed" },
+    { number: "11.4", title: "The Martian and the caveman", stars: "★ or ★★★★", difficulty: "One or four star difficulty", teaser: "Start with angular size, then unlock a diffraction test for whether distant details can actually be resolved.", motif: "martian-caveman", source: "reconstructed" },
+    { number: "11.5", title: "Strange fish", stars: "★★★ or ★★★★", difficulty: "Three or four star difficulty", teaser: "Follow rays across water, glass and air to reconcile apparent depth, viewing angle and total internal reflection.", motif: "strange-fish", source: "reconstructed" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -266,7 +274,7 @@
     { number: "8", title: "Kinematics", count: 3, page: 219, live: true, summary: "Pursuit, relative velocity and projectile interception" },
     { number: "9", title: "Electricity", count: 7, page: 228, live: true, summary: "Networks, transmission, AC power and heating" },
     { number: "10", title: "Gravity", count: 12, page: 242, live: true, summary: "Fields, orbits, apparent weight and escape" },
-    { number: "11", title: "Optics", count: 5, page: 285 },
+    { number: "11", title: "Optics", count: 5, page: 285, live: true, summary: "Refraction, interference, imaging and resolution" },
     { number: "12", title: "Heat", count: 5, page: 305 },
     { number: "13", title: "Buoyancy and hydrostatics", count: 8, page: 322 },
     { number: "14", title: "Estimation", count: 6, page: 351 },
@@ -342,6 +350,13 @@
       status: "12 reconstructed activities",
       introduction: "Move from shells and surface weight to orbits, transfers and escape. Every activity follows energy, acceleration or angular momentum across the gravitational landscape.",
       heroClass: "is-gravity",
+    },
+    "11": {
+      title: "Optics",
+      count: 5,
+      status: "5 reconstructed activities",
+      introduction: "Bend and recombine rays until apparent positions, floating images, interference rings and the limits of resolution become visible rather than mysterious.",
+      heroClass: "is-optics",
     },
   };
 
@@ -436,6 +451,11 @@
       'solar-escape': '<circle cx="48" cy="49" r="18"/><circle cx="48" cy="49" r="34"/><path class="index-accent" d="M82 49c24 0 29-26 59-31"/><path class="index-accent" d="m131 13 10 5-7 9"/><circle class="index-dot" cx="81" cy="49" r="5"/>',
       'expanding-moon': '<circle cx="55" cy="49" r="17"/><circle class="index-accent" cx="107" cy="49" r="34"/><path d="M76 49h-7m46-40v12m0 56v12M75 9v12M75 77v12"/>',
       asteroid: '<circle cx="32" cy="68" r="16"/><path d="m101 18 18 4 10 17-8 21-21 8-18-13-2-22z"/><path class="index-accent" d="M111 43 51 62m12-11-12 11 15 4"/><circle class="index-dot" cx="111" cy="43" r="4"/>',
+      'mote-sphere': '<circle cx="80" cy="48" r="39"/><circle class="index-dot" cx="61" cy="48" r="5"/><path d="M61 48 119 28M61 48l58 20"/><path class="index-accent" d="M119 28 148 36M119 68l29-8"/>',
+      'light-rings': '<circle cx="80" cy="48" r="38"/><circle cx="80" cy="48" r="27"/><circle cx="80" cy="48" r="17"/><circle class="index-accent" cx="80" cy="48" r="8"/><path d="M18 88h124"/>',
+      'floating-image': '<path d="M22 78c19-48 97-48 116 0"/><path d="M41 78c15-30 63-30 78 0"/><path class="index-accent" d="M54 63 80 25l26 38M80 25v52"/><circle class="index-dot" cx="80" cy="25" r="5"/>',
+      'martian-caveman': '<circle cx="32" cy="48" r="14"/><circle cx="128" cy="48" r="14"/><path d="M46 48h68"/><path class="index-accent" d="M47 42 112 31M47 54l65 11"/><circle class="index-dot" cx="112" cy="31" r="4"/><circle class="index-dot" cx="112" cy="65" r="4"/>',
+      'strange-fish': '<path d="M12 45h136M26 66c17-16 39-16 56 0-17 16-39 16-56 0zm56 0 14-12v24z"/><path class="index-accent" d="M63 61 99 45l31-23M63 71l36-26"/><circle class="index-dot" cx="51" cy="66" r="3"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -450,8 +470,9 @@
     const chapterEight = problem.number.startsWith("8.");
     const chapterNine = problem.number.startsWith("9.");
     const chapterTen = problem.number.startsWith("10.");
+    const chapterEleven = problem.number.startsWith("11.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -479,8 +500,9 @@
     const kinematics = chapter === "8";
     const electricity = chapter === "9";
     const gravity = chapter === "10";
+    const optics = chapter === "11";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -495,11 +517,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=10">Open Gravity <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=11">Open Optics <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> Ten chapters live</span>
+        <span class="chapter-index-complete"><i></i> Eleven chapters live</span>
         ${action}
       </header>`;
   }
@@ -533,7 +555,7 @@
         <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -544,25 +566,25 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>Ten are alive.</em></h1>
-            <p>This is the front door to the whole project: every chapter in the source book, the ten interactive chapters available now, and a clear view of what comes next.</p>
+            <h1>Fourteen chapters.<br><em>Eleven are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the eleven interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=10">Open Gravity →</a>
+              <a href="?view=chapter&amp;chapter=11">Open Optics →</a>
             </div>
           </div>
           ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>chapters in the book</dd></div>
             <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>85</dt><dd>interactive now</dd></div>
+            <div><dt>90</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
-            <p>Chapters 1–10 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+            <p>Chapters 1–11 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
           </header>
           <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
         </section>
@@ -574,7 +596,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a><a href="?view=chapter&amp;chapter=8">Kinematics →</a><a href="?view=chapter&amp;chapter=9">Electricity →</a><a href="?view=chapter&amp;chapter=10">Gravity →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a><a href="?view=chapter&amp;chapter=8">Kinematics →</a><a href="?view=chapter&amp;chapter=9">Electricity →</a><a href="?view=chapter&amp;chapter=10">Gravity →</a><a href="?view=chapter&amp;chapter=11">Optics →</a></div>
         </footer>
       </main>`;
   }
@@ -602,7 +624,9 @@
                     ? sectionMarkup({ chapter: "8", source: "reconstructed", eyebrow: "Problems 8.1–8.3", title: "An original kinematics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 8. Every pursuit, flight path, intercept and solution here is independently written and explicitly labelled.", id: "index-chapter-eight-reconstructed" })
                     : chapter === "9"
                       ? sectionMarkup({ chapter: "9", source: "reconstructed", eyebrow: "Problems 9.1–9.7", title: "An original electricity laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 9. Every network, power audit, heating model and solution here is independently written and explicitly labelled.", id: "index-chapter-nine-reconstructed" })
-                      : sectionMarkup({ chapter: "10", source: "reconstructed", eyebrow: "Problems 10.1–10.12", title: "An original gravity laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 10. Every world, orbit, transfer and solution here is independently written and explicitly labelled.", id: "index-chapter-ten-reconstructed" });
+                      : chapter === "10"
+                        ? sectionMarkup({ chapter: "10", source: "reconstructed", eyebrow: "Problems 10.1–10.12", title: "An original gravity laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 10. Every world, orbit, transfer and solution here is independently written and explicitly labelled.", id: "index-chapter-ten-reconstructed" })
+                        : sectionMarkup({ chapter: "11", source: "reconstructed", eyebrow: "Problems 11.1–11.5", title: "An original optics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 11. Every ray diagram, optical system and solution here is independently written and explicitly labelled.", id: "index-chapter-eleven-reconstructed" });
     const sourceCount = chapter === "1" ? "10" : details.count;
     const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = chapter === "1" ? "7" : "1";
