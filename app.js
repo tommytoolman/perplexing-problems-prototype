@@ -109,7 +109,14 @@ function chapterForProblem(problem) {
 
 function shouldRenderChapterIndex() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("view") === "index" || params.size === 0;
+  return params.get("view") === "index" || params.get("view") === "chapter" || params.size === 0;
+}
+
+function requestedChapterIndex() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("view") !== "chapter") return null;
+  const chapter = params.get("chapter");
+  return chapterCatalog[chapter] ? chapter : null;
 }
 
 function fmt(value, digits = 3) {
@@ -313,10 +320,11 @@ function problemHeaderActions(current, resetControl) {
   const chapter = chapterForProblem(current);
   const index = chapter.problems.indexOf(current);
   const next = chapter.problems[index + 1];
+  const contentsHref = `?view=chapter&amp;chapter=${chapter.number}`;
   const nextLink = next
     ? `<a class="problem-nav-link header-next" href="${problemHref(next).replaceAll("&", "&amp;")}">Next · ${next} →</a>`
     : "";
-  return `<div class="book-actions button-row"><a class="problem-nav-link header-contents" href="./">Contents</a>${nextLink}${resetControl}</div>`;
+  return `<div class="book-actions button-row"><a class="problem-nav-link header-contents" href="${contentsHref}" aria-label="Chapter ${chapter.number} contents">Contents</a>${nextLink}${resetControl}</div>`;
 }
 
 function problemProgress(current) {
@@ -823,8 +831,11 @@ function renderSwitcher(variant) {
 
 function render() {
   if (shouldRenderChapterIndex()) {
-    document.title = "Interactive problem library — Perplexing Problems";
-    document.getElementById("app").innerHTML = window.poveyChapterIndex.render();
+    const chapter = requestedChapterIndex();
+    document.title = chapter
+      ? `Chapter ${chapter} · ${chapterCatalog[chapter].title} — Perplexing Problems`
+      : "All chapters — Perplexing Problems";
+    document.getElementById("app").innerHTML = window.poveyChapterIndex.render({ chapter });
     document.getElementById("prototype-switcher").innerHTML = "";
     return;
   }

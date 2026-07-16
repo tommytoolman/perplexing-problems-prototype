@@ -4,7 +4,12 @@ A browser-native prototype exploring how a printed mathematics and physics probl
 
 ## Live prototype
 
-[Open the Chapter 1 contents page](https://tommytoolman.github.io/perplexing-problems-prototype/)
+[Open the master chapter index](https://tommytoolman.github.io/perplexing-problems-prototype/)
+
+The prototype now has three navigation levels: the complete 14-chapter book map, a contents page for each interactive chapter, and the individual problem pages.
+
+- [Chapter 1 · Geometry contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=1)
+- [Chapter 2 · Mathematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=2)
 
 Review individual problems:
 

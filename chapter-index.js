@@ -175,6 +175,40 @@
 
   const problems = [...chapterOneProblems, ...chapterTwoProblems];
 
+  const bookChapters = [
+    { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
+    { number: "2", title: "Mathematics", count: 12, page: 60, live: true, summary: "Algebra, graphs and probability" },
+    { number: "3", title: "Statics", count: 9, page: 82 },
+    { number: "4", title: "Dynamics and collisions", count: 7, page: 119 },
+    { number: "5", title: "Circular motion", count: 7, page: 150 },
+    { number: "6", title: "Simple harmonic motion", count: 5, page: 176 },
+    { number: "7", title: "Mad inventions and perpetual motion", count: 6, page: 196 },
+    { number: "8", title: "Kinematics", count: 3, page: 219 },
+    { number: "9", title: "Electricity", count: 7, page: 228 },
+    { number: "10", title: "Gravity", count: 12, page: 242 },
+    { number: "11", title: "Optics", count: 5, page: 285 },
+    { number: "12", title: "Heat", count: 5, page: 305 },
+    { number: "13", title: "Buoyancy and hydrostatics", count: 8, page: 322 },
+    { number: "14", title: "Estimation", count: 6, page: 351 },
+  ];
+
+  const chapterDetails = {
+    "1": {
+      title: "Geometry",
+      count: 17,
+      status: "10 source-backed · 7 reconstructed",
+      introduction: "Flatten, slide, resize and optimise. This chapter turns geometric arguments into things you can manipulate before you formalise them.",
+      heroClass: "",
+    },
+    "2": {
+      title: "Mathematics",
+      count: 12,
+      status: "12 reconstructed activities",
+      introduction: "Calculate, simulate and reason backwards through a collection spanning arithmetic, probability, graphs and discrete mathematics.",
+      heroClass: "is-mathematics",
+    },
+  };
+
   function problemHref(number) {
     return `?variant=A&amp;problem=${number}`;
   }
@@ -250,65 +284,141 @@
       </section>`;
   }
 
-  function render() {
+  function siteHeader(chapter) {
+    const action = chapter
+      ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=1">Open Geometry <span aria-hidden="true">→</span></a>';
     return `
-      <main class="chapter-index-shell">
-        <header class="chapter-index-header">
-          <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-          <span class="chapter-index-complete"><i></i> Two chapters live</span>
-          <a class="problem-nav-link chapter-index-start" href="?variant=A&amp;problem=2.1">Start Chapter 2 <span aria-hidden="true">→</span></a>
-        </header>
+      <header class="chapter-index-header">
+        <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
+        <span class="chapter-index-complete"><i></i> Two chapters live</span>
+        ${action}
+      </header>`;
+  }
 
-        <section class="chapter-index-hero">
+  function heroFigure(label) {
+    return `
+      <div class="chapter-index-hero-figure" aria-hidden="true">
+        <svg viewBox="0 0 520 420">
+          <circle class="hero-orbit hero-orbit-one" cx="274" cy="202" r="146"/>
+          <circle class="hero-orbit hero-orbit-two" cx="274" cy="202" r="105"/>
+          <path class="hero-polygon" d="m274 56 139 101-53 164H188l-53-164z"/>
+          <path class="hero-route" d="M74 348 227 191 448 77"/>
+          <circle class="hero-node" cx="227" cy="191" r="10"/>
+          <text x="315" y="375">${label}</text>
+        </svg>
+      </div>`;
+  }
+
+  function masterChapterCard(chapter) {
+    const number = chapter.number.padStart(2, "0");
+    const body = `
+      <div class="master-chapter-card-top">
+        <span class="master-chapter-number">${number}</span>
+        <span class="master-chapter-status">${chapter.live ? "Interactive now" : "To be built"}</span>
+      </div>
+      <h2>${chapter.title}</h2>
+      ${chapter.summary ? `<p>${chapter.summary}</p>` : '<p>Mapped from the full book contents.</p>'}
+      <div class="master-chapter-card-footer">
+        <span>${chapter.count} problems</span>
+        <span>Book p. ${chapter.page}</span>
+        <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
+      </div>`;
+    return chapter.live
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
+  }
+
+  function renderMaster() {
+    return `
+      <main class="chapter-index-shell master-index-shell">
+        ${siteHeader(null)}
+        <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
-            <div class="eyebrow">Interactive problem library</div>
-            <h1>Twenty-nine problems.<br><em>Nothing passive.</em></h1>
-            <p>Move the diagrams. Make an estimate. Ask for a hint only when you need one—then reveal the mathematics underneath.</p>
+            <div class="eyebrow">The complete book map</div>
+            <h1>Fourteen chapters.<br><em>Two are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the two interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
-              <a class="primary-button chapter-index-primary" href="#chapters">Choose a chapter</a>
-              <a href="#all-problems">Browse all problems ↓</a>
+              <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
+              <a href="?view=chapter&amp;chapter=1">Open Geometry →</a>
             </div>
           </div>
-          <div class="chapter-index-hero-figure" aria-hidden="true">
-            <svg viewBox="0 0 520 420">
-              <circle class="hero-orbit hero-orbit-one" cx="274" cy="202" r="146"/>
-              <circle class="hero-orbit hero-orbit-two" cx="274" cy="202" r="105"/>
-              <path class="hero-polygon" d="m274 56 139 101-53 164H188l-53-164z"/>
-              <path class="hero-route" d="M74 348 227 191 448 77"/>
-              <circle class="hero-node" cx="227" cy="191" r="10"/>
-              <text x="315" y="375">1.1 → 2.12</text>
-            </svg>
-          </div>
+          ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
-            <div><dt>29</dt><dd>interactive problems</dd></div>
-            <div><dt>2</dt><dd>complete chapters</dd></div>
-            <div><dt>19</dt><dd>clearly labelled reconstructions</dd></div>
+            <div><dt>14</dt><dd>chapters in the book</dd></div>
+            <div><dt>109</dt><dd>problems in the source index</dd></div>
+            <div><dt>29</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
-        <nav class="chapter-index-chapters" id="chapters" aria-label="Choose a chapter">
-          <a class="chapter-index-chapter-card" href="#chapter-1">
-            <span>Chapter 1</span><strong>Geometry</strong><small>17 problems · constructions, loci and optimisation</small><b>Browse chapter ↓</b>
-          </a>
-          <a class="chapter-index-chapter-card is-mathematics" href="#chapter-2">
-            <span>Chapter 2</span><strong>Mathematics</strong><small>12 reconstructed activities · algebra, graphs and probability</small><b>Browse chapter ↓</b>
-          </a>
-        </nav>
+        <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
+          <header class="master-chapters-heading">
+            <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
+            <p>Chapters 1 and 2 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+          </header>
+          <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
+        </section>
 
-        <div id="all-problems">
-          <header class="chapter-index-chapter-heading" id="chapter-1"><span>Chapter 1</span><h2>Geometry</h2><a href="?variant=A&amp;problem=1.1">Start 1.1 →</a></header>
-          ${sectionMarkup({ chapter: "1", source: "adapted", eyebrow: "Problems 1.1–1.10", title: "From the available chapter", copy: "Interactive adaptations of the problem statements and solutions available in the supplied source sample.", id: "index-chapter-one-adapted" })}
-          ${sectionMarkup({ chapter: "1", source: "reconstructed", eyebrow: "Problems 1.11–1.17", title: "The reconstructed continuation", copy: "The sample ends at 1.10. These independently written activities follow only the listed titles and difficulty ratings—not Povey's original wording.", id: "index-chapter-one-reconstructed" })}
-
-          <header class="chapter-index-chapter-heading is-mathematics" id="chapter-2"><span>Chapter 2</span><h2>Mathematics</h2><a href="?variant=A&amp;problem=2.1">Start 2.1 →</a></header>
-          ${sectionMarkup({ chapter: "2", source: "reconstructed", eyebrow: "Problems 2.1–2.12", title: "An original mathematics lab", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 2. Every activity here is independently written and explicitly labelled—not Povey's original wording or solution.", id: "index-chapter-two-reconstructed" })}
-        </div>
+        <aside class="master-epilogue">
+          <div><span>After the chapters · Book p. 367</span><strong>The Deadly Game of Puzzle Points</strong></div>
+          <p>The book closes with its puzzle-points game and endnote. They are mapped here, but are not yet interactive.</p>
+        </aside>
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?variant=A&amp;problem=1.1">Start Geometry →</a><a href="?variant=A&amp;problem=2.1">Start Mathematics →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry contents →</a><a href="?view=chapter&amp;chapter=2">Mathematics contents →</a></div>
         </footer>
       </main>`;
+  }
+
+  function renderChapter(chapter) {
+    const details = chapterDetails[chapter];
+    if (!details) return renderMaster();
+    const firstProblem = `${chapter}.1`;
+    const sections = chapter === "1"
+      ? `${sectionMarkup({ chapter: "1", source: "adapted", eyebrow: "Problems 1.1–1.10", title: "From the available chapter", copy: "Interactive adaptations of the problem statements and solutions available in the supplied source sample.", id: "index-chapter-one-adapted" })}
+         ${sectionMarkup({ chapter: "1", source: "reconstructed", eyebrow: "Problems 1.11–1.17", title: "The reconstructed continuation", copy: "The sample ends at 1.10. These independently written activities follow only the listed titles and difficulty ratings—not Povey's original wording.", id: "index-chapter-one-reconstructed" })}`
+      : sectionMarkup({ chapter: "2", source: "reconstructed", eyebrow: "Problems 2.1–2.12", title: "An original mathematics lab", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 2. Every activity here is independently written and explicitly labelled—not Povey's original wording or solution.", id: "index-chapter-two-reconstructed" });
+    const sourceCount = chapter === "1" ? "10" : "12";
+    const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
+    const thirdCount = chapter === "1" ? "7" : "1";
+    const thirdLabel = chapter === "1" ? "labelled reconstructions" : "complete chapter";
+    return `
+      <main class="chapter-index-shell chapter-contents-shell ${details.heroClass}">
+        ${siteHeader(chapter)}
+        <section class="chapter-index-hero chapter-landing-hero ${details.heroClass}">
+          <div class="chapter-index-hero-copy">
+            <div class="eyebrow">Chapter ${chapter} · Interactive contents</div>
+            <h1>${details.title}.<br><em>${details.count} problems.</em></h1>
+            <p>${details.introduction}</p>
+            <div class="chapter-index-hero-actions">
+              <a class="primary-button chapter-index-primary" href="${problemHref(firstProblem)}">Start ${firstProblem}</a>
+              <a href="#problems">Choose a problem ↓</a>
+            </div>
+          </div>
+          ${heroFigure(`${chapter}.1 → ${chapter}.${details.count}`)}
+          <dl class="chapter-index-stats">
+            <div><dt>${details.count}</dt><dd>interactive problems</dd></div>
+            <div><dt>${sourceCount}</dt><dd>${sourceLabel}</dd></div>
+            <div><dt>${thirdCount}</dt><dd>${thirdLabel}</dd></div>
+          </dl>
+        </section>
+
+        <header class="chapter-contents-heading ${details.heroClass}" id="problems">
+          <div><span>Chapter ${chapter}</span><h2>Contents</h2></div>
+          <p>${details.status}. Choose any problem, or work from the beginning.</p>
+        </header>
+        ${sections}
+
+        <footer class="chapter-index-footer">
+          <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
+          <div><a href="./">← All chapters</a><a href="${problemHref(firstProblem)}">Start ${details.title} →</a></div>
+        </footer>
+      </main>`;
+  }
+
+  function render({ chapter = null } = {}) {
+    return chapter ? renderChapter(chapter) : renderMaster();
   }
 
   window.poveyChapterIndex = { render };
