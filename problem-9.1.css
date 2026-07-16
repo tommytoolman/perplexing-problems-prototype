@@ -1,0 +1,644 @@
+/* Problem 9.1 - square-pyramid resistor symmetry and nodal analysis */
+
+.p91-shell {
+  --p91-accent: #72549a;
+  --p91-accent-dark: #493166;
+  --p91-hot: #e58055;
+  --p91-cold: #4b8ca9;
+  --p91-current: #e6b54f;
+  --p91-equal: #bca4e2;
+  --p91-mint: #92d2bd;
+  --p91-night: #213b49;
+}
+
+.p91-shell .problem-number,
+.p91-shell .difficulty,
+.p91-shell .eyebrow {
+  color: var(--p91-accent);
+}
+
+.p91-shell .book-progress-bar span,
+.p91-shell .coach-kicker::before {
+  background: var(--p91-accent);
+}
+
+.p91-spread {
+  grid-template-columns: minmax(250px, 0.76fr) minmax(520px, 1.65fr) minmax(285px, 0.9fr);
+}
+
+.p91-problem-page,
+.p91-coach {
+  align-content: start;
+  min-width: 0;
+}
+
+.p91-title {
+  font-size: clamp(2rem, 3.1vw, 4.2rem);
+  overflow-wrap: anywhere;
+}
+
+.p91-reconstruction-note {
+  background: rgba(114, 84, 154, 0.08);
+  border-left: 3px solid var(--p91-accent);
+  color: #57515f;
+  font-size: 0.69rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  padding: 0.78rem 0.86rem;
+}
+
+.p91-reconstruction-note strong {
+  color: var(--p91-accent-dark);
+}
+
+.p91-model-card {
+  background: rgba(75, 140, 169, 0.07);
+  border-radius: 11px;
+  margin-top: 1rem;
+  padding: 0.75rem 0.82rem;
+}
+
+.p91-model-card p {
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.48;
+  margin: 0.28rem 0 0;
+}
+
+.p91-stage {
+  align-content: start;
+  background:
+    linear-gradient(rgba(114, 84, 154, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(114, 84, 154, 0.035) 1px, transparent 1px),
+    var(--paper-2);
+  background-size: 24px 24px;
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.p91-stage-heading {
+  align-items: end;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: minmax(190px, 0.85fr) minmax(240px, 1.15fr);
+}
+
+.p91-stage-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.2rem 0 0;
+}
+
+.p91-stage-heading p {
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.p91-dynamic,
+.p91-network-wrap,
+.p91-controls {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.p91-network-wrap {
+  background: rgba(255, 253, 245, 0.96);
+  border: 1px solid rgba(23, 23, 19, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(33, 59, 73, 0.09);
+  overflow: hidden;
+}
+
+.p91-network {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(188, 164, 226, 0.11), transparent 42%),
+    linear-gradient(180deg, #eef4f4 0%, #f8f1df 100%);
+  display: block;
+  max-height: 52vh;
+  min-height: 315px;
+  width: 100%;
+}
+
+.p91-base-plane {
+  fill: rgba(75, 140, 169, 0.06);
+  stroke: rgba(75, 140, 169, 0.18);
+  stroke-dasharray: 4 5;
+  stroke-width: 1.5;
+}
+
+.p91-wire {
+  stroke: rgba(33, 59, 73, 0.38);
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.p91-edge.is-side .p91-wire {
+  stroke: rgba(114, 84, 154, 0.37);
+}
+
+.p91-current-path {
+  stroke: var(--p91-current);
+  stroke-linecap: round;
+}
+
+.p91-edge.is-zero .p91-current-path {
+  opacity: 0.08;
+  stroke-width: 2;
+}
+
+.p91-current-arrow {
+  stroke: #845f15;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+}
+
+#p91-arrow-current path {
+  fill: #845f15;
+}
+
+.p91-resistor rect {
+  fill: #fffaf0;
+  stroke: var(--p91-night);
+  stroke-width: 1.5;
+}
+
+.p91-edge.is-side .p91-resistor rect {
+  stroke: var(--p91-accent);
+}
+
+.p91-resistor path {
+  fill: none;
+  stroke: var(--p91-accent-dark);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.p91-resistor text,
+.p91-node text,
+.p91-voltage-key text,
+.p91-diagram-caption {
+  font-family: Inter, ui-sans-serif, sans-serif;
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 3px;
+}
+
+.p91-resistor text {
+  fill: var(--p91-night);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.p91-resistor .p91-current-value {
+  fill: #745417;
+  font-size: 7px;
+}
+
+.p91-edge.is-zero .p91-current-value {
+  fill: var(--p91-accent);
+}
+
+.p91-equipotential-halo {
+  fill: none;
+  stroke: var(--p91-equal);
+  stroke-dasharray: 4 3;
+  stroke-width: 3;
+}
+
+.p91-node-cold {
+  fill: var(--p91-cold);
+}
+
+.p91-node-hot {
+  fill: var(--p91-hot);
+}
+
+.p91-node-ring {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+}
+
+.p91-node.is-source .p91-node-ring {
+  stroke: #7c301c;
+  stroke-width: 4;
+}
+
+.p91-node.is-sink .p91-node-ring {
+  stroke: #1f5369;
+  stroke-width: 4;
+}
+
+.p91-node-name {
+  fill: white;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 14px;
+  font-weight: 700;
+  stroke: rgba(33, 59, 73, 0.48) !important;
+}
+
+.p91-node-potential {
+  fill: var(--p91-night);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.p91-terminal-label {
+  fill: var(--p91-accent-dark);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.p91-voltage-key text,
+.p91-diagram-caption {
+  fill: rgba(33, 59, 73, 0.68);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.p91-voltage-key rect {
+  fill: url(#p91-potential-gradient);
+}
+
+.p91-ledger {
+  background: var(--p91-night);
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0.75rem 0.9rem;
+}
+
+.p91-ledger > div {
+  min-width: 0;
+}
+
+.p91-ledger span,
+.p91-ledger strong,
+.p91-ledger small {
+  display: block;
+}
+
+.p91-ledger span {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.49rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.p91-ledger strong {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.p91-ledger small {
+  color: var(--p91-mint);
+  font-size: 0.47rem;
+  line-height: 1.35;
+  margin-top: 0.2rem;
+  overflow-wrap: anywhere;
+}
+
+.p91-reduction {
+  align-items: stretch;
+  background: rgba(114, 84, 154, 0.045);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: minmax(190px, 1.2fr) minmax(170px, 0.95fr) minmax(145px, 0.85fr);
+  padding: 0.78rem 0.9rem;
+}
+
+.p91-reduction p {
+  color: var(--muted);
+  font-size: 0.57rem;
+  line-height: 1.45;
+  margin: 0.25rem 0 0;
+}
+
+.p91-formula,
+.p91-verification {
+  border-left: 1px solid rgba(114, 84, 154, 0.2);
+  padding-left: 0.65rem;
+}
+
+.p91-formula span,
+.p91-formula strong,
+.p91-verification span,
+.p91-verification strong,
+.p91-verification small {
+  display: block;
+}
+
+.p91-formula span,
+.p91-verification span {
+  color: var(--muted);
+  font-size: 0.47rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.p91-formula strong {
+  color: var(--p91-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  margin-top: 0.3rem;
+  overflow-wrap: anywhere;
+}
+
+.p91-verification strong {
+  color: #276a57;
+  font-size: 0.64rem;
+  margin-top: 0.28rem;
+  text-transform: uppercase;
+}
+
+.p91-verification small {
+  color: var(--muted);
+  font-size: 0.45rem;
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+.p91-controls {
+  background: rgba(255, 253, 245, 0.94);
+  border: 1px solid rgba(23, 23, 19, 0.12);
+  border-radius: 14px;
+  padding: 0.72rem;
+}
+
+.p91-control-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.p91-control-grid label {
+  display: grid;
+  min-width: 0;
+}
+
+.p91-control-grid label > span {
+  align-items: baseline;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.52rem;
+  font-weight: 800;
+  gap: 0.4rem;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.p91-control-grid output {
+  color: var(--p91-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  text-transform: none;
+}
+
+.p91-control-grid input {
+  accent-color: var(--p91-accent);
+  min-height: 36px;
+  touch-action: pan-y;
+  width: 100%;
+}
+
+.p91-terminal-picker,
+.p91-presets {
+  display: grid;
+  gap: 0.38rem;
+  margin-top: 0.55rem;
+}
+
+.p91-terminal-picker {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.p91-presets {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.p91-terminal-picker button,
+.p91-presets button {
+  min-height: 40px;
+  min-width: 0;
+  padding-inline: 0.35rem;
+}
+
+.p91-terminal-picker button {
+  color: var(--p91-accent-dark);
+  font-size: 0.54rem;
+}
+
+.p91-terminal-picker button.active,
+.p91-terminal-picker button[aria-pressed="true"],
+.p91-presets button.active,
+.p91-presets button[aria-pressed="true"] {
+  background: var(--p91-accent);
+  border-color: var(--p91-accent);
+  color: white;
+}
+
+.p91-presets button {
+  border-color: rgba(114, 84, 154, 0.26);
+  color: var(--p91-accent-dark);
+  font-size: 0.49rem;
+}
+
+.p91-answer-form {
+  margin: 1rem 0;
+}
+
+.p91-answer-form > label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 800;
+  margin-bottom: 0.42rem;
+  text-transform: uppercase;
+}
+
+.p91-answer-form > div {
+  align-items: center;
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.p91-answer-form input {
+  min-width: 0;
+  width: 100%;
+}
+
+.p91-answer-form span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.p91-feedback {
+  border-radius: 11px;
+  font-size: 0.73rem;
+  line-height: 1.48;
+  margin: 0.85rem 0;
+  padding: 0.78rem;
+}
+
+.p91-feedback.is-neutral {
+  background: rgba(114, 84, 154, 0.09);
+  color: var(--p91-accent-dark);
+}
+
+.p91-feedback.is-success {
+  background: rgba(146, 210, 189, 0.23);
+  color: #245f4f;
+}
+
+.p91-feedback.is-warn {
+  background: rgba(230, 181, 79, 0.24);
+  color: #71500f;
+}
+
+.p91-help-row,
+.p91-hints,
+.p91-debug {
+  margin-top: 0.9rem;
+}
+
+.p91-solution {
+  background: var(--p91-night);
+  border-radius: 15px;
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.p91-solution h3 {
+  color: var(--p91-mint);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.p91-solution p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.69rem;
+  line-height: 1.53;
+}
+
+.p91-equation {
+  background: rgba(146, 210, 189, 0.09);
+  border-left: 3px solid var(--p91-mint);
+  color: #b8e6d8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  margin: 0.65rem 0;
+  overflow-wrap: anywhere;
+  padding: 0.64rem 0.7rem;
+}
+
+.p91-equation.is-answer {
+  border-left-color: var(--p91-current);
+  color: #f0cd80;
+  font-size: 1rem;
+}
+
+.p91-limits {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 0 !important;
+  padding-top: 0.65rem;
+}
+
+@media (max-width: 1180px) {
+  .p91-spread {
+    grid-template-columns: minmax(235px, 0.7fr) minmax(500px, 1.42fr);
+  }
+
+  .p91-reduction {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .p91-verification {
+    border-left: 0;
+    border-top: 1px solid rgba(114, 84, 154, 0.2);
+    grid-column: 1 / -1;
+    padding-left: 0;
+    padding-top: 0.55rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .p91-spread {
+    display: block;
+  }
+
+  .p91-network {
+    max-height: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .p91-stage-heading,
+  .p91-control-grid,
+  .p91-ledger,
+  .p91-reduction {
+    grid-template-columns: 1fr;
+  }
+
+  .p91-network {
+    min-height: 245px;
+  }
+
+  .p91-formula,
+  .p91-verification {
+    border-left: 0;
+    border-top: 1px solid rgba(114, 84, 154, 0.2);
+    grid-column: auto;
+    padding-left: 0;
+    padding-top: 0.55rem;
+  }
+
+  .p91-terminal-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .p91-presets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 430px) {
+  .p91-presets {
+    grid-template-columns: 1fr;
+  }
+
+  .p91-answer-form > div {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .p91-answer-form button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p91-current-path,
+  .p91-current-arrow,
+  .p91-node-hot,
+  .p91-equipotential-halo {
+    transition: none;
+  }
+}

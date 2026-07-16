@@ -1,0 +1,628 @@
+/* Problem 9.6 - sinusoidal RMS and real-power audit */
+
+.p96-shell {
+  --p96-accent: #356e8b;
+  --p96-accent-dark: #214b61;
+  --p96-voltage: #ef8a67;
+  --p96-current: #89cae0;
+  --p96-positive: #8ed0b5;
+  --p96-negative: #e27068;
+  --p96-average: #e8bc58;
+  --p96-violet: #bba5e2;
+  --p96-night: #203b4a;
+}
+
+.p96-shell .problem-number,
+.p96-shell .difficulty,
+.p96-shell .eyebrow {
+  color: var(--p96-accent);
+}
+
+.p96-shell .book-progress-bar span,
+.p96-shell .coach-kicker::before {
+  background: var(--p96-accent);
+}
+
+.p96-spread {
+  grid-template-columns: minmax(250px, 0.76fr) minmax(520px, 1.65fr) minmax(285px, 0.9fr);
+}
+
+.p96-problem-page,
+.p96-coach {
+  align-content: start;
+  min-width: 0;
+}
+
+.p96-title {
+  font-size: clamp(2rem, 3.1vw, 4.2rem);
+  overflow-wrap: anywhere;
+}
+
+.p96-reconstruction-note {
+  background: rgba(53, 110, 139, 0.08);
+  border-left: 3px solid var(--p96-accent);
+  color: #515b61;
+  font-size: 0.69rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  padding: 0.78rem 0.86rem;
+}
+
+.p96-reconstruction-note strong {
+  color: var(--p96-accent-dark);
+}
+
+.p96-convention-card {
+  background: rgba(53, 110, 139, 0.07);
+  border-radius: 11px;
+  margin-top: 1rem;
+  padding: 0.75rem 0.82rem;
+}
+
+.p96-convention-card strong {
+  color: var(--p96-accent-dark);
+  font-size: 0.59rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.p96-convention-card p {
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.48;
+  margin: 0.3rem 0 0;
+}
+
+.p96-stage {
+  align-content: start;
+  background:
+    linear-gradient(rgba(53, 110, 139, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 110, 139, 0.035) 1px, transparent 1px),
+    var(--paper-2);
+  background-size: 24px 24px;
+  display: grid;
+  gap: 0.72rem;
+  min-width: 0;
+}
+
+.p96-stage-heading {
+  align-items: end;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: minmax(190px, 0.85fr) minmax(250px, 1.15fr);
+}
+
+.p96-stage-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.2rem 0 0;
+}
+
+.p96-stage-heading p {
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.p96-dynamic,
+.p96-wave-wrap,
+.p96-controls {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.p96-wave-wrap {
+  background: var(--p96-night);
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+}
+
+.p96-wave {
+  display: block;
+  max-height: 52vh;
+  min-height: 310px;
+  width: 100%;
+}
+
+.p96-lane {
+  stroke: rgba(255, 255, 255, 0.19);
+  stroke-width: 1.5;
+}
+
+.p96-rms-rails line {
+  stroke: rgba(187, 165, 226, 0.34);
+  stroke-dasharray: 4 5;
+  stroke-width: 1.5;
+}
+
+.p96-voltage-wave,
+.p96-current-wave,
+.p96-power-wave {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.p96-voltage-wave {
+  stroke: var(--p96-voltage);
+  stroke-width: 3.5;
+}
+
+.p96-current-wave {
+  stroke: var(--p96-current);
+  stroke-width: 3.5;
+}
+
+.p96-power-wave {
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 2;
+}
+
+.p96-power-area {
+  pointer-events: none;
+}
+
+.p96-power-bar {
+  stroke-width: 3.1;
+}
+
+.p96-power-bar.is-positive {
+  stroke: rgba(142, 208, 181, 0.45);
+}
+
+.p96-power-bar.is-negative {
+  stroke: rgba(226, 112, 104, 0.5);
+}
+
+.p96-average-line {
+  stroke: var(--p96-average);
+  stroke-dasharray: 7 4;
+  stroke-width: 2.5;
+}
+
+.p96-cursor {
+  stroke: var(--p96-violet);
+  stroke-dasharray: 3 3;
+  stroke-width: 2;
+}
+
+.p96-voltage-dot {
+  fill: var(--p96-voltage);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.p96-current-dot {
+  fill: var(--p96-current);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.p96-power-dot {
+  fill: var(--p96-average);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.p96-wave text {
+  font-family: Inter, ui-sans-serif, sans-serif;
+}
+
+.p96-lane-title {
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.p96-lane-title.is-voltage,
+.p96-lane-value.is-voltage {
+  fill: var(--p96-voltage);
+}
+
+.p96-lane-title.is-current,
+.p96-lane-value.is-current {
+  fill: var(--p96-current);
+}
+
+.p96-lane-title.is-power,
+.p96-lane-value.is-power {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+.p96-lane-value {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.p96-rms-label {
+  fill: var(--p96-violet);
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.p96-average-label {
+  fill: var(--p96-average);
+  font-size: 8px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: var(--p96-night);
+  stroke-width: 3px;
+}
+
+.p96-phase-axis text {
+  fill: rgba(255, 255, 255, 0.47);
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.p96-sign-strip {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.065);
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: minmax(0, 1fr) minmax(155px, 1.35fr) minmax(0, 1fr);
+  padding: 0.65rem 0.8rem;
+  text-align: center;
+}
+
+.p96-sign-strip span {
+  font-size: 0.48rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.p96-sign-strip span.is-positive {
+  color: var(--p96-positive);
+}
+
+.p96-sign-strip span.is-negative {
+  color: var(--p96-negative);
+}
+
+.p96-sign-strip strong {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.p96-ledger {
+  background: rgba(255, 253, 245, 0.96);
+  border: 1px solid rgba(23, 23, 19, 0.13);
+  border-top: 0;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0.7rem;
+}
+
+.p96-ledger > div {
+  background: rgba(53, 110, 139, 0.05);
+  border-radius: 8px;
+  min-width: 0;
+  padding: 0.5rem;
+}
+
+.p96-ledger > div:nth-child(4) {
+  border-top: 3px solid var(--p96-positive);
+}
+
+.p96-ledger > div:nth-child(5) {
+  border-top: 3px solid var(--p96-violet);
+}
+
+.p96-ledger span,
+.p96-ledger strong,
+.p96-ledger small {
+  display: block;
+}
+
+.p96-ledger span {
+  color: var(--muted);
+  font-size: 0.45rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.p96-ledger strong {
+  color: var(--p96-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.77rem;
+  margin-top: 0.17rem;
+  overflow-wrap: anywhere;
+}
+
+.p96-ledger small {
+  color: var(--muted);
+  font-size: 0.44rem;
+  margin-top: 0.17rem;
+}
+
+.p96-instant {
+  background: rgba(255, 253, 245, 0.96);
+  border: 1px solid rgba(23, 23, 19, 0.13);
+  border-radius: 0 0 14px 14px;
+  border-top: 0;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0 0.7rem 0.7rem;
+}
+
+.p96-instant > div {
+  border-left: 3px solid rgba(53, 110, 139, 0.2);
+  min-width: 0;
+  padding: 0.35rem 0.45rem;
+}
+
+.p96-instant > div.is-positive {
+  border-left-color: var(--p96-positive);
+}
+
+.p96-instant > div.is-negative {
+  border-left-color: var(--p96-negative);
+}
+
+.p96-instant span,
+.p96-instant strong {
+  display: block;
+}
+
+.p96-instant span {
+  color: var(--muted);
+  font-size: 0.43rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.p96-instant strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  margin-top: 0.17rem;
+  overflow-wrap: anywhere;
+}
+
+.p96-controls {
+  background: rgba(255, 253, 245, 0.94);
+  border: 1px solid rgba(23, 23, 19, 0.12);
+  border-radius: 14px;
+  padding: 0.72rem;
+}
+
+.p96-control-grid {
+  display: grid;
+  gap: 0.48rem 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.p96-control-grid label {
+  display: grid;
+  min-width: 0;
+}
+
+.p96-control-grid label > span {
+  align-items: baseline;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.51rem;
+  font-weight: 800;
+  gap: 0.4rem;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.p96-control-grid output {
+  color: var(--p96-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.76rem;
+  text-transform: none;
+}
+
+.p96-control-grid input {
+  accent-color: var(--p96-accent);
+  min-height: 35px;
+  touch-action: pan-y;
+  width: 100%;
+}
+
+.p96-presets {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 0.55rem;
+}
+
+.p96-presets button {
+  border-color: rgba(53, 110, 139, 0.25);
+  color: var(--p96-accent-dark);
+  font-size: 0.46rem;
+  min-height: 42px;
+  min-width: 0;
+  padding-inline: 0.3rem;
+}
+
+.p96-presets button.active,
+.p96-presets button[aria-pressed="true"] {
+  background: var(--p96-accent);
+  border-color: var(--p96-accent);
+  color: white;
+}
+
+.p96-answer-form {
+  margin: 1rem 0;
+}
+
+.p96-answer-form > label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 800;
+  margin-bottom: 0.42rem;
+  text-transform: uppercase;
+}
+
+.p96-answer-form > div {
+  align-items: center;
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.p96-answer-form input {
+  min-width: 0;
+  width: 100%;
+}
+
+.p96-answer-form span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.p96-feedback {
+  border-radius: 11px;
+  font-size: 0.73rem;
+  line-height: 1.48;
+  margin: 0.85rem 0;
+  padding: 0.78rem;
+}
+
+.p96-feedback.is-neutral {
+  background: rgba(53, 110, 139, 0.09);
+  color: var(--p96-accent-dark);
+}
+
+.p96-feedback.is-success {
+  background: rgba(142, 208, 181, 0.23);
+  color: #245f4f;
+}
+
+.p96-feedback.is-warn {
+  background: rgba(232, 188, 88, 0.24);
+  color: #71500f;
+}
+
+.p96-help-row,
+.p96-hints,
+.p96-debug {
+  margin-top: 0.9rem;
+}
+
+.p96-solution {
+  background: var(--p96-night);
+  border-radius: 15px;
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.p96-solution h3 {
+  color: var(--p96-positive);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.p96-solution p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.69rem;
+  line-height: 1.53;
+}
+
+.p96-equation {
+  background: rgba(137, 202, 224, 0.09);
+  border-left: 3px solid var(--p96-current);
+  color: #bae5f1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  margin: 0.65rem 0;
+  overflow-wrap: anywhere;
+  padding: 0.64rem 0.7rem;
+}
+
+.p96-equation.is-answer {
+  border-left-color: var(--p96-average);
+  color: #f1cf82;
+  font-size: 1rem;
+}
+
+.p96-limits {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 0 !important;
+  padding-top: 0.65rem;
+}
+
+@media (max-width: 1180px) {
+  .p96-spread {
+    grid-template-columns: minmax(235px, 0.7fr) minmax(500px, 1.42fr);
+  }
+
+  .p96-presets {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .p96-spread {
+    display: block;
+  }
+
+  .p96-wave {
+    max-height: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .p96-stage-heading,
+  .p96-control-grid,
+  .p96-ledger,
+  .p96-instant,
+  .p96-sign-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .p96-wave {
+    min-height: 245px;
+  }
+
+  .p96-presets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .p96-sign-strip {
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .p96-presets {
+    grid-template-columns: 1fr;
+  }
+
+  .p96-answer-form > div {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .p96-answer-form button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p96-voltage-wave,
+  .p96-current-wave,
+  .p96-power-wave,
+  .p96-cursor,
+  .p96-voltage-dot,
+  .p96-current-dot,
+  .p96-power-dot {
+    transition: none;
+  }
+}

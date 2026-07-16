@@ -652,6 +652,23 @@
   fill: #3977a6;
 }
 
+.chapter-index-card.is-chapter-nine::before {
+  background: #7256b5;
+}
+
+.chapter-index-card.is-chapter-nine .chapter-index-number,
+.chapter-index-card.is-chapter-nine .chapter-index-stars {
+  color: #6249a1;
+}
+
+.chapter-index-card.is-chapter-nine .index-motif-svg .index-accent {
+  stroke: #7256b5;
+}
+
+.chapter-index-card.is-chapter-nine .index-motif-svg .index-dot {
+  fill: #7256b5;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -678,6 +695,10 @@
 
 .chapter-index-kinematics {
   background: #dbe6ef;
+}
+
+.chapter-index-electricity {
+  background: #e2ddec;
 }
 
 .chapter-index-footer {
@@ -791,6 +812,10 @@
 
 .master-chapter-card.is-live.is-kinematics {
   background: #244b6a;
+}
+
+.master-chapter-card.is-live.is-electricity {
+  background: #40316d;
 }
 
 .master-chapter-card.is-live:hover,
@@ -1018,6 +1043,19 @@
 .chapter-landing-hero.is-kinematics h1 em,
 .chapter-contents-heading.is-kinematics span {
   color: #3977a6;
+}
+
+.chapter-landing-hero.is-electricity .chapter-index-hero-figure {
+  background: #40316d;
+}
+
+.chapter-landing-hero.is-electricity .chapter-index-stats {
+  background: #7256b5;
+}
+
+.chapter-landing-hero.is-electricity h1 em,
+.chapter-contents-heading.is-electricity span {
+  color: #7256b5;
 }
 
 .chapter-contents-heading {

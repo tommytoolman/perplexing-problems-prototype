@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first eight chapters contain 66 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first nine chapters contain 73 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -16,6 +16,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 6 · Simple harmonic motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=6)
 - [Chapter 7 · Mad inventions and perpetual motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=7)
 - [Chapter 8 · Kinematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=8)
+- [Chapter 9 · Electricity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=9)
 
 Review individual problems:
 
@@ -109,6 +110,16 @@ Review individual problems:
 - [8.2 The Unflinching Aviator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=8.2)
 - [8.3 Target shooting](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=8.3)
 
+### Chapter 9 · Electricity
+
+- [9.1 Resistor pyramid](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.1)
+- [9.2 Resistor tetrahedron](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.2)
+- [9.3 Resistor square](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.3)
+- [9.4 Resistor cube](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.4)
+- [9.5 Power transmission](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.5)
+- [9.6 RMS power](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.6)
+- [9.7 Boiling time](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=9.7)
+
 ## Run locally
 
 ```sh
@@ -136,5 +147,7 @@ Chapter 6 likewise contains five independently written oscillation activities re
 Chapter 7 contains six independently written energy and impossible-machine audits reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 8 contains three independently written kinematics activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 9 contains seven independently written electricity activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
