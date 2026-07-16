@@ -4,7 +4,7 @@ A browser-native prototype exploring how a printed mathematics problem book can 
 
 ## Live prototype
 
-[Open Chapter 1 on GitHub Pages](https://tommytoolman.github.io/perplexing-problems-prototype/)
+[Open the Chapter 1 contents page](https://tommytoolman.github.io/perplexing-problems-prototype/)
 
 Review individual problems:
 

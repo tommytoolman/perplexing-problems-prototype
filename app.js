@@ -90,6 +90,11 @@ function currentProblem() {
   return chapterProblems.includes(problem) ? problem : "1.1";
 }
 
+function shouldRenderChapterIndex() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("view") === "index" || params.size === 0;
+}
+
 function fmt(value, digits = 3) {
   return Number(value).toFixed(digits);
 }
@@ -293,7 +298,7 @@ function problemHeaderActions(current, resetControl) {
   const nextLink = next
     ? `<a class="problem-nav-link header-next" href="${problemHref(next).replaceAll("&", "&amp;")}">Next · ${next} →</a>`
     : "";
-  return `<div class="book-actions button-row">${nextLink}${resetControl}</div>`;
+  return `<div class="book-actions button-row"><a class="problem-nav-link header-contents" href="./">Contents</a>${nextLink}${resetControl}</div>`;
 }
 
 function problemNav(current) {
@@ -791,6 +796,12 @@ function renderSwitcher(variant) {
 }
 
 function render() {
+  if (shouldRenderChapterIndex()) {
+    document.title = "Chapter 1 · Geometry — Perplexing Problems";
+    document.getElementById("app").innerHTML = window.poveyChapterIndex.render();
+    document.getElementById("prototype-switcher").innerHTML = "";
+    return;
+  }
   const variant = currentVariant();
   const renderVariant = { A: renderBook, B: renderLab, C: renderTutor }[variant];
   const problem = currentProblem();
@@ -1158,6 +1169,7 @@ function cycleVariant(direction) {
 }
 
 window.addEventListener("keydown", (event) => {
+  if (shouldRenderChapterIndex()) return;
   if (currentProblem() !== "1.1") return;
   const target = event.target;
   if (target.matches("input, textarea, [contenteditable='true']")) return;
