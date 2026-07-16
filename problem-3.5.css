@@ -1,0 +1,474 @@
+/* Problem 3.5 - The Wheel Wars I */
+
+.p35-shell {
+  --math2-accent: #2f7d65;
+  --math2-accent-dark: #185642;
+  --math2-cyan: #a9e3cf;
+  --math2-gold: #e3a94c;
+}
+
+.p35-title {
+  font-size: clamp(2.15rem, 3.5vw, 4.65rem);
+}
+
+.p35-problem-page,
+.p35-coach {
+  align-content: start;
+}
+
+.p35-assumptions {
+  background: rgba(47, 125, 101, 0.07);
+  border-left: 3px solid var(--math2-accent);
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+  padding: 0.75rem 0.85rem;
+}
+
+.p35-assumptions strong {
+  color: var(--math2-accent-dark);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+}
+
+.p35-assumptions ul {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.p35-assumptions li {
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.4;
+}
+
+.p35-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.p35-presets .chip-button {
+  min-height: 42px;
+}
+
+.p35-stage {
+  align-content: start;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: clamp(1.15rem, 2.2vw, 2.5rem);
+}
+
+.p35-stage-card {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.p35-stage-tabs {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.p35-stage-tabs .chip-button {
+  min-height: 42px;
+  min-width: 0;
+  padding-inline: 0.3rem;
+}
+
+.p35-stage-card .math2-stage-heading {
+  margin-bottom: 0;
+}
+
+.p35-svg-wrap {
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.p35-wheel-svg {
+  display: block;
+  max-height: 43vh;
+  max-width: 100%;
+  min-height: 290px;
+  width: 100%;
+}
+
+.p35-ground {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.p35-wheel > circle:first-child {
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.p35-wheel.is-left > circle:first-child {
+  fill: url(#p35-left-wheel);
+}
+
+.p35-wheel.is-right > circle:first-child {
+  fill: url(#p35-right-wheel);
+}
+
+.p35-wheel .p35-hub {
+  fill: var(--paper-2);
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.p35-wheel line {
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 3;
+}
+
+.p35-wheel > text:not(.p35-radius-label) {
+  fill: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.p35-radius-label,
+.p35-torque-label,
+.p35-contact-label {
+  fill: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 3px;
+}
+
+.p35-torque-arc {
+  fill: none;
+  stroke: var(--math2-accent);
+  stroke-width: 4;
+}
+
+.p35-torque-arc.is-right {
+  stroke: #b36c20;
+}
+
+#p35-torque-arrow path {
+  fill: var(--math2-gold);
+}
+
+#p35-drive-up path {
+  fill: var(--math2-accent);
+}
+
+#p35-drive-down path {
+  fill: #b36c20;
+}
+
+.p35-contact {
+  fill: white;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.p35-drive-arrows line,
+.p35-net-drive line {
+  stroke-width: 4;
+}
+
+.p35-drive-arrows line.is-left {
+  stroke: var(--math2-accent);
+}
+
+.p35-drive-arrows line.is-right {
+  stroke: #b36c20;
+}
+
+.p35-drive-arrows text,
+.p35-net-drive text {
+  fill: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 3px;
+}
+
+.p35-net-drive.is-left line {
+  stroke: var(--math2-accent);
+}
+
+.p35-net-drive.is-right line {
+  stroke: #b36c20;
+}
+
+.p35-net-drive.is-balance line {
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+
+.p35-control-grid {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.p35-wheel-control {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.p35-wheel-control > header {
+  align-items: center;
+  background: rgba(47, 125, 101, 0.08);
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.6rem;
+}
+
+.p35-wheel-control.is-right > header {
+  background: rgba(227, 169, 76, 0.14);
+}
+
+.p35-wheel-control header > span {
+  align-items: center;
+  background: var(--math2-accent);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  flex: 0 0 auto;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.p35-wheel-control.is-right header > span {
+  background: #b36c20;
+}
+
+.p35-wheel-control header small {
+  color: var(--muted);
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.p35-wheel-control header h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin: 0.05rem 0 0;
+}
+
+.p35-stepper {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 0.4rem;
+  justify-content: space-between;
+  padding: 0.55rem 0.6rem;
+}
+
+.p35-stepper > span {
+  color: var(--muted);
+  font-size: 0.52rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.p35-stepper > div {
+  align-items: center;
+  display: flex;
+  gap: 0.22rem;
+}
+
+.p35-stepper button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(47, 125, 101, 0.3);
+  border-radius: 50%;
+  color: var(--math2-accent-dark);
+  display: flex;
+  flex: 0 0 auto;
+  height: 34px;
+  justify-content: center;
+  padding: 0;
+  width: 34px;
+}
+
+.p35-stepper button:disabled {
+  opacity: 0.3;
+}
+
+.p35-stepper strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  min-width: 4.2rem;
+  text-align: center;
+}
+
+.p35-comparison {
+  background: rgba(47, 125, 101, 0.055);
+  border: 1px solid rgba(47, 125, 101, 0.15);
+  border-radius: 14px;
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.75rem;
+}
+
+.p35-drive-row {
+  align-items: center;
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: 100px minmax(0, 1fr) 70px;
+}
+
+.p35-drive-row > span {
+  color: var(--muted);
+  font-size: 0.56rem;
+  font-weight: 850;
+}
+
+.p35-drive-row > div {
+  background: rgba(23, 23, 19, 0.08);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.p35-drive-row i {
+  background: var(--math2-accent);
+  display: block;
+  height: 100%;
+  transition: width 180ms ease;
+}
+
+.p35-drive-row.is-right i {
+  background: #b36c20;
+}
+
+.p35-drive-row strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+.p35-result {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  justify-content: space-between;
+  padding-top: 0.55rem;
+}
+
+.p35-result span {
+  color: var(--muted);
+  font-size: 0.58rem;
+}
+
+.p35-result strong {
+  color: var(--math2-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.84rem;
+}
+
+.p35-result.is-right strong {
+  color: #925417;
+}
+
+.p35-predictions {
+  display: grid;
+  gap: 0.42rem;
+  margin: 1rem 0;
+}
+
+.p35-prediction {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--ink);
+  display: grid;
+  gap: 0.15rem;
+  min-height: 44px;
+  padding: 0.62rem;
+  text-align: left;
+}
+
+.p35-prediction strong {
+  font-size: 0.72rem;
+}
+
+.p35-prediction span {
+  color: var(--muted);
+  font-size: 0.6rem;
+}
+
+.p35-prediction.active,
+.p35-prediction[aria-pressed="true"] {
+  background: rgba(47, 125, 101, 0.1);
+  border-color: var(--math2-accent);
+  color: var(--math2-accent-dark);
+}
+
+.p35-commit {
+  width: 100%;
+}
+
+.p35-help-row {
+  margin-block: 0.9rem;
+}
+
+.p35-hints {
+  margin-top: 0.8rem;
+}
+
+.p35-final-equation {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1120px) {
+  .p35-coach {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 820px) {
+  .p35-stage,
+  .p35-coach {
+    padding-block: 2rem;
+  }
+
+  .p35-wheel-svg {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 560px) {
+  .p35-stage-tabs,
+  .p35-control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .p35-drive-row {
+    grid-template-columns: 82px minmax(0, 1fr) 62px;
+  }
+
+  .p35-wheel-svg {
+    min-height: 225px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p35-drive-row i {
+    transition: none;
+  }
+}

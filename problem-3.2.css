@@ -1,0 +1,570 @@
+/* Problem 3.2 - Sewage worker's escape */
+
+.p32-shell {
+  --p32-accent: #28796f;
+  --p32-accent-dark: #16564f;
+  --p32-mint: #9fe2cf;
+  --p32-gold: #efb957;
+  --p32-danger: #d85f52;
+}
+
+.p32-shell .problem-number,
+.p32-shell .difficulty,
+.p32-shell .eyebrow {
+  color: var(--p32-accent);
+}
+
+.p32-shell .book-progress-bar span,
+.p32-shell .coach-kicker::before {
+  background: var(--p32-accent);
+}
+
+.p32-spread {
+  grid-template-columns: minmax(255px, 0.8fr) minmax(440px, 1.5fr) minmax(275px, 0.9fr);
+}
+
+.p32-title {
+  font-size: clamp(2.15rem, 3.3vw, 4.55rem);
+  overflow-wrap: anywhere;
+}
+
+.p32-reconstruction-note {
+  background: rgba(40, 121, 111, 0.09);
+  border-left: 3px solid var(--p32-accent);
+  color: #4b5753;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  margin: 1.2rem 0 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.p32-reconstruction-note strong {
+  color: var(--p32-accent-dark);
+}
+
+.p32-stage {
+  align-content: center;
+  background:
+    linear-gradient(rgba(40, 121, 111, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 121, 111, 0.04) 1px, transparent 1px),
+    var(--paper-2);
+  background-size: 24px 24px;
+  min-width: 0;
+  padding: clamp(1.2rem, 2.3vw, 2.6rem);
+}
+
+.p32-stage-card {
+  background: rgba(255, 253, 245, 0.95);
+  border: 1px solid rgba(23, 23, 19, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(22, 86, 79, 0.1);
+  min-width: 0;
+  padding: clamp(0.9rem, 1.8vw, 1.5rem);
+}
+
+.p32-stage-heading {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.p32-stage-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0.25rem 0 0;
+}
+
+.p32-stage-heading p {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 22rem;
+}
+
+.p32-apparatus-wrap {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(159, 226, 207, 0.13), transparent 42%),
+    var(--blue);
+  border-radius: 17px;
+  overflow: hidden;
+  position: relative;
+}
+
+.p32-apparatus-wrap::after {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 11px;
+  content: "";
+  inset: 9px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.p32-apparatus {
+  display: block;
+  height: auto;
+  max-height: 390px;
+  min-height: 260px;
+  width: 100%;
+}
+
+.p32-shaft {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 4;
+}
+
+.p32-cover {
+  stroke: #d9e2de;
+  stroke-linecap: round;
+  stroke-width: 20;
+}
+
+.p32-hinge circle {
+  fill: var(--p32-gold);
+  stroke: var(--blue);
+  stroke-width: 4;
+}
+
+.p32-hinge path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 2;
+}
+
+.p32-weight-arrow,
+.p32-push-arrow {
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.p32-weight-arrow {
+  stroke: var(--p32-gold);
+}
+
+.p32-push-arrow {
+  stroke: var(--p32-danger);
+}
+
+#p32-arrow-red path {
+  fill: var(--p32-danger);
+}
+
+#p32-arrow-gold path {
+  fill: var(--p32-gold);
+}
+
+.p32-pole {
+  stroke: #9fb1ad;
+  stroke-linecap: round;
+  stroke-width: 10;
+}
+
+.p32-contact {
+  fill: var(--p32-danger);
+  stroke: white;
+  stroke-width: 4;
+  transition: fill 150ms ease;
+}
+
+.p32-contact.is-lifting {
+  fill: var(--p32-mint);
+}
+
+.p32-contact-guide {
+  stroke: rgba(255, 255, 255, 0.4);
+  stroke-dasharray: 4 5;
+  stroke-width: 2;
+}
+
+.p32-angle-arc {
+  fill: none;
+  stroke: var(--p32-mint);
+  stroke-width: 2;
+}
+
+.p32-worker circle {
+  fill: var(--p32-gold);
+}
+
+.p32-worker path {
+  fill: none;
+  stroke: var(--p32-gold);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.p32-force-label,
+.p32-contact-label,
+.p32-angle-label,
+.p32-hinge-label,
+.p32-cover-label,
+.p32-dimension-label {
+  fill: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.p32-force-label {
+  fill: #ff968c;
+}
+
+.p32-force-label.is-weight {
+  fill: var(--p32-gold);
+}
+
+.p32-contact-label,
+.p32-angle-label {
+  fill: var(--p32-mint);
+}
+
+.p32-moment-balance {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: 1fr minmax(110px, 1.5fr) 1fr;
+  padding: 0.75rem 1rem 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.p32-moment-balance > div:first-child,
+.p32-moment-balance > div:last-child {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.p32-moment-balance > div:last-child {
+  text-align: right;
+}
+
+.p32-moment-balance strong {
+  color: white;
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  letter-spacing: normal;
+  margin-top: 0.18rem;
+  text-transform: none;
+}
+
+.p32-moment-balance.is-lifting > div:first-child strong {
+  color: var(--p32-mint);
+}
+
+.p32-balance-track {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  height: 9px;
+  position: relative;
+}
+
+.p32-balance-track i {
+  background: linear-gradient(90deg, var(--p32-danger), var(--p32-gold), var(--p32-mint));
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  width: var(--p32-progress);
+}
+
+.p32-balance-track b {
+  background: white;
+  height: 17px;
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 2px;
+}
+
+.p32-controls {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0.9rem;
+}
+
+.p32-range-row {
+  background: rgba(40, 121, 111, 0.06);
+  border: 1px solid rgba(40, 121, 111, 0.14);
+  border-radius: 12px;
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.7rem;
+}
+
+.p32-range-row > span,
+.p32-range-row small {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.p32-range-row strong {
+  color: var(--muted);
+  font-size: 0.59rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.p32-range-row output {
+  color: var(--p32-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.p32-range-row input {
+  accent-color: var(--p32-accent);
+  min-height: 30px;
+  width: 100%;
+}
+
+.p32-range-row small {
+  color: var(--muted);
+  font-size: 0.52rem;
+  font-weight: 700;
+}
+
+.p32-presets {
+  display: grid;
+  gap: 0.4rem;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.p32-chip {
+  border-color: rgba(40, 121, 111, 0.3);
+  color: var(--p32-accent-dark);
+  min-height: 42px;
+  min-width: 0;
+  padding-inline: 0.4rem;
+}
+
+.p32-chip.active,
+.p32-chip[aria-pressed="true"] {
+  background: var(--p32-accent);
+  border-color: var(--p32-accent);
+  color: white;
+}
+
+.p32-metrics {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.75rem;
+}
+
+.p32-metrics > div {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  min-width: 0;
+  padding: 0.65rem;
+}
+
+.p32-metrics span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.p32-metrics strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  overflow-wrap: anywhere;
+}
+
+.p32-metrics .is-success {
+  background: rgba(40, 121, 111, 0.1);
+  border-color: rgba(40, 121, 111, 0.28);
+  color: var(--p32-accent-dark);
+}
+
+.p32-metrics .is-blocked {
+  background: rgba(216, 95, 82, 0.09);
+  border-color: rgba(216, 95, 82, 0.24);
+  color: #8f352c;
+}
+
+.p32-coach {
+  min-width: 0;
+}
+
+.p32-answer-form {
+  margin: 1rem 0;
+}
+
+.p32-answer-form > label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+
+.p32-answer-form > div {
+  align-items: center;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.p32-answer-form input {
+  min-width: 0;
+  width: 100%;
+}
+
+.p32-answer-form span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.p32-feedback {
+  border-radius: 11px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 0.9rem 0;
+  padding: 0.8rem;
+}
+
+.p32-feedback.is-neutral {
+  background: rgba(40, 121, 111, 0.09);
+  color: var(--p32-accent-dark);
+}
+
+.p32-feedback.is-success {
+  background: rgba(40, 121, 111, 0.13);
+  color: var(--p32-accent-dark);
+}
+
+.p32-feedback.is-warn {
+  background: rgba(239, 185, 87, 0.2);
+  color: #75520f;
+}
+
+.p32-help-row {
+  margin-top: 0.8rem;
+}
+
+.p32-hints {
+  margin-top: 0.9rem;
+}
+
+.p32-solution {
+  background: var(--blue);
+  border-radius: 16px;
+  color: white;
+  margin-top: 1rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.p32-solution h3 {
+  color: var(--p32-mint);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.p32-solution p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.p32-equation {
+  background: rgba(159, 226, 207, 0.09);
+  border-left: 3px solid var(--p32-mint);
+  color: var(--p32-mint);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  margin: 0.7rem 0;
+  overflow-wrap: anywhere;
+  padding: 0.65rem 0.75rem;
+}
+
+.p32-equation.is-answer {
+  color: var(--p32-gold);
+  font-size: 1.08rem;
+}
+
+@media (max-width: 1120px) {
+  .p32-spread {
+    grid-template-columns: minmax(235px, 0.72fr) minmax(440px, 1.35fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .p32-spread {
+    display: block;
+  }
+
+  .p32-stage {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .p32-stage-heading {
+    flex-direction: column;
+  }
+
+  .p32-controls,
+  .p32-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .p32-presets {
+    grid-column: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .p32-moment-balance {
+    grid-template-columns: 1fr;
+  }
+
+  .p32-moment-balance > div:last-child {
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .p32-stage {
+    padding: 0.85rem;
+  }
+
+  .p32-stage-card {
+    border-radius: 16px;
+    padding: 0.72rem;
+  }
+
+  .p32-apparatus {
+    min-height: 220px;
+  }
+
+  .p32-answer-form > div {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .p32-answer-form button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+  }
+}

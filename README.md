@@ -1,15 +1,16 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first two chapters contain 29 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first three chapters contain 38 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
 [Open the master chapter index](https://tommytoolman.github.io/perplexing-problems-prototype/)
 
-The prototype now has three navigation levels: the complete 14-chapter book map, a contents page for each interactive chapter, and the individual problem pages.
+The prototype has three navigation levels: the complete 14-chapter book map, a contents page for each interactive chapter, and the individual problem pages.
 
 - [Chapter 1 · Geometry contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=1)
 - [Chapter 2 · Mathematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=2)
+- [Chapter 3 · Statics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=3)
 
 Review individual problems:
 
@@ -48,6 +49,18 @@ Review individual problems:
 - [2.11 The three envelope problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.11)
 - [2.12 A card game](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=2.12)
 
+### Chapter 3 · Statics
+
+- [3.1 Sewage worker’s conundrum](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.1)
+- [3.2 Sewage worker’s escape](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.2)
+- [3.3 Sewage worker’s resolution](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.3)
+- [3.4 Aztec stone movers](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.4)
+- [3.5 The Wheel Wars I](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.5)
+- [3.6 The Wheel Wars II](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.6)
+- [3.7 Obelisk raiser](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.7)
+- [3.8 Obelisk razer](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.8)
+- [3.9 The Ravine of (Not Quite) Certain Death](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.9)
+
 ## Run locally
 
 ```sh
@@ -63,5 +76,7 @@ Everything is static HTML, CSS, JavaScript, and SVG. No build step or server-sid
 Problems 1.1–1.10 are interactive adaptations of the material available in the supplied chapter sample of *Professor Povey's Perplexing Problems* by Thomas Povey. The available source stops after 1.10. Problems 1.11–1.17 are new reconstructed activities inspired by the index titles and difficulty ratings.
 
 For Chapter 2, the available PDF, attached OCR, public mirrors, and exact-title searches expose only the twelve titles and difficulty ratings. Problems 2.1–2.12 are therefore independently written reconstructions. Every reconstructed page is explicitly labelled and is not presented as Povey's original wording or solution.
+
+The same source boundary applies to Chapter 3: only its nine titles and difficulty ratings were recoverable. Problems 3.1–3.9 are independently written statics activities, explicitly labelled as reconstructions rather than Povey's original wording or solutions.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
