@@ -1,0 +1,663 @@
+/* Problem 4.5 - water-powered funicular */
+
+.p45-shell {
+  --dyn4-accent: #d5532f;
+  --dyn4-accent-dark: #7b2f1e;
+  --dyn4-blue: #285b77;
+  --dyn4-gold: #d69a25;
+  --dyn4-green: #27705a;
+  --dyn4-night: #173342;
+  --math2-accent-dark: #7b2f1e;
+}
+
+.p45-shell .problem-number,
+.p45-shell .difficulty,
+.p45-shell .eyebrow {
+  color: var(--dyn4-accent);
+}
+
+.p45-shell .book-progress-bar span,
+.p45-shell .coach-kicker::before {
+  background: var(--dyn4-accent);
+}
+
+.p45-spread {
+  grid-template-columns: minmax(250px, 0.8fr) minmax(480px, 1.55fr) minmax(290px, 0.9fr);
+}
+
+.p45-problem-page,
+.p45-coach {
+  align-content: start;
+}
+
+.p45-title {
+  font-size: clamp(2rem, 3vw, 4rem);
+  overflow-wrap: anywhere;
+}
+
+.p45-reconstruction-note {
+  background: rgba(213, 83, 47, 0.08);
+  border-left: 3px solid var(--dyn4-accent);
+  color: #5e554d;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  margin: 1.05rem 0 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.p45-reconstruction-note strong {
+  color: var(--dyn4-accent-dark);
+}
+
+.p45-data-card {
+  background: rgba(40, 91, 119, 0.07);
+  border-left: 3px solid var(--dyn4-blue);
+  margin-top: 1rem;
+  padding: 0.75rem 0.82rem;
+}
+
+.p45-data-card strong,
+.p45-assumption-card strong {
+  color: var(--dyn4-accent-dark);
+  font-size: 0.61rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.p45-data-card p,
+.p45-assumption-card p {
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.48;
+  margin: 0.34rem 0 0;
+}
+
+.p45-assumption-card {
+  background: rgba(214, 154, 37, 0.11);
+  border-radius: 11px;
+  margin-top: 0.8rem;
+  padding: 0.72rem 0.82rem;
+}
+
+.p45-stage {
+  align-content: start;
+  background:
+    linear-gradient(rgba(40, 91, 119, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 91, 119, 0.045) 1px, transparent 1px),
+    var(--paper-2);
+  background-size: 24px 24px;
+  display: grid;
+  gap: 0.78rem;
+  min-width: 0;
+}
+
+.p45-stage-controls {
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.p45-stage-controls button {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  font-size: 0.62rem;
+  gap: 0.35rem;
+  justify-content: center;
+  min-height: 2.45rem;
+  min-width: 0;
+  padding: 0.35rem;
+}
+
+.p45-stage-controls button span {
+  align-items: center;
+  background: rgba(23, 23, 19, 0.08);
+  border-radius: 50%;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 1.25rem;
+  justify-content: center;
+  width: 1.25rem;
+}
+
+.p45-stage-controls button.active {
+  background: var(--dyn4-accent);
+  color: white;
+}
+
+.p45-stage-controls button.active span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.p45-visual-card,
+.p45-controls,
+.p45-metrics {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.p45-visual-card {
+  background: rgba(255, 253, 245, 0.95);
+  border: 1px solid rgba(23, 23, 19, 0.14);
+  border-radius: 19px;
+  box-shadow: 0 16px 42px rgba(40, 91, 119, 0.1);
+  overflow: hidden;
+}
+
+.p45-svg {
+  display: block;
+  max-height: 47vh;
+  min-height: 285px;
+  width: 100%;
+}
+
+.p45-land {
+  fill: url(#p45-hills), #829363;
+  stroke: #57684a;
+  stroke-width: 2px;
+}
+
+.p45-track {
+  stroke: #51493f;
+  stroke-linecap: round;
+  stroke-width: 8px;
+}
+
+.p45-rope {
+  fill: none;
+  stroke: #b88b45;
+  stroke-linecap: round;
+  stroke-width: 3px;
+}
+
+.p45-pulley {
+  fill: #e8dfcb;
+  stroke: var(--dyn4-night);
+  stroke-width: 4px;
+}
+
+.p45-hub {
+  fill: var(--dyn4-accent);
+  stroke: var(--dyn4-night);
+  stroke-width: 2px;
+}
+
+.p45-car-body {
+  fill: #ebd6a4;
+  stroke: #664a31;
+  stroke-width: 3px;
+}
+
+.p45-car.is-water-car .p45-car-body {
+  fill: #d9e3d5;
+  stroke: var(--dyn4-blue);
+}
+
+.p45-car circle {
+  fill: #30383a;
+  stroke: #eee4ce;
+  stroke-width: 3px;
+}
+
+.p45-car text,
+.p45-force text,
+.p45-angle text,
+.p45-water-scale text {
+  fill: var(--ink);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 10px;
+  font-weight: 780;
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 4px;
+}
+
+.p45-tank {
+  fill: rgba(40, 91, 119, 0.07);
+  stroke: var(--dyn4-blue);
+  stroke-width: 1.5px;
+}
+
+.p45-water {
+  fill: #55a9c5;
+  opacity: 0.82;
+}
+
+.p45-seat {
+  fill: none;
+  stroke: #87663d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px;
+}
+
+.p45-angle path {
+  fill: none;
+  stroke: var(--dyn4-accent);
+  stroke-width: 2px;
+}
+
+.p45-angle text {
+  fill: var(--dyn4-accent-dark);
+}
+
+.p45-force line {
+  stroke-linecap: round;
+  stroke-width: 4px;
+}
+
+.p45-force.is-gravity line {
+  stroke: var(--dyn4-accent);
+}
+
+.p45-force.is-resistance line {
+  stroke: var(--dyn4-gold);
+  stroke-dasharray: 4 3;
+}
+
+.p45-force.is-tension line {
+  stroke: var(--dyn4-blue);
+}
+
+.p45-force.is-motion line {
+  stroke: var(--dyn4-green);
+  stroke-width: 5px;
+}
+
+.p45-force.is-gravity text {
+  fill: var(--dyn4-accent-dark);
+}
+
+.p45-force.is-resistance text {
+  fill: #80570f;
+}
+
+.p45-force.is-tension text {
+  fill: var(--dyn4-blue);
+}
+
+.p45-force.is-motion text {
+  fill: var(--dyn4-green);
+}
+
+#p45-arrow-gravity path {
+  fill: var(--dyn4-accent);
+}
+
+#p45-arrow-resistance path {
+  fill: var(--dyn4-gold);
+}
+
+#p45-arrow-tension path {
+  fill: var(--dyn4-blue);
+}
+
+#p45-arrow-motion path {
+  fill: var(--dyn4-green);
+}
+
+.p45-stage-0 .p45-force-layer,
+.p45-stage-0 .p45-motion-layer,
+.p45-stage-1 .p45-motion-layer {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.p45-force-layer,
+.p45-motion-layer {
+  transition: opacity 180ms ease;
+}
+
+.p45-status rect {
+  fill: var(--dyn4-night);
+}
+
+.p45-svg.is-held .p45-status rect {
+  fill: #765f2a;
+}
+
+.p45-svg.is-limiting .p45-status rect {
+  fill: #8b511f;
+}
+
+.p45-svg.is-moving .p45-status rect {
+  fill: var(--dyn4-green);
+}
+
+.p45-status text {
+  fill: white;
+  font-family: Inter, ui-sans-serif, sans-serif;
+}
+
+.p45-status-kicker {
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.p45-status-value {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.p45-water-scale text {
+  fill: var(--muted);
+  font-size: 9px;
+}
+
+.p45-water-scale > text:first-child {
+  fill: var(--dyn4-accent-dark);
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.p45-scale-base {
+  stroke: rgba(23, 23, 19, 0.2);
+  stroke-linecap: round;
+  stroke-width: 8px;
+}
+
+.p45-scale-go {
+  stroke: rgba(39, 112, 90, 0.72);
+  stroke-linecap: round;
+  stroke-width: 8px;
+}
+
+.p45-threshold {
+  stroke: var(--dyn4-accent);
+  stroke-width: 3px;
+}
+
+.p45-current {
+  fill: var(--dyn4-blue);
+}
+
+.p45-stage-caption {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  padding: 0.78rem 0.9rem;
+}
+
+.p45-stage-caption strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+}
+
+.p45-stage-caption p {
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.42;
+  margin: 0.2rem 0 0;
+}
+
+.p45-stage-caption button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.p45-controls,
+.p45-metrics {
+  background: rgba(255, 253, 245, 0.92);
+  border: 1px solid rgba(23, 23, 19, 0.12);
+  border-radius: 14px;
+  padding: 0.78rem;
+}
+
+.p45-controls label {
+  display: grid;
+}
+
+.p45-controls label > span {
+  align-items: baseline;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.56rem;
+  font-weight: 800;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.p45-controls label strong {
+  color: var(--dyn4-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.88rem;
+  text-transform: none;
+}
+
+.p45-controls input {
+  accent-color: var(--dyn4-accent);
+  min-height: 42px;
+  touch-action: pan-y;
+  width: 100%;
+}
+
+.p45-scale-labels {
+  color: var(--muted);
+  display: flex;
+  font-size: 0.49rem;
+  justify-content: space-between;
+}
+
+.p45-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin-top: 0.6rem;
+}
+
+.p45-presets button {
+  background: rgba(213, 83, 47, 0.05);
+  border-color: rgba(213, 83, 47, 0.28);
+  color: var(--dyn4-accent-dark);
+  font-size: 0.54rem;
+  min-height: 38px;
+  padding: 0.35rem 0.57rem;
+}
+
+.p45-metrics {
+  display: grid;
+  gap: 0.44rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.p45-metrics > div {
+  background: rgba(40, 91, 119, 0.055);
+  border-radius: 9px;
+  min-width: 0;
+  padding: 0.53rem;
+}
+
+.p45-metrics span,
+.p45-metrics strong {
+  display: block;
+}
+
+.p45-metrics span {
+  color: var(--muted);
+  font-size: 0.47rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.p45-metrics > div strong {
+  color: var(--dyn4-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.79rem;
+  line-height: 1.3;
+  margin-top: 0.18rem;
+  overflow-wrap: anywhere;
+}
+
+.p45-metrics p {
+  color: var(--muted);
+  font-size: 0.63rem;
+  grid-column: 1 / -1;
+  line-height: 1.45;
+  margin: 0.16rem 0 0;
+}
+
+.p45-metrics p strong {
+  color: var(--ink);
+}
+
+.p45-metrics.is-moving p strong {
+  color: var(--dyn4-green);
+}
+
+.p45-answer-form {
+  display: grid;
+  gap: 0.38rem;
+  margin-top: 0.85rem;
+}
+
+.p45-answer-form label {
+  color: var(--muted);
+  font-size: 0.54rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.p45-answer-form > div {
+  align-items: center;
+  border: 1px solid rgba(23, 23, 19, 0.2);
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+}
+
+.p45-answer-form input {
+  background: white;
+  border: 0;
+  box-sizing: border-box;
+  min-height: 2.45rem;
+  min-width: 0;
+  padding: 0.45rem 0.5rem;
+  width: 100%;
+}
+
+.p45-answer-form > div span {
+  color: var(--muted);
+  font-size: 0.54rem;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.p45-answer-form > div:focus-within {
+  outline: 3px solid rgba(213, 83, 47, 0.25);
+  outline-offset: 2px;
+}
+
+.p45-answer-form > button {
+  margin-top: 0.22rem;
+  width: 100%;
+}
+
+.p45-help-row,
+.p45-hints {
+  margin-top: 1rem;
+}
+
+.p45-solution {
+  background: var(--dyn4-night);
+  border-radius: 15px;
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.p45-solution h3 {
+  color: #8fd4d0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.p45-solution p {
+  color: rgba(255, 255, 255, 0.77);
+  font-size: 0.69rem;
+  line-height: 1.52;
+}
+
+.p45-equation {
+  background: rgba(143, 212, 208, 0.1);
+  border-left: 3px solid #8fd4d0;
+  color: #a8e2de;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0.63rem 0;
+  overflow-wrap: anywhere;
+  padding: 0.64rem 0.7rem;
+}
+
+.p45-insight {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 0 !important;
+  padding-top: 0.65rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p45-force-layer,
+  .p45-motion-layer {
+    transition: none;
+  }
+}
+
+@media (max-width: 1120px) {
+  .p45-spread {
+    grid-template-columns: minmax(235px, 0.72fr) minmax(480px, 1.35fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .p45-spread {
+    display: block;
+  }
+
+  .p45-svg {
+    max-height: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .p45-stage-controls button {
+    font-size: 0.52rem;
+  }
+
+  .p45-stage-caption {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .p45-stage-caption button {
+    width: 100%;
+  }
+
+  .p45-visual-card,
+  .p45-controls,
+  .p45-metrics {
+    border-radius: 13px;
+  }
+
+  .p45-svg {
+    min-height: 240px;
+  }
+
+  .p45-presets button {
+    flex: 1 1 calc(50% - 0.38rem);
+  }
+
+  .p45-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .p45-metrics p {
+    grid-column: 1;
+  }
+}

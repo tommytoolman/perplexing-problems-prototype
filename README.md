@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first three chapters contain 38 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first four chapters contain 45 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -11,6 +11,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 1 · Geometry contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=1)
 - [Chapter 2 · Mathematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=2)
 - [Chapter 3 · Statics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=3)
+- [Chapter 4 · Dynamics and collisions contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=4)
 
 Review individual problems:
 
@@ -61,6 +62,16 @@ Review individual problems:
 - [3.8 Obelisk razer](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.8)
 - [3.9 The Ravine of (Not Quite) Certain Death](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=3.9)
 
+### Chapter 4 · Dynamics and collisions
+
+- [4.1 Pulleys](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.1)
+- [4.2 Dr Lightspeed’s elastotennis match](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.2)
+- [4.3 Accelerating matchbox](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.3)
+- [4.4 The last flight of Monsieur Canard](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.4)
+- [4.5 Water-powered funicular](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.5)
+- [4.6 Sherlock Holmes and the Bella Fiore emerald](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.6)
+- [4.7 Equivalent statements for linear collisions](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.7)
+
 ## Run locally
 
 ```sh
@@ -78,5 +89,7 @@ Problems 1.1–1.10 are interactive adaptations of the material available in the
 For Chapter 2, the available PDF, attached OCR, public mirrors, and exact-title searches expose only the twelve titles and difficulty ratings. Problems 2.1–2.12 are therefore independently written reconstructions. Every reconstructed page is explicitly labelled and is not presented as Povey's original wording or solution.
 
 The same source boundary applies to Chapter 3: only its nine titles and difficulty ratings were recoverable. Problems 3.1–3.9 are independently written statics activities, explicitly labelled as reconstructions rather than Povey's original wording or solutions.
+
+Chapter 4 is likewise reconstructed from its seven recovered titles and difficulty ratings. Its dynamics and collision scenarios, numerical values, interactions and solutions are independently written and explicitly labelled.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

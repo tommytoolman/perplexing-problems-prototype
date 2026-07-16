@@ -185,13 +185,23 @@
     { number: "3.9", title: "The Ravine of (Not Quite) Certain Death", stars: "★★★", difficulty: "Three star difficulty", teaser: "Cross a loaded beam over a ravine without losing either support—or your equilibrium.", motif: "ravine", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems];
+  const chapterFourProblems = [
+    { number: "4.1", title: "Pulleys", stars: "★", difficulty: "One star difficulty", teaser: "Change two masses and watch an ideal Atwood machine reveal its acceleration and rope tension.", motif: "pulley", source: "reconstructed" },
+    { number: "4.2", title: "Dr Lightspeed’s elastotennis match", stars: "★★", difficulty: "Two star difficulty", teaser: "Ride with the centre of mass to reverse an elastic collision and fire the ball back across court.", motif: "elastotennis", source: "reconstructed" },
+    { number: "4.3", title: "Accelerating matchbox", stars: "★★★", difficulty: "Three star difficulty", teaser: "Accelerate a box beneath a small load and map the thresholds between rest, slip and lost contact.", motif: "matchbox", source: "reconstructed" },
+    { number: "4.4", title: "The last flight of Monsieur Canard", stars: "★★", difficulty: "Two star difficulty", teaser: "Follow a final flight into impact and use impulse to separate speed from stopping force.", motif: "flight-impact", source: "reconstructed" },
+    { number: "4.5", title: "Water-powered funicular", stars: "★", difficulty: "One star difficulty", teaser: "Add water to one car until gravity overcomes the slope resistance and moves the pair.", motif: "funicular", source: "reconstructed" },
+    { number: "4.6", title: "Sherlock Holmes and the Bella Fiore emerald", stars: "★★★", difficulty: "Three star difficulty", teaser: "Reconstruct a collision from its aftermath and let momentum expose the only possible story.", motif: "emerald", source: "reconstructed" },
+    { number: "4.7", title: "Equivalent statements for linear collisions", stars: "★★★", difficulty: "Three star difficulty", teaser: "Move between restitution, relative velocity and centre-of-mass statements of the same collision.", motif: "collision-equivalence", source: "reconstructed" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
     { number: "2", title: "Mathematics", count: 12, page: 60, live: true, summary: "Algebra, graphs and probability" },
     { number: "3", title: "Statics", count: 9, page: 82, live: true, summary: "Equilibrium, moments and simple machines" },
-    { number: "4", title: "Dynamics and collisions", count: 7, page: 119 },
+    { number: "4", title: "Dynamics and collisions", count: 7, page: 119, live: true, summary: "Acceleration, momentum, impulse and restitution" },
     { number: "5", title: "Circular motion", count: 7, page: 150 },
     { number: "6", title: "Simple harmonic motion", count: 5, page: 176 },
     { number: "7", title: "Mad inventions and perpetual motion", count: 6, page: 196 },
@@ -225,6 +235,13 @@
       status: "9 reconstructed activities",
       introduction: "Balance forces, take moments and test the limits of ropes, wheels, beams and pivots. Every diagram responds before the equations arrive.",
       heroClass: "is-statics",
+    },
+    "4": {
+      title: "Dynamics and collisions",
+      count: 7,
+      status: "7 reconstructed activities",
+      introduction: "Set masses moving, change frames and audit what survives a collision. These activities make acceleration, momentum and restitution visible.",
+      heroClass: "is-dynamics",
     },
   };
 
@@ -272,6 +289,13 @@
       'obelisk-rise': '<path d="M24 80h120M42 80l62-57 12 13-68 44z"/><circle cx="42" cy="80" r="5"/><path class="index-accent" d="M104 23 143 9"/><path d="m133 7 10 2-4 9"/>',
       'obelisk-fall': '<path d="M18 82h124M43 82l73-54 9 14-76 40z"/><circle cx="43" cy="82" r="5"/><path class="index-accent" d="M116 28 78 9"/><path d="m84 18-6-9 10-2"/>',
       ravine: '<path d="M12 74h36M112 74h36M48 74 112 37"/><path d="M43 68v18m74-18v18"/><circle class="index-dot" cx="83" cy="54" r="7"/><path class="index-accent" d="M83 61v20"/>',
+      pulley: '<circle cx="80" cy="28" r="18"/><path d="M62 28v43M98 28v43M49 71h26v17H49zm36 0h26v17H85z"/><path class="index-accent" d="M80 10v-7M49 62v-15m62 15v-27"/>',
+      elastotennis: '<circle class="index-dot" cx="54" cy="49" r="8"/><path d="M100 18c18 16 18 46 0 62M92 25c12 12 12 36 0 48"/><path class="index-accent" d="M17 49h58m-10-9 10 9-10 9"/>',
+      matchbox: '<rect x="30" y="33" width="100" height="48" rx="3"/><rect class="index-accent index-fill" x="66" y="16" width="29" height="17" rx="2"/><path d="M18 88h124"/><path class="index-accent" d="M22 22h30m-9-8 9 8-9 8"/>',
+      'flight-impact': '<path d="M20 66c36-52 76-52 120 0"/><circle class="index-dot" cx="85" cy="27" r="6"/><path class="index-accent" d="m85 33 24 42m-10-4 10 4 3-10"/><path d="M17 77h126"/>',
+      funicular: '<path d="m17 79 126-54"/><rect x="42" y="48" width="31" height="22" transform="rotate(-23 57 59)"/><rect x="99" y="24" width="31" height="22" transform="rotate(-23 114 35)"/><path class="index-accent" d="M57 46 115 21"/><circle cx="80" cy="13" r="7"/>',
+      emerald: '<path d="M23 69h114"/><circle cx="50" cy="53" r="16"/><circle cx="107" cy="58" r="11"/><path class="index-accent" d="M12 34h54m-10-9 10 9-10 9"/><path d="m98 15 10 12-10 12-10-12z"/>',
+      'collision-equivalence': '<circle cx="41" cy="48" r="16"/><circle cx="119" cy="48" r="16"/><path class="index-accent" d="M58 48h43m-8-8 8 8-8 8"/><path d="M41 19v-9m78 9v-9M41 86v-9m78 9v-9"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -279,8 +303,9 @@
   function problemCard(problem) {
     const chapterTwo = problem.number.startsWith("2.");
     const chapterThree = problem.number.startsWith("3.");
+    const chapterFour = problem.number.startsWith("4.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -301,8 +326,9 @@
     const matching = problems.filter((problem) => problem.number.startsWith(`${chapter}.`) && problem.source === source);
     const mathematics = chapter === "2";
     const statics = chapter === "3";
+    const dynamics = chapter === "4";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -317,11 +343,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=3">Open Statics <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=4">Open Dynamics <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> Three chapters live</span>
+        <span class="chapter-index-complete"><i></i> Four chapters live</span>
         ${action}
       </header>`;
   }
@@ -355,7 +381,7 @@
         <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -366,25 +392,25 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>Three are alive.</em></h1>
-            <p>This is the front door to the whole project: every chapter in the source book, the three interactive chapters available now, and a clear view of what comes next.</p>
+            <h1>Fourteen chapters.<br><em>Four are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the four interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=3">Open Statics →</a>
+              <a href="?view=chapter&amp;chapter=4">Open Dynamics →</a>
             </div>
           </div>
           ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>chapters in the book</dd></div>
             <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>38</dt><dd>interactive now</dd></div>
+            <div><dt>45</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
-            <p>Chapters 1–3 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+            <p>Chapters 1–4 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
           </header>
           <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
         </section>
@@ -396,7 +422,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a></div>
         </footer>
       </main>`;
   }
@@ -410,7 +436,9 @@
          ${sectionMarkup({ chapter: "1", source: "reconstructed", eyebrow: "Problems 1.11–1.17", title: "The reconstructed continuation", copy: "The sample ends at 1.10. These independently written activities follow only the listed titles and difficulty ratings—not Povey's original wording.", id: "index-chapter-one-reconstructed" })}`
       : chapter === "2"
         ? sectionMarkup({ chapter: "2", source: "reconstructed", eyebrow: "Problems 2.1–2.12", title: "An original mathematics lab", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 2. Every activity here is independently written and explicitly labelled—not Povey's original wording or solution.", id: "index-chapter-two-reconstructed" })
-        : sectionMarkup({ chapter: "3", source: "reconstructed", eyebrow: "Problems 3.1–3.9", title: "An original statics workshop", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 3. Every force, scenario and solution here is independently written and explicitly labelled.", id: "index-chapter-three-reconstructed" });
+        : chapter === "3"
+          ? sectionMarkup({ chapter: "3", source: "reconstructed", eyebrow: "Problems 3.1–3.9", title: "An original statics workshop", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 3. Every force, scenario and solution here is independently written and explicitly labelled.", id: "index-chapter-three-reconstructed" })
+          : sectionMarkup({ chapter: "4", source: "reconstructed", eyebrow: "Problems 4.1–4.7", title: "An original dynamics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 4. Every moving system, collision and solution here is independently written and explicitly labelled.", id: "index-chapter-four-reconstructed" });
     const sourceCount = chapter === "1" ? "10" : details.count;
     const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = chapter === "1" ? "7" : "1";
