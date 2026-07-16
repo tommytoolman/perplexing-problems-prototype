@@ -30,6 +30,7 @@ Original extension — not in the source book:
 - [Chapter 17 · Combinatorics and networks contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=17)
 - [Chapter 18 · Waves and sound contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=18)
 - [Chapter 19 · Magnetism and fields contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=19)
+- [Chapter 20 · Relativity and spacetime contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=20)
 
 Review individual problems:
 
@@ -232,6 +233,15 @@ Chapters 15–20 are created for this project. They do not appear in *Professor 
 - [19.4 The Isotope Gate](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.4)
 - [19.5 Corkscrew in a Blue Field](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.5)
 - [19.6 The Bottle’s Escape Cone](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.6)
+
+### Chapter 20 · Relativity and spacetime
+
+- [20.1 A Sideways Tick](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.1)
+- [20.2 The Muon That Reaches the Beach](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.2)
+- [20.3 The Train Inside a Snapshot](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.3)
+- [20.4 The Closing-Speed Trap](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.4)
+- [20.5 The Red Echo](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.5)
+- [20.6 The Price of Standing Still](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.6)
 
 ## Run locally
 
