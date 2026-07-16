@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first four chapters contain 45 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first five chapters contain 52 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -12,6 +12,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 2 · Mathematics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=2)
 - [Chapter 3 · Statics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=3)
 - [Chapter 4 · Dynamics and collisions contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=4)
+- [Chapter 5 · Circular motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=5)
 
 Review individual problems:
 
@@ -72,6 +73,16 @@ Review individual problems:
 - [4.6 Sherlock Holmes and the Bella Fiore emerald](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.6)
 - [4.7 Equivalent statements for linear collisions](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=4.7)
 
+### Chapter 5 · Circular motion
+
+- [5.1 Friction at the superbike races](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.1)
+- [5.2 Pole position at the superbike races](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.2)
+- [5.3 Roller coaster](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.3)
+- [5.4 Derailed roller coaster](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.4)
+- [5.5 The last ride of Professor Lazy](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.5)
+- [5.6 Wall of Death: car](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.6)
+- [5.7 Wall of Death: motorcycle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.7)
+
 ## Run locally
 
 ```sh
@@ -91,5 +102,7 @@ For Chapter 2, the available PDF, attached OCR, public mirrors, and exact-title 
 The same source boundary applies to Chapter 3: only its nine titles and difficulty ratings were recoverable. Problems 3.1–3.9 are independently written statics activities, explicitly labelled as reconstructions rather than Povey's original wording or solutions.
 
 Chapter 4 is likewise reconstructed from its seven recovered titles and difficulty ratings. Its dynamics and collision scenarios, numerical values, interactions and solutions are independently written and explicitly labelled.
+
+Chapter 5 follows the same boundary: its seven circular-motion activities are original reconstructions based only on the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

@@ -195,14 +195,24 @@
     { number: "4.7", title: "Equivalent statements for linear collisions", stars: "★★★", difficulty: "Three star difficulty", teaser: "Move between restitution, relative velocity and centre-of-mass statements of the same collision.", motif: "collision-equivalence", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems];
+  const chapterFiveProblems = [
+    { number: "5.1", title: "Friction at the superbike races", stars: "★", difficulty: "One star difficulty", teaser: "Compare required centripetal force with available tyre friction on a flat corner.", motif: "superbike-flat", source: "reconstructed" },
+    { number: "5.2", title: "Pole position at the superbike races", stars: "★★", difficulty: "Two star difficulty", teaser: "Bank the corner, find its design speed and track which way friction must act away from it.", motif: "superbike-bank", source: "reconstructed" },
+    { number: "5.3", title: "Roller coaster", stars: "★★★", difficulty: "Three star difficulty", teaser: "Combine energy with radial force balance to keep a coaster in contact around a vertical loop.", motif: "coaster-loop", source: "reconstructed" },
+    { number: "5.4", title: "Derailed roller coaster", stars: "★★", difficulty: "Two star difficulty", teaser: "Leave the rail on a tangent, become a projectile and predict where the flight meets the world.", motif: "coaster-flight", source: "reconstructed" },
+    { number: "5.5", title: "The last ride of Professor Lazy", stars: "★★", difficulty: "Two star difficulty", teaser: "Spin a circular ride until its support geometry and centripetal demand reach a critical limit.", motif: "lazy-ride", source: "reconstructed" },
+    { number: "5.6", title: "Wall of Death: car", stars: "★★★", difficulty: "Three star difficulty", teaser: "Drive around a vertical cylinder and make wall friction hold the car against gravity.", motif: "wall-car", source: "reconstructed" },
+    { number: "5.7", title: "Wall of Death: motorcycle", stars: "★★ or ★★★★", difficulty: "Two star problem with a four star extension", teaser: "Add the motorcycle’s lean and torque balance to the wall-of-death force diagram.", motif: "wall-bike", source: "reconstructed" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
     { number: "2", title: "Mathematics", count: 12, page: 60, live: true, summary: "Algebra, graphs and probability" },
     { number: "3", title: "Statics", count: 9, page: 82, live: true, summary: "Equilibrium, moments and simple machines" },
     { number: "4", title: "Dynamics and collisions", count: 7, page: 119, live: true, summary: "Acceleration, momentum, impulse and restitution" },
-    { number: "5", title: "Circular motion", count: 7, page: 150 },
+    { number: "5", title: "Circular motion", count: 7, page: 150, live: true, summary: "Centripetal force, banking, loops and rotating walls" },
     { number: "6", title: "Simple harmonic motion", count: 5, page: 176 },
     { number: "7", title: "Mad inventions and perpetual motion", count: 6, page: 196 },
     { number: "8", title: "Kinematics", count: 3, page: 219 },
@@ -242,6 +252,13 @@
       status: "7 reconstructed activities",
       introduction: "Set masses moving, change frames and audit what survives a collision. These activities make acceleration, momentum and restitution visible.",
       heroClass: "is-dynamics",
+    },
+    "5": {
+      title: "Circular motion",
+      count: 7,
+      status: "7 reconstructed activities",
+      introduction: "Turn speed into inward acceleration, then ask which real force supplies it. Corners, loops and rotating walls expose every limit.",
+      heroClass: "is-circular",
     },
   };
 
@@ -296,6 +313,13 @@
       funicular: '<path d="m17 79 126-54"/><rect x="42" y="48" width="31" height="22" transform="rotate(-23 57 59)"/><rect x="99" y="24" width="31" height="22" transform="rotate(-23 114 35)"/><path class="index-accent" d="M57 46 115 21"/><circle cx="80" cy="13" r="7"/>',
       emerald: '<path d="M23 69h114"/><circle cx="50" cy="53" r="16"/><circle cx="107" cy="58" r="11"/><path class="index-accent" d="M12 34h54m-10-9 10 9-10 9"/><path d="m98 15 10 12-10 12-10-12z"/>',
       'collision-equivalence': '<circle cx="41" cy="48" r="16"/><circle cx="119" cy="48" r="16"/><path class="index-accent" d="M58 48h43m-8-8 8 8-8 8"/><path d="M41 19v-9m78 9v-9M41 86v-9m78 9v-9"/>',
+      'superbike-flat': '<circle cx="80" cy="49" r="39"/><path d="M41 49h78M80 10v78"/><path class="index-accent" d="M119 49c0 21-17 39-39 39"/><circle class="index-dot" cx="113" cy="72" r="6"/>',
+      'superbike-bank': '<path d="M19 74 141 38M30 82 150 47"/><circle cx="102" cy="46" r="10"/><path class="index-accent" d="M102 46 73 26m7-2-7 2 2 7"/><path d="M18 85h134"/>',
+      'coaster-loop': '<circle cx="80" cy="50" r="39"/><path d="M13 89h134"/><circle class="index-dot" cx="80" cy="11" r="7"/><path class="index-accent" d="M80 18v28m-7-9 7 9 7-9"/>',
+      'coaster-flight': '<path d="M13 77c28 0 38-49 67-49"/><path class="index-accent" d="M80 28c24 0 43 16 62 48"/><circle class="index-dot" cx="80" cy="28" r="6"/><path d="M12 86h136"/>',
+      'lazy-ride': '<ellipse cx="80" cy="51" rx="57" ry="26"/><path d="M80 8v70M23 51h114"/><circle class="index-dot" cx="129" cy="38" r="7"/><path class="index-accent" d="M129 38 82 50m11-8-11 8 12 3"/>',
+      'wall-car': '<path d="M31 12v73M129 12v73M31 22c0 12 98 12 98 0M31 75c0-12 98-12 98 0"/><rect class="index-accent index-fill" x="103" y="39" width="22" height="17" rx="3"/><path d="M114 39V19"/>',
+      'wall-bike': '<path d="M28 12v73M132 12v73M28 23c0 12 104 12 104 0M28 75c0-12 104-12 104 0"/><circle cx="111" cy="57" r="8"/><circle cx="128" cy="57" r="8"/><path class="index-accent" d="M111 57 121 31 130 49M121 31l-8-9"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -304,8 +328,9 @@
     const chapterTwo = problem.number.startsWith("2.");
     const chapterThree = problem.number.startsWith("3.");
     const chapterFour = problem.number.startsWith("4.");
+    const chapterFive = problem.number.startsWith("5.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -327,8 +352,9 @@
     const mathematics = chapter === "2";
     const statics = chapter === "3";
     const dynamics = chapter === "4";
+    const circular = chapter === "5";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -343,11 +369,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=4">Open Dynamics <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=5">Open Circular motion <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> Four chapters live</span>
+        <span class="chapter-index-complete"><i></i> Five chapters live</span>
         ${action}
       </header>`;
   }
@@ -381,7 +407,7 @@
         <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -392,25 +418,25 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>Four are alive.</em></h1>
-            <p>This is the front door to the whole project: every chapter in the source book, the four interactive chapters available now, and a clear view of what comes next.</p>
+            <h1>Fourteen chapters.<br><em>Five are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the five interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=4">Open Dynamics →</a>
+              <a href="?view=chapter&amp;chapter=5">Open Circular motion →</a>
             </div>
           </div>
           ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>chapters in the book</dd></div>
             <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>45</dt><dd>interactive now</dd></div>
+            <div><dt>52</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
-            <p>Chapters 1–4 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+            <p>Chapters 1–5 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
           </header>
           <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
         </section>
@@ -422,7 +448,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a></div>
         </footer>
       </main>`;
   }
@@ -438,7 +464,9 @@
         ? sectionMarkup({ chapter: "2", source: "reconstructed", eyebrow: "Problems 2.1–2.12", title: "An original mathematics lab", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 2. Every activity here is independently written and explicitly labelled—not Povey's original wording or solution.", id: "index-chapter-two-reconstructed" })
         : chapter === "3"
           ? sectionMarkup({ chapter: "3", source: "reconstructed", eyebrow: "Problems 3.1–3.9", title: "An original statics workshop", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 3. Every force, scenario and solution here is independently written and explicitly labelled.", id: "index-chapter-three-reconstructed" })
-          : sectionMarkup({ chapter: "4", source: "reconstructed", eyebrow: "Problems 4.1–4.7", title: "An original dynamics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 4. Every moving system, collision and solution here is independently written and explicitly labelled.", id: "index-chapter-four-reconstructed" });
+          : chapter === "4"
+            ? sectionMarkup({ chapter: "4", source: "reconstructed", eyebrow: "Problems 4.1–4.7", title: "An original dynamics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 4. Every moving system, collision and solution here is independently written and explicitly labelled.", id: "index-chapter-four-reconstructed" })
+            : sectionMarkup({ chapter: "5", source: "reconstructed", eyebrow: "Problems 5.1–5.7", title: "An original circular-motion laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 5. Every corner, loop, rotating wall and solution here is independently written and explicitly labelled.", id: "index-chapter-five-reconstructed" });
     const sourceCount = chapter === "1" ? "10" : details.count;
     const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = chapter === "1" ? "7" : "1";
