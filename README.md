@@ -26,6 +26,7 @@ The prototype has three navigation levels: the complete 14-chapter source-book m
 Original extension — not in the source book:
 
 - [Chapter 15 · Probability and randomness contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=15)
+- [Chapter 16 · Proof, induction and invariants contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=16)
 
 Review individual problems:
 
@@ -192,6 +193,15 @@ Chapters 15–20 are created for this project. They do not appear in *Professor 
 - [15.4 Firefly Between Two Fountains](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.4)
 - [15.5 The Missing Constellation](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.5)
 - [15.6 The Chord Factory](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=15.6)
+
+### Chapter 16 · Proof, induction and invariants
+
+- [16.1 Odd Bricks, Square Wall](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.1)
+- [16.2 The Lantern Keeper’s Even Night](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.2)
+- [16.3 The Moon Archivist’s Rings](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.3)
+- [16.4 Euclid’s Shrinking Rectangle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.4)
+- [16.5 The Village of Odd Doorways](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.5)
+- [16.6 The Bellhop’s Impossible Suitcase](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=16.6)
 
 ## Run locally
 

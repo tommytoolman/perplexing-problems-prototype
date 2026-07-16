@@ -87,6 +87,11 @@ const chapterCatalog = {
     title: "Probability and randomness",
     problems: Array.from({ length: 6 }, (_, index) => `15.${index + 1}`),
   },
+  "16": {
+    number: "16",
+    title: "Proof, induction and invariants",
+    problems: Array.from({ length: 6 }, (_, index) => `16.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);
