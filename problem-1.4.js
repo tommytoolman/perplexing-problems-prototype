@@ -250,7 +250,7 @@ window.poveyProblemPages = window.poveyProblemPages || {};
         <header class="book-header">
           <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Content build</span></div>
           <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar hex-progress"><span></span></div></div>
-          <div class="book-actions button-row"><a class="problem-nav-link header-next" href="?variant=A&amp;problem=1.5">Next · 1.5 →</a><button class="ghost-button" type="button" data-problem-action="hex-reset">Reset</button></div>
+          ${problemHeaderActions("1.4", '<button class="ghost-button" type="button" data-problem-action="hex-reset">Reset</button>')}
         </header>
         <div class="book-spread hex-spread">
           <article class="book-page">

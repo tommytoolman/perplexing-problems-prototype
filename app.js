@@ -11,6 +11,8 @@ const variantMeta = {
   C: { name: "Guided tutor", short: "Conversation first" },
 };
 
+const chapterProblems = Array.from({ length: 17 }, (_, index) => `1.${index + 1}`);
+
 const hints = [
   "A route across the surface becomes easier to compare if two neighbouring faces are laid flat.",
   "In the unfolded view, try making the two red segments behave like one straight line.",
@@ -85,7 +87,7 @@ function currentVariant() {
 
 function currentProblem() {
   const problem = new URLSearchParams(window.location.search).get("problem");
-  return ["1.2", "1.3", "1.4", "1.5", "1.6"].includes(problem) ? problem : "1.1";
+  return chapterProblems.includes(problem) ? problem : "1.1";
 }
 
 function fmt(value, digits = 3) {
@@ -281,17 +283,29 @@ function controls() {
     </div>`;
 }
 
+function problemHref(problem) {
+  return problem === "1.1" ? "?variant=A" : `?variant=A&problem=${problem}`;
+}
+
+function problemHeaderActions(current, resetControl) {
+  const index = chapterProblems.indexOf(current);
+  const next = chapterProblems[index + 1];
+  const nextLink = next
+    ? `<a class="problem-nav-link header-next" href="${problemHref(next).replaceAll("&", "&amp;")}">Next · ${next} →</a>`
+    : "";
+  return `<div class="book-actions button-row">${nextLink}${resetControl}</div>`;
+}
+
 function problemNav(current) {
-  const problems = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"];
-  const index = problems.indexOf(current);
+  const index = chapterProblems.indexOf(current);
   const toLink = (problem, direction) => problem
     ? {
         label: direction === "previous" ? `← ${problem}` : `${problem} →`,
-        href: problem === "1.1" ? "?variant=A" : `?variant=A&problem=${problem}`,
+        href: problemHref(problem),
       }
     : null;
-  const previous = toLink(problems[index - 1], "previous");
-  const next = toLink(problems[index + 1], "next");
+  const previous = toLink(chapterProblems[index - 1], "previous");
+  const next = toLink(chapterProblems[index + 1], "next");
   const position = index + 1;
   return `
     <nav class="problem-nav" aria-label="Problem navigation">
@@ -377,7 +391,7 @@ function renderCableBook() {
       <header class="book-header">
         <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Content build</span></div>
         <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar cable-progress"><span></span></div></div>
-        <div class="book-actions button-row"><a class="problem-nav-link header-next" href="?variant=A&amp;problem=1.3">Next · 1.3 →</a><button class="ghost-button" data-action="cable-reset">Reset</button></div>
+        ${problemHeaderActions("1.2", '<button class="ghost-button" data-action="cable-reset">Reset</button>')}
       </header>
       <div class="book-spread cable-spread">
         <article class="book-page">
@@ -566,7 +580,7 @@ function renderHoopBook() {
       <header class="book-header">
         <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Content build</span></div>
         <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar hoop-progress"><span></span></div></div>
-        <div class="book-actions button-row"><a class="problem-nav-link header-next" href="?variant=A&amp;problem=1.4">Next · 1.4 →</a><button class="ghost-button" data-action="hoop-reset">Reset</button></div>
+        ${problemHeaderActions("1.3", '<button class="ghost-button" data-action="hoop-reset">Reset</button>')}
       </header>
       <div class="book-spread hoop-spread">
         <article class="book-page">
@@ -646,7 +660,7 @@ function renderBook() {
       <header class="book-header">
         <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Prototype</span></div>
         <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar"><span></span></div></div>
-        <div class="book-actions button-row"><a class="problem-nav-link header-next" href="?variant=A&amp;problem=1.2">Next · 1.2 →</a><button class="ghost-button" data-action="reset">Reset</button></div>
+        ${problemHeaderActions("1.1", '<button class="ghost-button" data-action="reset">Reset</button>')}
       </header>
       <div class="book-spread">
         <article class="book-page">

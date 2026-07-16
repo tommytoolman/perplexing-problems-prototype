@@ -210,7 +210,7 @@ window.poveyProblemPages = window.poveyProblemPages || {};
         <header class="book-header">
           <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Content build</span></div>
           <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar cube16-progress"><span></span></div></div>
-          <div class="book-actions button-row"><button class="ghost-button" data-problem-action="cube16-reset">Reset</button></div>
+          ${problemHeaderActions("1.6", '<button class="ghost-button" data-problem-action="cube16-reset">Reset</button>')}
         </header>
         <div class="book-spread cube16-spread">
           <article class="book-page">

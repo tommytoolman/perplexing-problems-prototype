@@ -1,42 +1,43 @@
-# Povey interaction prototype
+# Perplexing Problems — interactive chapter prototype
 
-> **THROWAWAY PROTOTYPE.** This code exists to answer a presentation question. Do not publish or promote it directly to production.
-
-## Prototype question
-
-Which presentation model best turns a Povey problem into active reading?
-
-Three structurally different variants use the same interaction for problem 1.1, **Shortest walk**:
-
-- `?variant=A` - editorial interactive-book spread;
-- `?variant=B` - experiment-first visual laboratory;
-- `?variant=C` - conversation-first guided tutor.
-
-The bottom switcher and left/right arrow keys move between variants. The user can drag the route joint, commit a proposed minimum, request progressive hints, and reveal the geometric solution. State is deliberately kept in memory; developer telemetry is available only with `debug=1` in the URL.
+A browser-native prototype exploring how a printed mathematics problem book can become an active reading experience. Chapter 1 contains 17 interactive geometry problems with manipulable diagrams, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
-[Open the GitHub Pages prototype](https://tommytoolman.github.io/perplexing-problems-prototype/)
+[Open Chapter 1 on GitHub Pages](https://tommytoolman.github.io/perplexing-problems-prototype/)
+
+Review individual problems:
+
+- [1.1 Shortest walk](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A)
+- [1.2 Intercontinental telephone cable](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.2)
+- [1.3 Chessboard and hoop](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.3)
+- [1.4 Hexagonal tiles and hoop](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.4)
+- [1.5 Intersecting circles](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.5)
+- [1.6 Cube within sphere](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.6)
+- [1.7 Polygon inscribed within circle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.7)
+- [1.8 Circle inscribed within polygon](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.8)
+- [1.9 Triangle inscribed within semicircle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.9)
+- [1.10 Big and small tree trunks](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.10)
+- [1.11 Professor Fuddlethumbs' stamp](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.11)
+- [1.12 Captain Fistfulls' treasure](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.12)
+- [1.13 Captain Fistfulls' treasure II](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.13)
+- [1.14 Captain Fistfulls' treasure III](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.14)
+- [1.15 The geometry of Koch Island](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.15)
+- [1.16 An easyish fencing problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.16)
+- [1.17 A hardish fencing problem](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=1.17)
 
 ## Run locally
 
-From the workspace root:
-
 ```sh
-./povey-prototype/run.sh
+./run.sh
 ```
 
 Then open <http://127.0.0.1:4173/?variant=A>.
 
-Reviewable content pages:
+Everything is static HTML, CSS, JavaScript, and SVG. No build step or server-side application is required.
 
-- [1.1 Shortest walk](http://127.0.0.1:4173/?variant=A)
-- [1.2 Intercontinental telephone cable](http://127.0.0.1:4173/?variant=A&problem=1.2)
-- [1.3 Chessboard and hoop](http://127.0.0.1:4173/?variant=A&problem=1.3)
-- [1.4 Hexagonal tiles and hoop](http://127.0.0.1:4173/?variant=A&problem=1.4)
-- [1.5 Intersecting circles](http://127.0.0.1:4173/?variant=A&problem=1.5)
-- [1.6 Cube within sphere](http://127.0.0.1:4173/?variant=A&problem=1.6)
+## Source boundary
 
-## Source note
+Problems 1.1–1.10 are interactive adaptations of the material available in the supplied chapter sample of *Professor Povey's Perplexing Problems* by Thomas Povey. The available source stops after 1.10. Problems 1.11–1.17 are new reconstructed activities inspired by the index titles and difficulty ratings; each is explicitly labelled as reconstructed in the interface and is not presented as Povey's original wording or solution.
 
-The problem is adapted privately for evaluation from *Professor Povey's Perplexing Problems*, Thomas Povey, 2015. The source states copyright and all rights reserved. This prototype is not cleared for publication.
+This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

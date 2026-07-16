@@ -217,10 +217,7 @@
         <header class="book-header">
           <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Content build</span></div>
           <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar p15-progress"><span></span></div></div>
-          <div class="book-actions button-row">
-            <a class="problem-nav-link header-next" href="?variant=A&amp;problem=1.6">Next · 1.6 →</a>
-            <button class="ghost-button" type="button" data-problem-action="reset">Reset</button>
-          </div>
+          ${problemHeaderActions("1.5", '<button class="ghost-button" type="button" data-problem-action="reset">Reset</button>')}
         </header>
 
         <div class="book-spread p15-spread">
