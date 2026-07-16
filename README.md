@@ -28,6 +28,7 @@ Original extension — not in the source book:
 - [Chapter 15 · Probability and randomness contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=15)
 - [Chapter 16 · Proof, induction and invariants contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=16)
 - [Chapter 17 · Combinatorics and networks contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=17)
+- [Chapter 18 · Waves and sound contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=18)
 
 Review individual problems:
 
@@ -212,6 +213,15 @@ Chapters 15–20 are created for this project. They do not appear in *Professor 
 - [17.4 The Midnight Radio Wheel](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.4)
 - [17.5 The Two-Route Lifeboat Network](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.5)
 - [17.6 The Eleven-Crate Bottleneck](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=17.6)
+
+### Chapter 18 · Waves and sound
+
+- [18.1 The Tunnel Clap](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.1)
+- [18.2 Two Notes, One Throb](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.2)
+- [18.3 The Pipe That Changed Its Mind](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.3)
+- [18.4 The Siren’s Split Personality](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.4)
+- [18.5 Why Ten Violins Aren’t Ten Times Louder](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.5)
+- [18.6 The Pulse That Runs Away from Its Ripples](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.6)
 
 ## Run locally
 

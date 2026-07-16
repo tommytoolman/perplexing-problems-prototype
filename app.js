@@ -97,6 +97,11 @@ const chapterCatalog = {
     title: "Combinatorics and networks",
     problems: Array.from({ length: 6 }, (_, index) => `17.${index + 1}`),
   },
+  "18": {
+    number: "18",
+    title: "Waves and sound",
+    problems: Array.from({ length: 6 }, (_, index) => `18.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

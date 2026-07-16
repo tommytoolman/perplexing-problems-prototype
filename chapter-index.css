@@ -805,6 +805,23 @@
   fill: #3f8a68;
 }
 
+.chapter-index-card.is-chapter-eighteen::before {
+  background: #337e93;
+}
+
+.chapter-index-card.is-chapter-eighteen .chapter-index-number,
+.chapter-index-card.is-chapter-eighteen .chapter-index-stars {
+  color: #286c80;
+}
+
+.chapter-index-card.is-chapter-eighteen .index-motif-svg .index-accent {
+  stroke: #337e93;
+}
+
+.chapter-index-card.is-chapter-eighteen .index-motif-svg .index-dot {
+  fill: #337e93;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -868,6 +885,10 @@
 
 .chapter-index-combinatorics {
   background: #dce9e1;
+}
+
+.chapter-index-waves {
+  background: #d9e9ed;
 }
 
 .chapter-index-footer {
@@ -1017,6 +1038,10 @@
 
 .master-chapter-card.is-live.is-combinatorics {
   background: #24543f;
+}
+
+.master-chapter-card.is-live.is-waves {
+  background: #1d5364;
 }
 
 .master-chapter-card.is-original-extension {
@@ -1406,6 +1431,19 @@
 .chapter-landing-hero.is-combinatorics h1 em,
 .chapter-contents-heading.is-combinatorics span {
   color: #2f7354;
+}
+
+.chapter-landing-hero.is-waves .chapter-index-hero-figure {
+  background: #1d5364;
+}
+
+.chapter-landing-hero.is-waves .chapter-index-stats {
+  background: #337e93;
+}
+
+.chapter-landing-hero.is-waves h1 em,
+.chapter-contents-heading.is-waves span {
+  color: #286c80;
 }
 
 .chapter-contents-heading {
