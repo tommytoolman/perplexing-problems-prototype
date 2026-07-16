@@ -205,7 +205,15 @@
     { number: "5.7", title: "Wall of Death: motorcycle", stars: "★★ or ★★★★", difficulty: "Two star problem with a four star extension", teaser: "Add the motorcycle’s lean and torque balance to the wall-of-death force diagram.", motif: "wall-bike", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems];
+  const chapterSixProblems = [
+    { number: "6.1", title: "Oscillating sphere", stars: "★★", difficulty: "Two star difficulty", teaser: "Slide a sphere inside a smooth bowl and compare exact finite-amplitude motion with its SHM limit.", motif: "sphere-bowl", source: "reconstructed" },
+    { number: "6.2", title: "Professor Stopclock’s time-manipulator", stars: "★★★", difficulty: "Three star difficulty", teaser: "Switch an oscillator’s stiffness mid-cycle and rebuild its amplitude, phase, energy and next peak.", motif: "stopclock", source: "reconstructed" },
+    { number: "6.3", title: "Dr Springlove’s Oscillator", stars: "★", difficulty: "Introductory difficulty marker", teaser: "Track position, velocity, acceleration and energy around one complete mass–spring cycle.", motif: "spring-single", source: "reconstructed" },
+    { number: "6.4", title: "Dr Springlove’s Infernal Oscillator", stars: "★★", difficulty: "Two star difficulty", teaser: "Couple two oscillators and separate their motion into symmetric and antisymmetric normal modes.", motif: "spring-coupled", source: "reconstructed" },
+    { number: "6.5", title: "Dr Springlove’s Improved Infernal Oscillator", stars: "★★★", difficulty: "Three star difficulty", teaser: "Tune an added absorber so modal superposition suppresses the motion where it matters most.", motif: "spring-absorber", source: "reconstructed" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -213,7 +221,7 @@
     { number: "3", title: "Statics", count: 9, page: 82, live: true, summary: "Equilibrium, moments and simple machines" },
     { number: "4", title: "Dynamics and collisions", count: 7, page: 119, live: true, summary: "Acceleration, momentum, impulse and restitution" },
     { number: "5", title: "Circular motion", count: 7, page: 150, live: true, summary: "Centripetal force, banking, loops and rotating walls" },
-    { number: "6", title: "Simple harmonic motion", count: 5, page: 176 },
+    { number: "6", title: "Simple harmonic motion", count: 5, page: 176, live: true, summary: "Oscillators, phase, energy and normal modes" },
     { number: "7", title: "Mad inventions and perpetual motion", count: 6, page: 196 },
     { number: "8", title: "Kinematics", count: 3, page: 219 },
     { number: "9", title: "Electricity", count: 7, page: 228 },
@@ -259,6 +267,13 @@
       status: "7 reconstructed activities",
       introduction: "Turn speed into inward acceleration, then ask which real force supplies it. Corners, loops and rotating walls expose every limit.",
       heroClass: "is-circular",
+    },
+    "6": {
+      title: "Simple harmonic motion",
+      count: 5,
+      status: "5 reconstructed activities",
+      introduction: "Follow phase as energy trades between motion and restoring force. Then couple, switch and tune oscillators until the modes become visible.",
+      heroClass: "is-oscillation",
     },
   };
 
@@ -320,6 +335,11 @@
       'lazy-ride': '<ellipse cx="80" cy="51" rx="57" ry="26"/><path d="M80 8v70M23 51h114"/><circle class="index-dot" cx="129" cy="38" r="7"/><path class="index-accent" d="M129 38 82 50m11-8-11 8 12 3"/>',
       'wall-car': '<path d="M31 12v73M129 12v73M31 22c0 12 98 12 98 0M31 75c0-12 98-12 98 0"/><rect class="index-accent index-fill" x="103" y="39" width="22" height="17" rx="3"/><path d="M114 39V19"/>',
       'wall-bike': '<path d="M28 12v73M132 12v73M28 23c0 12 104 12 104 0M28 75c0-12 104-12 104 0"/><circle cx="111" cy="57" r="8"/><circle cx="128" cy="57" r="8"/><path class="index-accent" d="M111 57 121 31 130 49M121 31l-8-9"/>',
+      'sphere-bowl': '<path d="M24 28c0 74 112 74 112 0"/><circle class="index-dot" cx="52" cy="62" r="12"/><path class="index-accent" d="M52 50c14-25 39-28 58-12"/>',
+      stopclock: '<circle cx="80" cy="48" r="37"/><path d="M80 11V3M65 3h30M80 48l20-16"/><path class="index-accent" d="M80 48 57 68"/><circle class="index-dot" cx="80" cy="48" r="5"/>',
+      'spring-single': '<path d="M12 48h18l7-12 12 24 12-24 12 24 12-24 7 12h18"/><rect class="index-accent index-fill" x="110" y="30" width="34" height="36" rx="3"/><path d="M8 22v52"/>',
+      'spring-coupled': '<path d="M8 48h15l6-11 10 22 10-22 6 11"/><rect x="55" y="31" width="27" height="34"/><path d="M82 48h9l5-10 10 20 10-20 5 10"/><rect class="index-accent index-fill" x="121" y="31" width="27" height="34"/>',
+      'spring-absorber': '<path d="M8 49h16l6-10 9 20 9-20 7 10"/><rect x="55" y="31" width="28" height="36"/><path class="index-accent" d="M69 31V18h15l5-9 8 18 8-18 6 9h14"/><rect class="index-accent index-fill" x="125" y="6" width="25" height="24"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -329,8 +349,9 @@
     const chapterThree = problem.number.startsWith("3.");
     const chapterFour = problem.number.startsWith("4.");
     const chapterFive = problem.number.startsWith("5.");
+    const chapterSix = problem.number.startsWith("6.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -353,8 +374,9 @@
     const statics = chapter === "3";
     const dynamics = chapter === "4";
     const circular = chapter === "5";
+    const oscillation = chapter === "6";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -369,11 +391,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=5">Open Circular motion <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=6">Open SHM <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> Five chapters live</span>
+        <span class="chapter-index-complete"><i></i> Six chapters live</span>
         ${action}
       </header>`;
   }
@@ -407,7 +429,7 @@
         <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -418,25 +440,25 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>Five are alive.</em></h1>
-            <p>This is the front door to the whole project: every chapter in the source book, the five interactive chapters available now, and a clear view of what comes next.</p>
+            <h1>Fourteen chapters.<br><em>Six are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the six interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=5">Open Circular motion →</a>
+              <a href="?view=chapter&amp;chapter=6">Open Simple harmonic motion →</a>
             </div>
           </div>
           ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>chapters in the book</dd></div>
             <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>52</dt><dd>interactive now</dd></div>
+            <div><dt>57</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
-            <p>Chapters 1–5 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+            <p>Chapters 1–6 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
           </header>
           <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
         </section>
@@ -448,7 +470,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a></div>
         </footer>
       </main>`;
   }
@@ -466,7 +488,9 @@
           ? sectionMarkup({ chapter: "3", source: "reconstructed", eyebrow: "Problems 3.1–3.9", title: "An original statics workshop", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 3. Every force, scenario and solution here is independently written and explicitly labelled.", id: "index-chapter-three-reconstructed" })
           : chapter === "4"
             ? sectionMarkup({ chapter: "4", source: "reconstructed", eyebrow: "Problems 4.1–4.7", title: "An original dynamics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 4. Every moving system, collision and solution here is independently written and explicitly labelled.", id: "index-chapter-four-reconstructed" })
-            : sectionMarkup({ chapter: "5", source: "reconstructed", eyebrow: "Problems 5.1–5.7", title: "An original circular-motion laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 5. Every corner, loop, rotating wall and solution here is independently written and explicitly labelled.", id: "index-chapter-five-reconstructed" });
+            : chapter === "5"
+              ? sectionMarkup({ chapter: "5", source: "reconstructed", eyebrow: "Problems 5.1–5.7", title: "An original circular-motion laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 5. Every corner, loop, rotating wall and solution here is independently written and explicitly labelled.", id: "index-chapter-five-reconstructed" })
+              : sectionMarkup({ chapter: "6", source: "reconstructed", eyebrow: "Problems 6.1–6.5", title: "An original oscillation laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 6. Every oscillator, intervention, coupled mode and solution here is independently written and explicitly labelled.", id: "index-chapter-six-reconstructed" });
     const sourceCount = chapter === "1" ? "10" : details.count;
     const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = chapter === "1" ? "7" : "1";

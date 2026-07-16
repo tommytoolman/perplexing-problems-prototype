@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first five chapters contain 52 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first six chapters contain 57 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -13,6 +13,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 3 · Statics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=3)
 - [Chapter 4 · Dynamics and collisions contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=4)
 - [Chapter 5 · Circular motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=5)
+- [Chapter 6 · Simple harmonic motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=6)
 
 Review individual problems:
 
@@ -83,6 +84,14 @@ Review individual problems:
 - [5.6 Wall of Death: car](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.6)
 - [5.7 Wall of Death: motorcycle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=5.7)
 
+### Chapter 6 · Simple harmonic motion
+
+- [6.1 Oscillating sphere](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.1)
+- [6.2 Professor Stopclock’s time-manipulator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.2)
+- [6.3 Dr Springlove’s Oscillator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.3)
+- [6.4 Dr Springlove’s Infernal Oscillator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.4)
+- [6.5 Dr Springlove’s Improved Infernal Oscillator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.5)
+
 ## Run locally
 
 ```sh
@@ -104,5 +113,7 @@ The same source boundary applies to Chapter 3: only its nine titles and difficul
 Chapter 4 is likewise reconstructed from its seven recovered titles and difficulty ratings. Its dynamics and collision scenarios, numerical values, interactions and solutions are independently written and explicitly labelled.
 
 Chapter 5 follows the same boundary: its seven circular-motion activities are original reconstructions based only on the recovered titles and difficulty ratings.
+
+Chapter 6 likewise contains five independently written oscillation activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

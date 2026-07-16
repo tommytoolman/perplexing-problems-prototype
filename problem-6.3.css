@@ -1,0 +1,110 @@
+/* Problem 6.3 - horizontal mass-spring SHM */
+
+.p63-shell { --osc6-accent: #7850a8; --osc6-accent-dark: #4d2b72; --osc6-blue: #286b8b; --osc6-gold: #c88825; --osc6-green: #27705a; --osc6-night: #263044; --math2-accent-dark: #4d2b72; }
+.p63-shell .problem-number, .p63-shell .difficulty, .p63-shell .eyebrow { color: var(--osc6-accent); }
+.p63-shell .book-progress-bar span, .p63-shell .coach-kicker::before { background: var(--osc6-accent); }
+.p63-spread { grid-template-columns: minmax(250px, 0.8fr) minmax(510px, 1.6fr) minmax(285px, 0.9fr); }
+.p63-problem-page, .p63-coach { align-content: start; }
+.p63-title { font-size: clamp(1.9rem, 3vw, 4rem); overflow-wrap: anywhere; }
+.p63-difficulty { font-family: Georgia, "Times New Roman", serif; font-size: 1.55rem; }
+.p63-reconstruction-note { background: rgba(120, 80, 168, 0.08); border-left: 3px solid var(--osc6-accent); color: #5e554d; font-size: 0.69rem; line-height: 1.5; margin: 1rem 0 0; padding: 0.78rem 0.86rem; }
+.p63-reconstruction-note strong { color: var(--osc6-accent-dark); }
+.p63-convention-card, .p63-challenge-card { margin-top: 0.85rem; padding: 0.72rem 0.82rem; }
+.p63-convention-card { background: rgba(40, 107, 139, 0.07); border-left: 3px solid var(--osc6-blue); }
+.p63-challenge-card { background: rgba(200, 136, 37, 0.11); border-radius: 11px; }
+.p63-convention-card strong, .p63-challenge-card strong { color: var(--osc6-accent-dark); font-size: 0.61rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.p63-convention-card p, .p63-challenge-card p { color: var(--muted); font-size: 0.68rem; line-height: 1.48; margin: 0.34rem 0 0; }
+
+.p63-stage { align-content: start; background: linear-gradient(rgba(120, 80, 168, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 80, 168, 0.04) 1px, transparent 1px), var(--paper-2); background-size: 24px 24px; display: grid; gap: 0.78rem; min-width: 0; }
+.p63-stage-controls { display: grid; gap: 0.42rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.p63-stage-controls button { align-items: center; border-radius: 10px; display: flex; font-size: 0.62rem; gap: 0.35rem; justify-content: center; min-height: 2.45rem; min-width: 0; padding: 0.35rem; }
+.p63-stage-controls button span { align-items: center; background: rgba(23, 23, 19, 0.08); border-radius: 50%; display: inline-flex; flex: 0 0 auto; height: 1.25rem; justify-content: center; width: 1.25rem; }
+.p63-stage-controls button.active { background: var(--osc6-accent); color: white; }
+.p63-stage-controls button.active span { background: rgba(255, 255, 255, 0.2); }
+.p63-visual-card, .p63-controls, .p63-metrics { box-sizing: border-box; max-width: 100%; min-width: 0; }
+.p63-visual-card { background: rgba(255, 253, 245, 0.95); border: 1px solid rgba(23, 23, 19, 0.14); border-radius: 19px; box-shadow: 0 16px 42px rgba(78, 43, 114, 0.09); overflow: hidden; }
+.p63-svg { display: block; max-height: 47vh; min-height: 285px; width: 100%; }
+.p63-wall { fill: none; stroke: #6e6555; stroke-width: 5px; }
+.p63-track { stroke: #7d786e; stroke-width: 4px; }
+.p63-equilibrium { stroke: rgba(120, 80, 168, 0.46); stroke-dasharray: 5 4; stroke-width: 2px; }
+.p63-turn { stroke: rgba(40, 107, 139, 0.52); stroke-width: 2px; }
+.p63-axis-label, .p63-position-label, .p63-vector text, .p63-phase-layer text, .p63-energy-layer text { fill: var(--ink); font-family: Inter, ui-sans-serif, sans-serif; font-size: 10px; font-weight: 780; paint-order: stroke; stroke: var(--paper-2); stroke-width: 4px; }
+.p63-axis-label { fill: var(--muted); }
+.p63-position-label { fill: var(--osc6-accent-dark); }
+.p63-spring { fill: none; stroke: var(--osc6-blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 4px; }
+.p63-block rect { fill: #d9c7e8; stroke: var(--osc6-accent-dark); stroke-width: 3px; }
+.p63-block text { fill: var(--osc6-accent-dark); font-family: Inter, sans-serif; font-size: 10px; font-weight: 800; }
+.p63-vector line { stroke-linecap: round; stroke-width: 5px; }
+.p63-vector circle { stroke-width: 3px; }
+.p63-vector.is-velocity line, .p63-vector.is-velocity circle { stroke: var(--osc6-green); }
+.p63-vector.is-acceleration line, .p63-vector.is-acceleration circle { stroke: var(--osc6-gold); }
+.p63-vector.is-velocity text { fill: var(--osc6-green); }
+.p63-vector.is-acceleration text { fill: #80570f; }
+#p63-arrow-v path { fill: var(--osc6-green); }
+#p63-arrow-a path { fill: var(--osc6-gold); }
+.p63-phase-clock { fill: rgba(40, 107, 139, 0.04); stroke: rgba(40, 107, 139, 0.48); stroke-width: 2px; }
+.p63-phase-layer line { stroke: var(--osc6-blue); stroke-width: 3px; }
+.p63-phase-point { fill: var(--osc6-accent); }
+.p63-phase-title { fill: var(--osc6-accent-dark) !important; }
+.p63-status rect { fill: var(--osc6-night); }
+.p63-status text { fill: white; font-family: Inter, sans-serif; }
+.p63-status-kicker { font-size: 8px; font-weight: 850; letter-spacing: 0.1em; }
+.p63-status-value { font-family: Georgia, "Times New Roman", serif !important; font-size: 12px; font-weight: 700; }
+.p63-status-detail { fill: rgba(255, 255, 255, 0.72) !important; font-size: 9px; }
+.p63-energy-title { fill: var(--osc6-accent-dark) !important; }
+.p63-energy-base { fill: rgba(23, 23, 19, 0.1); }
+.p63-energy-u { fill: var(--osc6-accent); }
+.p63-energy-k { fill: var(--osc6-green); }
+.p63-stage-0 .p63-state-layer, .p63-stage-0 .p63-phase-layer, .p63-stage-0 .p63-energy-layer, .p63-stage-1 .p63-energy-layer { opacity: 0; pointer-events: none; }
+.p63-state-layer, .p63-phase-layer, .p63-energy-layer { transition: opacity 180ms ease; }
+
+.p63-stage-caption { align-items: center; border-top: 1px solid var(--line); display: flex; gap: 0.8rem; justify-content: space-between; padding: 0.78rem 0.9rem; }
+.p63-stage-caption strong { font-family: Georgia, "Times New Roman", serif; font-size: 1rem; }
+.p63-stage-caption p { color: var(--muted); font-size: 0.65rem; line-height: 1.42; margin: 0.2rem 0 0; }
+.p63-stage-caption button:disabled { cursor: not-allowed; opacity: 0.45; }
+.p63-controls, .p63-metrics { background: rgba(255, 253, 245, 0.92); border: 1px solid rgba(23, 23, 19, 0.12); border-radius: 14px; padding: 0.78rem; }
+.p63-controls { display: grid; gap: 0.35rem 0.8rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.p63-controls label { display: grid; min-width: 0; }
+.p63-time-control { grid-column: 1 / -1; }
+.p63-controls label > span { align-items: baseline; color: var(--muted); display: flex; font-size: 0.53rem; font-weight: 800; gap: 0.5rem; justify-content: space-between; text-transform: uppercase; }
+.p63-controls label strong { color: var(--osc6-accent-dark); font-family: Georgia, "Times New Roman", serif; font-size: 0.79rem; text-transform: none; white-space: nowrap; }
+.p63-controls input { accent-color: var(--osc6-accent); min-height: 38px; touch-action: pan-y; width: 100%; }
+.p63-presets { display: flex; flex-wrap: wrap; gap: 0.38rem; grid-column: 1 / -1; margin-top: 0.2rem; }
+.p63-presets button { background: rgba(120, 80, 168, 0.05); border-color: rgba(120, 80, 168, 0.28); color: var(--osc6-accent-dark); font-size: 0.54rem; min-height: 38px; padding: 0.35rem 0.57rem; }
+.p63-controls > p { color: var(--muted); font-size: 0.56rem; grid-column: 1 / -1; line-height: 1.4; margin: 0; }
+.p63-metrics { display: grid; gap: 0.44rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.p63-metrics > div { background: rgba(40, 107, 139, 0.055); border-radius: 9px; min-width: 0; padding: 0.53rem; }
+.p63-metrics span, .p63-metrics strong { display: block; }
+.p63-metrics span { color: var(--muted); font-size: 0.47rem; font-weight: 800; text-transform: uppercase; }
+.p63-metrics > div strong { color: var(--osc6-accent-dark); font-family: Georgia, "Times New Roman", serif; font-size: 0.78rem; margin-top: 0.18rem; overflow-wrap: anywhere; }
+.p63-metrics p { color: var(--muted); font-size: 0.63rem; grid-column: 1 / -1; line-height: 1.45; margin: 0.16rem 0 0; }
+.p63-metrics p strong { color: var(--ink); }
+
+.p63-answer-form { display: grid; gap: 0.38rem; margin-top: 0.85rem; }
+.p63-answer-form label { color: var(--muted); font-size: 0.54rem; font-weight: 800; text-transform: uppercase; }
+.p63-answer-form > div { align-items: center; border: 1px solid rgba(23, 23, 19, 0.2); border-radius: 8px; display: flex; overflow: hidden; }
+.p63-answer-form input { background: white; border: 0; box-sizing: border-box; min-height: 2.5rem; min-width: 0; padding: 0.45rem 0.5rem; width: 100%; }
+.p63-answer-form > div span { color: var(--muted); font-size: 0.56rem; padding-right: 0.5rem; }
+.p63-answer-form > div:focus-within { outline: 3px solid rgba(120, 80, 168, 0.25); outline-offset: 2px; }
+.p63-answer-form > button { margin-top: 0.22rem; width: 100%; }
+.p63-help-row, .p63-hints { margin-top: 1rem; }
+.p63-solution { background: var(--osc6-night); border-radius: 15px; color: white; margin-top: 1rem; padding: 1rem; }
+.p63-solution h3 { color: #bca6e0; font-family: Georgia, "Times New Roman", serif; font-size: 1.25rem; font-weight: 500; margin: 0 0 0.65rem; }
+.p63-solution p { color: rgba(255, 255, 255, 0.77); font-size: 0.69rem; line-height: 1.52; }
+.p63-equation { background: rgba(188, 166, 224, 0.1); border-left: 3px solid #bca6e0; color: #d0c0e8; font-family: Georgia, "Times New Roman", serif; font-size: 0.87rem; line-height: 1.5; margin: 0.63rem 0; overflow-wrap: anywhere; padding: 0.64rem 0.7rem; }
+.p63-answer-equation { color: white; font-size: 0.94rem; }
+.p63-insight { border-top: 1px solid rgba(255, 255, 255, 0.14); margin-bottom: 0 !important; padding-top: 0.65rem; }
+
+@media (prefers-reduced-motion: reduce) { .p63-state-layer, .p63-phase-layer, .p63-energy-layer { transition: none; } }
+@media (max-width: 1120px) { .p63-spread { grid-template-columns: minmax(235px, 0.72fr) minmax(500px, 1.35fr); } }
+@media (max-width: 820px) { .p63-spread { display: block; } .p63-svg { max-height: none; } }
+@media (max-width: 560px) {
+  .p63-stage-controls button { font-size: 0.52rem; }
+  .p63-stage-caption { align-items: stretch; flex-direction: column; }
+  .p63-stage-caption button { width: 100%; }
+  .p63-controls, .p63-metrics { grid-template-columns: 1fr; }
+  .p63-time-control, .p63-presets, .p63-controls > p, .p63-metrics p { grid-column: 1; }
+  .p63-visual-card, .p63-controls, .p63-metrics { border-radius: 13px; }
+  .p63-svg { min-height: 250px; }
+  .p63-presets button { flex: 1 1 calc(50% - 0.38rem); }
+}

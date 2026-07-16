@@ -601,6 +601,23 @@
   fill: #a23b78;
 }
 
+.chapter-index-card.is-chapter-six::before {
+  background: #b47b13;
+}
+
+.chapter-index-card.is-chapter-six .chapter-index-number,
+.chapter-index-card.is-chapter-six .chapter-index-stars {
+  color: #9b6710;
+}
+
+.chapter-index-card.is-chapter-six .index-motif-svg .index-accent {
+  stroke: #b47b13;
+}
+
+.chapter-index-card.is-chapter-six .index-motif-svg .index-dot {
+  fill: #b47b13;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -615,6 +632,10 @@
 
 .chapter-index-circular {
   background: #eadbe5;
+}
+
+.chapter-index-oscillation {
+  background: #ece4cf;
 }
 
 .chapter-index-footer {
@@ -716,6 +737,10 @@
 
 .master-chapter-card.is-live.is-circular {
   background: #662451;
+}
+
+.master-chapter-card.is-live.is-oscillation {
+  background: #6d4a10;
 }
 
 .master-chapter-card.is-live:hover,
@@ -904,6 +929,19 @@
 .chapter-landing-hero.is-circular h1 em,
 .chapter-contents-heading.is-circular span {
   color: #a23b78;
+}
+
+.chapter-landing-hero.is-oscillation .chapter-index-hero-figure {
+  background: #6d4a10;
+}
+
+.chapter-landing-hero.is-oscillation .chapter-index-stats {
+  background: #b47b13;
+}
+
+.chapter-landing-hero.is-oscillation h1 em,
+.chapter-contents-heading.is-oscillation span {
+  color: #b47b13;
 }
 
 .chapter-contents-heading {
