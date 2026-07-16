@@ -822,6 +822,23 @@
   fill: #337e93;
 }
 
+.chapter-index-card.is-chapter-nineteen::before {
+  background: #7e3d78;
+}
+
+.chapter-index-card.is-chapter-nineteen .chapter-index-number,
+.chapter-index-card.is-chapter-nineteen .chapter-index-stars {
+  color: #6b3265;
+}
+
+.chapter-index-card.is-chapter-nineteen .index-motif-svg .index-accent {
+  stroke: #7e3d78;
+}
+
+.chapter-index-card.is-chapter-nineteen .index-motif-svg .index-dot {
+  fill: #7e3d78;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -889,6 +906,10 @@
 
 .chapter-index-waves {
   background: #d9e9ed;
+}
+
+.chapter-index-magnetism {
+  background: #eaddea;
 }
 
 .chapter-index-footer {
@@ -1042,6 +1063,10 @@
 
 .master-chapter-card.is-live.is-waves {
   background: #1d5364;
+}
+
+.master-chapter-card.is-live.is-magnetism {
+  background: #51254d;
 }
 
 .master-chapter-card.is-original-extension {
@@ -1444,6 +1469,19 @@
 .chapter-landing-hero.is-waves h1 em,
 .chapter-contents-heading.is-waves span {
   color: #286c80;
+}
+
+.chapter-landing-hero.is-magnetism .chapter-index-hero-figure {
+  background: #51254d;
+}
+
+.chapter-landing-hero.is-magnetism .chapter-index-stats {
+  background: #7e3d78;
+}
+
+.chapter-landing-hero.is-magnetism h1 em,
+.chapter-contents-heading.is-magnetism span {
+  color: #6b3265;
 }
 
 .chapter-contents-heading {

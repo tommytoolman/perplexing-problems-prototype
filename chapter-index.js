@@ -325,7 +325,16 @@
     { number: "18.6", title: "The Pulse That Runs Away from Its Ripples", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Separate phase speed from group speed and watch a deep-water packet outrun—or lag—its carrier ripples.", motif: "pulse-dispersion", source: "extension" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems, ...chapterSixteenProblems, ...chapterSeventeenProblems, ...chapterEighteenProblems];
+  const chapterNineteenProblems = [
+    { number: "19.1", title: "The Current That Turns North", stars: "★", difficulty: "One star difficulty", teaser: "Move a compass around a straight current and make the right-hand rule predict its direction everywhere.", motif: "current-compass", source: "extension" },
+    { number: "19.2", title: "The Loop That Won’t Sit Still", stars: "★★", difficulty: "Two star difficulty", teaser: "Rotate a current loop in a field and connect its magnetic moment to torque and stable alignment.", motif: "loop-torque", source: "extension" },
+    { number: "19.3", title: "The Rail That Brakes Itself", stars: "★★", difficulty: "Two star difficulty", teaser: "Slide a conducting bar through a field and watch Lenz’s law turn kinetic energy into heat.", motif: "rail-brake", source: "extension" },
+    { number: "19.4", title: "The Isotope Gate", stars: "★★★", difficulty: "Three star difficulty", teaser: "Send two ion masses through semicircular paths and translate radius into detector separation.", motif: "isotope-gate", source: "extension" },
+    { number: "19.5", title: "Corkscrew in a Blue Field", stars: "★★★", difficulty: "Three star difficulty", teaser: "Resolve a charged particle’s velocity into circular and axial motion to build its helical path.", motif: "field-corkscrew", source: "extension" },
+    { number: "19.6", title: "The Bottle’s Escape Cone", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Use magnetic-moment conservation to decide which pitch angles mirror and which escape.", motif: "escape-cone", source: "extension" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems, ...chapterSixteenProblems, ...chapterSeventeenProblems, ...chapterEighteenProblems, ...chapterNineteenProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -346,7 +355,7 @@
     { number: "16", title: "Proof, induction and invariants", count: 6, live: true, extension: true, summary: "Induction, recursion, descent and preserved structure" },
     { number: "17", title: "Combinatorics and networks", count: 6, live: true, extension: true, summary: "Counting, colouring, reliability and network flow" },
     { number: "18", title: "Waves and sound", count: 6, live: true, extension: true, summary: "Echoes, beats, modes, Doppler shifts, decibels and dispersion" },
-    { number: "19", title: "Magnetism and fields", count: 6, extension: true, summary: "Planned original extension" },
+    { number: "19", title: "Magnetism and fields", count: 6, live: true, extension: true, summary: "Currents, torque, induction, particle paths and magnetic mirrors" },
     { number: "20", title: "Relativity and spacetime", count: 6, extension: true, summary: "Planned original extension" },
   ];
 
@@ -479,6 +488,14 @@
       status: "6 original-extension activities",
       introduction: "See a disturbance travel, reflect and interfere before the equation arrives. These activities distinguish the motion of a wave from the motion hidden inside it.",
       heroClass: "is-waves",
+      extension: true,
+    },
+    "19": {
+      title: "Magnetism and fields",
+      count: 6,
+      status: "6 original-extension activities",
+      introduction: "Trace the direction first, then calculate the magnitude. Currents, moving charges and magnetic moments make every field line earn its place.",
+      heroClass: "is-magnetism",
       extension: true,
     },
   };
@@ -622,6 +639,12 @@
       'doppler-siren': '<circle cx="80" cy="48" r="8"/><path d="M80 40V28M72 45l-12-7M72 53l-12 7"/><path d="M104 31c13 8 13 26 0 34M116 21c24 14 24 40 0 54M52 33c-10 8-10 22 0 30M42 24c-20 14-20 34 0 48"/><path class="index-accent" d="M62 14h43m-9-8 9 8-9 8"/>',
       'violin-decibel': '<path d="M26 15c18 10 18 56 0 66M50 15c18 10 18 56 0 66M74 15c18 10 18 56 0 66M98 15c18 10 18 56 0 66M122 15c18 10 18 56 0 66"/><path d="M20 15h112M20 81h112"/><path class="index-accent" d="M15 48h130"/><circle class="index-dot" cx="128" cy="48" r="6"/>',
       'pulse-dispersion': '<path d="M8 49h144M12 49c12-2 18-8 24-18 7-11 13-12 20 2 7 15 13 29 20 9 7-22 13-43 20-12 7 29 13 34 20 10 7-21 13-12 20-2 5 7 9 10 16 11"/><path class="index-accent" d="M23 72c24-20 48-20 72 0s39 11 54-1"/><path class="index-accent" d="M96 16h42m-9-8 9 8-9 8"/>',
+      'current-compass': '<circle cx="80" cy="48" r="34"/><circle cx="80" cy="48" r="7"/><path d="M80 5v20M80 71v20M37 48h20M103 48h20"/><path d="M105 25c12 12 12 34 0 46M55 71c-12-12-12-34 0-46"/><path class="index-accent" d="M116 48h27m-10-9 10 9-10 9"/><circle class="index-dot" cx="116" cy="48" r="5"/>',
+      'loop-torque': '<path d="m48 27 64-12v54L48 81zM48 27l64 42M112 15 48 81"/><path d="M14 48h34M112 48h34"/><path class="index-accent" d="M80 48 99 22m-2 10 2-10-10 3"/><path class="index-accent" d="M31 35v26M21 48h20"/>',
+      'rail-brake': '<path d="M15 20h130M15 76h130M92 20v56"/><path d="M31 34v28m-7-7 7 7 7-7"/><path class="index-accent" d="M92 48h39m-9-9 9 9-9 9"/><circle cx="48" cy="48" r="3"/><circle cx="63" cy="34" r="3"/><circle cx="63" cy="62" r="3"/><circle cx="78" cy="48" r="3"/>',
+      'isotope-gate': '<path d="M16 48h34"/><path d="M50 48c0-43 49-43 49 0s-49 43-49 0M50 48c0-31 37-31 37 0s-37 31-37 0"/><path class="index-accent" d="M87 48h57M99 35v26M116 31v34"/><circle class="index-dot" cx="99" cy="48" r="4"/><circle class="index-dot" cx="116" cy="48" r="4"/>',
+      'field-corkscrew': '<path d="M14 48h132"/><path d="M25 48c9-35 18-35 27 0s18 35 27 0 18-35 27 0 18 35 27 0"/><path class="index-accent" d="M18 18h124m-10-9 10 9-10 9"/><circle class="index-dot" cx="79" cy="48" r="5"/>',
+      'escape-cone': '<path d="M18 18c28 15 28 45 0 60M142 18c-28 15-28 45 0 60M18 18h124M18 78h124"/><path d="M80 48 35 29M80 48 35 67M80 48l45-19M80 48l45 19"/><path class="index-accent" d="M80 48 125 48"/><circle class="index-dot" cx="80" cy="48" r="5"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -644,8 +667,9 @@
     const chapterSixteen = problem.number.startsWith("16.");
     const chapterSeventeen = problem.number.startsWith("17.");
     const chapterEighteen = problem.number.startsWith("18.");
+    const chapterNineteen = problem.number.startsWith("19.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""} ${chapterSixteen ? "is-chapter-sixteen" : ""} ${chapterSeventeen ? "is-chapter-seventeen" : ""} ${chapterEighteen ? "is-chapter-eighteen" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""} ${chapterSixteen ? "is-chapter-sixteen" : ""} ${chapterSeventeen ? "is-chapter-seventeen" : ""} ${chapterEighteen ? "is-chapter-eighteen" : ""} ${chapterNineteen ? "is-chapter-nineteen" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -681,8 +705,9 @@
     const proof = chapter === "16";
     const combinatorics = chapter === "17";
     const waves = chapter === "18";
+    const magnetism = chapter === "19";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""} ${proof ? "chapter-index-proof" : ""} ${combinatorics ? "chapter-index-combinatorics" : ""} ${waves ? "chapter-index-waves" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""} ${proof ? "chapter-index-proof" : ""} ${combinatorics ? "chapter-index-combinatorics" : ""} ${waves ? "chapter-index-waves" : ""} ${magnetism ? "chapter-index-magnetism" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -697,11 +722,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=18">Open Waves <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=19">Open Magnetism <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 4 extension chapters live</span>
+        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 5 extension chapters live</span>
         ${action}
       </header>`;
   }
@@ -735,7 +760,7 @@
         <strong>${chapter.live ? "Open chapter →" : chapter.extension ? "Original chapter planned" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""} ${chapter.number === "19" ? "is-magnetism" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future ${chapter.extension ? "is-original-extension" : ""}" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -749,17 +774,17 @@
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book · plus an original extension</div>
             <h1>The book is complete.<br><em>The extension begins.</em></h1>
-            <p>All 109 indexed source-book problems remain together and complete. The first four chapters of a visibly separate six-chapter curriculum are now live; none of Chapters 15–20 comes from the original book.</p>
+            <p>All 109 indexed source-book problems remain together and complete. The first five chapters of a visibly separate six-chapter curriculum are now live; none of Chapters 15–20 comes from the original book.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=18">Open Waves →</a>
+              <a href="?view=chapter&amp;chapter=19">Open Magnetism →</a>
             </div>
           </div>
           ${heroFigure("01 → 20")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>source-book chapters complete</dd></div>
             <div><dt>109</dt><dd>source-book problems interactive</dd></div>
-            <div><dt>133</dt><dd>total interactive routes</dd></div>
+            <div><dt>139</dt><dd>total interactive routes</dd></div>
           </dl>
         </section>
 
@@ -787,7 +812,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Chapters 15–20 are original extensions and are not part of the source book.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a><a href="?view=chapter&amp;chapter=19">Magnetism →</a></div>
         </footer>
       </main>`;
   }
@@ -831,7 +856,9 @@
                                     ? sectionMarkup({ chapter: "16", source: "extension", eyebrow: "Original extension · Problems 16.1–16.6", title: "Proof beyond the source book", copy: "Chapter 16 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-sixteen-extension" })
                                     : chapter === "17"
                                       ? sectionMarkup({ chapter: "17", source: "extension", eyebrow: "Original extension · Problems 17.1–17.6", title: "Networks beyond the source book", copy: "Chapter 17 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-seventeen-extension" })
-                                      : sectionMarkup({ chapter: "18", source: "extension", eyebrow: "Original extension · Problems 18.1–18.6", title: "Waves beyond the source book", copy: "Chapter 18 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-eighteen-extension" });
+                                      : chapter === "18"
+                                        ? sectionMarkup({ chapter: "18", source: "extension", eyebrow: "Original extension · Problems 18.1–18.6", title: "Waves beyond the source book", copy: "Chapter 18 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-eighteen-extension" })
+                                        : sectionMarkup({ chapter: "19", source: "extension", eyebrow: "Original extension · Problems 19.1–19.6", title: "Magnetism beyond the source book", copy: "Chapter 19 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-nineteen-extension" });
     const sourceCount = details.extension ? details.count : chapter === "1" ? "10" : details.count;
     const sourceLabel = details.extension ? "original-extension activities" : chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = details.extension ? "0" : chapter === "1" ? "7" : "1";

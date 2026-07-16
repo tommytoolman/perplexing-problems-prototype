@@ -29,6 +29,7 @@ Original extension — not in the source book:
 - [Chapter 16 · Proof, induction and invariants contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=16)
 - [Chapter 17 · Combinatorics and networks contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=17)
 - [Chapter 18 · Waves and sound contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=18)
+- [Chapter 19 · Magnetism and fields contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=19)
 
 Review individual problems:
 
@@ -222,6 +223,15 @@ Chapters 15–20 are created for this project. They do not appear in *Professor 
 - [18.4 The Siren’s Split Personality](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.4)
 - [18.5 Why Ten Violins Aren’t Ten Times Louder](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.5)
 - [18.6 The Pulse That Runs Away from Its Ripples](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=18.6)
+
+### Chapter 19 · Magnetism and fields
+
+- [19.1 The Current That Turns North](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.1)
+- [19.2 The Loop That Won’t Sit Still](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.2)
+- [19.3 The Rail That Brakes Itself](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.3)
+- [19.4 The Isotope Gate](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.4)
+- [19.5 Corkscrew in a Blue Field](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.5)
+- [19.6 The Bottle’s Escape Cone](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=19.6)
 
 ## Run locally
 
