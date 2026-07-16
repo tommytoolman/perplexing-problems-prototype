@@ -566,7 +566,7 @@ function renderHoopBook() {
       <header class="book-header">
         <div class="book-brand"><strong>Perplexing Problems</strong><span class="eyebrow">Content build</span></div>
         <div class="book-progress">Chapter 1 · Geometry<div class="book-progress-bar hoop-progress"><span></span></div></div>
-        <div class="book-actions button-row"><button class="ghost-button" data-action="hoop-reset">Reset</button></div>
+        <div class="book-actions button-row"><a class="problem-nav-link header-next" href="?variant=A&amp;problem=1.4">Next · 1.4 →</a><button class="ghost-button" data-action="hoop-reset">Reset</button></div>
       </header>
       <div class="book-spread hoop-spread">
         <article class="book-page">
