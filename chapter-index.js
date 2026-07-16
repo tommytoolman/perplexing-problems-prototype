@@ -269,7 +269,18 @@
     { number: "12.5", title: "The cold end of the Earth", stars: "★★", difficulty: "Two star difficulty", teaser: "Balance absorbed sunlight, transported heat and infrared emission in a deliberately local polar model.", motif: "cold-earth", source: "reconstructed" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems];
+  const chapterThirteenProblems = [
+    { number: "13.1", title: "Archimedes’ crown and Galileo’s balance", stars: "★", difficulty: "One star difficulty", teaser: "Weigh a crown in air and water, then turn lost weight into volume, density and an alloy verdict.", motif: "crown-balance", source: "reconstructed" },
+    { number: "13.2", title: "Another Galileo’s balance puzzle", stars: "★★", difficulty: "Two star difficulty", teaser: "Submerge unequal volumes on a two-arm balance and restore equilibrium with buoyancy-aware torques.", motif: "galileo-balance", source: "reconstructed" },
+    { number: "13.3", title: "Balanced scales", stars: "★", difficulty: "One star difficulty", teaser: "Move a submerged object across the scale boundary and track exactly where the buoyant reaction is recorded.", motif: "balanced-scales", source: "reconstructed" },
+    { number: "13.4", title: "The floating ball and the sinking ball", stars: "★★", difficulty: "Two star difficulty", teaser: "Compare displaced volume, tether force and scale reading for balls that would naturally float or sink.", motif: "two-balls", source: "reconstructed" },
+    { number: "13.5", title: "Floating cylinders", stars: "★★★", difficulty: "Three star difficulty", teaser: "Couple cylindrical buoyancy to stability and discover when a floating column rights itself or topples.", motif: "floating-cylinders", source: "reconstructed" },
+    { number: "13.6", title: "The hydrostatic paradox", stars: "★★", difficulty: "Two star difficulty", teaser: "Give differently shaped vessels the same base and depth, then reconcile equal bottom force with unequal water weight.", motif: "hydrostatic-paradox", source: "reconstructed" },
+    { number: "13.7", title: "A quantitative piston puzzle", stars: "★", difficulty: "One star difficulty", teaser: "Transmit pressure between pistons and separate force multiplication from conservation of work and displaced volume.", motif: "pistons", source: "reconstructed" },
+    { number: "13.8", title: "The floating bar", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Solve a partially submerged bar whose buoyant force, weight and support geometry determine both depth and angle.", motif: "floating-bar", source: "reconstructed" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -284,7 +295,7 @@
     { number: "10", title: "Gravity", count: 12, page: 242, live: true, summary: "Fields, orbits, apparent weight and escape" },
     { number: "11", title: "Optics", count: 5, page: 285, live: true, summary: "Refraction, interference, imaging and resolution" },
     { number: "12", title: "Heat", count: 5, page: 305, live: true, summary: "Thermal energy, scaling, refrigeration and phase change" },
-    { number: "13", title: "Buoyancy and hydrostatics", count: 8, page: 322 },
+    { number: "13", title: "Buoyancy and hydrostatics", count: 8, page: 322, live: true, summary: "Buoyant force, pressure, stability and hydraulic work" },
     { number: "14", title: "Estimation", count: 6, page: 351 },
   ];
 
@@ -372,6 +383,13 @@
       status: "5 reconstructed activities",
       introduction: "Follow energy into temperature, phase and radiation. These activities make every heat transfer declare its source, destination and timescale.",
       heroClass: "is-heat",
+    },
+    "13": {
+      title: "Buoyancy and hydrostatics",
+      count: 8,
+      status: "8 reconstructed activities",
+      introduction: "Draw the system boundary, measure displaced fluid and follow pressure through every surface. Floating, sinking and hydraulic force all reduce to careful accounting.",
+      heroClass: "is-buoyancy",
     },
   };
 
@@ -476,6 +494,14 @@
       'fridge-room': '<rect x="45" y="12" width="70" height="72" rx="3"/><path d="M45 43h70M103 25v8M103 56v10"/><path class="index-accent" d="M28 48h17m-9-8 9 8-9 8M115 48h17m-8-8 8 8-8 8"/>',
       'desert-ice': '<path d="M12 79h136M22 79l23-24 21 24m22 0 24-31 27 31"/><rect x="67" y="58" width="25" height="21"/><circle cx="124" cy="21" r="13"/><path class="index-accent" d="M124 2v7m0 24v7M105 21h7m24 0h7"/>',
       'cold-earth': '<circle cx="80" cy="49" r="38"/><path d="M42 49h76M80 11v76"/><path class="index-accent" d="M48 29c16-11 48-11 64 0M48 69c16 11 48 11 64 0"/><circle class="index-dot" cx="80" cy="11" r="5"/>',
+      'crown-balance': '<path d="M18 29h124M80 16v62M40 29 24 62h32zM120 29l-16 33h32z"/><path class="index-accent" d="m27 60 7-20 7 20m73 0 6-20 7 20"/><circle class="index-dot" cx="80" cy="29" r="4"/>',
+      'galileo-balance': '<path d="M18 28h124M80 16v66M38 28 24 69h28zM122 28l-14 41h28z"/><path class="index-accent" d="M15 70h45M100 70h45M28 49h20m64 8h20"/>',
+      'balanced-scales': '<path d="M18 25h124M80 14v67M40 25 25 61h30zM120 25l-15 36h30z"/><path class="index-accent" d="M20 62h40v19H20zm80 0h40v19h-40z"/><circle class="index-dot" cx="120" cy="52" r="6"/>',
+      'two-balls': '<path d="M12 48h136M18 82h124"/><circle cx="48" cy="40" r="16"/><circle cx="112" cy="67" r="13"/><path class="index-accent" d="M48 24V8M112 54V29"/><path d="m41 15 7-7 7 7m57 22 7-8"/>',
+      'floating-cylinders': '<path d="M12 55h136M18 84h124"/><rect x="35" y="23" width="28" height="56" rx="3"/><rect x="96" y="37" width="28" height="42" rx="3" transform="rotate(12 110 58)"/><path class="index-accent" d="M35 55h28M96 55h30"/>',
+      'hydrostatic-paradox': '<path d="M18 18 36 80h34V18M90 18v62h34l18-62"/><path class="index-accent" d="M28 51h42M90 51h42"/><path d="M36 80h88"/>',
+      pistons: '<path d="M20 31h42v49H20zm78 0h42v49H98zM62 68h36"/><path d="M14 31h54M90 31h56"/><path class="index-accent" d="M41 13v30m-8-9 8 9 8-9M119 49v-30m-8 9 8-9 8 9"/>',
+      'floating-bar': '<path d="M12 58h136M18 84h124"/><rect x="43" y="36" width="81" height="18" rx="3" transform="rotate(20 83 45)"/><path class="index-accent" d="M78 52v28m-8-8 8 8 8-8"/><circle class="index-dot" cx="78" cy="52" r="4"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -492,8 +518,9 @@
     const chapterTen = problem.number.startsWith("10.");
     const chapterEleven = problem.number.startsWith("11.");
     const chapterTwelve = problem.number.startsWith("12.");
+    const chapterThirteen = problem.number.startsWith("13.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -523,8 +550,9 @@
     const gravity = chapter === "10";
     const optics = chapter === "11";
     const heat = chapter === "12";
+    const buoyancy = chapter === "13";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -539,11 +567,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=12">Open Heat <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=13">Open Buoyancy <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> Twelve chapters live</span>
+        <span class="chapter-index-complete"><i></i> Thirteen chapters live</span>
         ${action}
       </header>`;
   }
@@ -577,7 +605,7 @@
         <strong>${chapter.live ? "Open chapter →" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -588,25 +616,25 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book map</div>
-            <h1>Fourteen chapters.<br><em>Twelve are alive.</em></h1>
-            <p>This is the front door to the whole project: every chapter in the source book, the twelve interactive chapters available now, and a clear view of what comes next.</p>
+            <h1>Fourteen chapters.<br><em>Thirteen are alive.</em></h1>
+            <p>This is the front door to the whole project: every chapter in the source book, the thirteen interactive chapters available now, and a clear view of what comes next.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=12">Open Heat →</a>
+              <a href="?view=chapter&amp;chapter=13">Open Buoyancy →</a>
             </div>
           </div>
           ${heroFigure("01 → 14")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>chapters in the book</dd></div>
             <div><dt>109</dt><dd>problems in the source index</dd></div>
-            <div><dt>95</dt><dd>interactive now</dd></div>
+            <div><dt>103</dt><dd>interactive now</dd></div>
           </dl>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Complete contents</div><h2 id="master-chapters-title">Choose a chapter</h2></div>
-            <p>Chapters 1–12 open into interactive contents pages. The remaining chapters are shown as the roadmap and will become active as their content is built.</p>
+            <p>Chapters 1–13 open into interactive contents pages. The remaining chapter is shown as the final roadmap milestone and will become active as its content is built.</p>
           </header>
           <div class="master-chapter-grid">${bookChapters.map(masterChapterCard).join("")}</div>
         </section>
@@ -618,7 +646,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Original book rights remain with their respective holder.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a><a href="?view=chapter&amp;chapter=8">Kinematics →</a><a href="?view=chapter&amp;chapter=9">Electricity →</a><a href="?view=chapter&amp;chapter=10">Gravity →</a><a href="?view=chapter&amp;chapter=11">Optics →</a><a href="?view=chapter&amp;chapter=12">Heat →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Geometry →</a><a href="?view=chapter&amp;chapter=2">Mathematics →</a><a href="?view=chapter&amp;chapter=3">Statics →</a><a href="?view=chapter&amp;chapter=4">Dynamics →</a><a href="?view=chapter&amp;chapter=5">Circular motion →</a><a href="?view=chapter&amp;chapter=6">SHM →</a><a href="?view=chapter&amp;chapter=7">Inventions →</a><a href="?view=chapter&amp;chapter=8">Kinematics →</a><a href="?view=chapter&amp;chapter=9">Electricity →</a><a href="?view=chapter&amp;chapter=10">Gravity →</a><a href="?view=chapter&amp;chapter=11">Optics →</a><a href="?view=chapter&amp;chapter=12">Heat →</a><a href="?view=chapter&amp;chapter=13">Buoyancy →</a></div>
         </footer>
       </main>`;
   }
@@ -650,7 +678,9 @@
                         ? sectionMarkup({ chapter: "10", source: "reconstructed", eyebrow: "Problems 10.1–10.12", title: "An original gravity laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 10. Every world, orbit, transfer and solution here is independently written and explicitly labelled.", id: "index-chapter-ten-reconstructed" })
                         : chapter === "11"
                           ? sectionMarkup({ chapter: "11", source: "reconstructed", eyebrow: "Problems 11.1–11.5", title: "An original optics laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 11. Every ray diagram, optical system and solution here is independently written and explicitly labelled.", id: "index-chapter-eleven-reconstructed" })
-                          : sectionMarkup({ chapter: "12", source: "reconstructed", eyebrow: "Problems 12.1–12.5", title: "An original heat laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 12. Every thermal system, energy audit and solution here is independently written and explicitly labelled.", id: "index-chapter-twelve-reconstructed" });
+                          : chapter === "12"
+                            ? sectionMarkup({ chapter: "12", source: "reconstructed", eyebrow: "Problems 12.1–12.5", title: "An original heat laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 12. Every thermal system, energy audit and solution here is independently written and explicitly labelled.", id: "index-chapter-twelve-reconstructed" })
+                            : sectionMarkup({ chapter: "13", source: "reconstructed", eyebrow: "Problems 13.1–13.8", title: "An original buoyancy laboratory", copy: "Only the published titles and difficulty ratings were recoverable for Chapter 13. Every vessel, immersed body, pressure field and solution here is independently written and explicitly labelled.", id: "index-chapter-thirteen-reconstructed" });
     const sourceCount = chapter === "1" ? "10" : details.count;
     const sourceLabel = chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = chapter === "1" ? "7" : "1";

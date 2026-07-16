@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first twelve chapters contain 95 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first thirteen chapters contain 103 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -20,6 +20,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 10 · Gravity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=10)
 - [Chapter 11 · Optics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=11)
 - [Chapter 12 · Heat contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=12)
+- [Chapter 13 · Buoyancy and hydrostatics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=13)
 
 Review individual problems:
 
@@ -154,6 +155,17 @@ Review individual problems:
 - [12.4 Ice in the desert](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.4)
 - [12.5 The cold end of the Earth](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.5)
 
+### Chapter 13 · Buoyancy and hydrostatics
+
+- [13.1 Archimedes’ crown and Galileo’s balance](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.1)
+- [13.2 Another Galileo’s balance puzzle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.2)
+- [13.3 Balanced scales](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.3)
+- [13.4 The floating ball and the sinking ball](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.4)
+- [13.5 Floating cylinders](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.5)
+- [13.6 The hydrostatic paradox](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.6)
+- [13.7 A quantitative piston puzzle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.7)
+- [13.8 The floating bar](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=13.8)
+
 ## Run locally
 
 ```sh
@@ -189,5 +201,7 @@ Chapter 10 contains twelve independently written gravity activities reconstructe
 Chapter 11 contains five independently written optics activities reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 12 contains five independently written heat activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 13 contains eight independently written buoyancy and hydrostatics activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
