@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first eleven chapters contain 90 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first twelve chapters contain 95 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -19,6 +19,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 9 · Electricity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=9)
 - [Chapter 10 · Gravity contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=10)
 - [Chapter 11 · Optics contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=11)
+- [Chapter 12 · Heat contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=12)
 
 Review individual problems:
 
@@ -145,6 +146,14 @@ Review individual problems:
 - [11.4 The Martian and the caveman](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.4)
 - [11.5 Strange fish](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=11.5)
 
+### Chapter 12 · Heat
+
+- [12.1 The heated plate](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.1)
+- [12.2 The heated cube](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.2)
+- [12.3 Fridge in a room](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.3)
+- [12.4 Ice in the desert](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.4)
+- [12.5 The cold end of the Earth](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=12.5)
+
 ## Run locally
 
 ```sh
@@ -178,5 +187,7 @@ Chapter 9 contains seven independently written electricity activities reconstruc
 Chapter 10 contains twelve independently written gravity activities reconstructed from the recovered titles and difficulty ratings.
 
 Chapter 11 contains five independently written optics activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 12 contains five independently written heat activities reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
