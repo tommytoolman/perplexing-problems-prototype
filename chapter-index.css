@@ -618,6 +618,23 @@
   fill: #b47b13;
 }
 
+.chapter-index-card.is-chapter-seven::before {
+  background: #668d3b;
+}
+
+.chapter-index-card.is-chapter-seven .chapter-index-number,
+.chapter-index-card.is-chapter-seven .chapter-index-stars {
+  color: #557a32;
+}
+
+.chapter-index-card.is-chapter-seven .index-motif-svg .index-accent {
+  stroke: #668d3b;
+}
+
+.chapter-index-card.is-chapter-seven .index-motif-svg .index-dot {
+  fill: #668d3b;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -636,6 +653,10 @@
 
 .chapter-index-oscillation {
   background: #ece4cf;
+}
+
+.chapter-index-inventions {
+  background: #dfe8d5;
 }
 
 .chapter-index-footer {
@@ -741,6 +762,10 @@
 
 .master-chapter-card.is-live.is-oscillation {
   background: #6d4a10;
+}
+
+.master-chapter-card.is-live.is-inventions {
+  background: #344d22;
 }
 
 .master-chapter-card.is-live:hover,
@@ -942,6 +967,19 @@
 .chapter-landing-hero.is-oscillation h1 em,
 .chapter-contents-heading.is-oscillation span {
   color: #b47b13;
+}
+
+.chapter-landing-hero.is-inventions .chapter-index-hero-figure {
+  background: #344d22;
+}
+
+.chapter-landing-hero.is-inventions .chapter-index-stats {
+  background: #668d3b;
+}
+
+.chapter-landing-hero.is-inventions h1 em,
+.chapter-contents-heading.is-inventions span {
+  color: #668d3b;
 }
 
 .chapter-contents-heading {

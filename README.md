@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first six chapters contain 57 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. The first seven chapters contain 63 interactive problems with manipulable models, estimates, progressive hints, and staged solutions.
 
 ## Live prototype
 
@@ -14,6 +14,7 @@ The prototype has three navigation levels: the complete 14-chapter book map, a c
 - [Chapter 4 · Dynamics and collisions contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=4)
 - [Chapter 5 · Circular motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=5)
 - [Chapter 6 · Simple harmonic motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=6)
+- [Chapter 7 · Mad inventions and perpetual motion contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=7)
 
 Review individual problems:
 
@@ -92,6 +93,15 @@ Review individual problems:
 - [6.4 Dr Springlove’s Infernal Oscillator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.4)
 - [6.5 Dr Springlove’s Improved Infernal Oscillator](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=6.5)
 
+### Chapter 7 · Mad inventions and perpetual motion
+
+- [7.1 Stevin’s clootcrans](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=7.1)
+- [7.2 Power-producing speed humps](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=7.2)
+- [7.3 The overbalanced wheel](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=7.3)
+- [7.4 Professor Sinclair’s syphon](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=7.4)
+- [7.5 Boyle’s perpetual vase](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=7.5)
+- [7.6 The curious wheel](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=7.6)
+
 ## Run locally
 
 ```sh
@@ -115,5 +125,7 @@ Chapter 4 is likewise reconstructed from its seven recovered titles and difficul
 Chapter 5 follows the same boundary: its seven circular-motion activities are original reconstructions based only on the recovered titles and difficulty ratings.
 
 Chapter 6 likewise contains five independently written oscillation activities reconstructed from the recovered titles and difficulty ratings.
+
+Chapter 7 contains six independently written energy and impossible-machine audits reconstructed from the recovered titles and difficulty ratings.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
