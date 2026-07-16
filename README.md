@@ -14,7 +14,11 @@ Three structurally different variants use the same interaction for problem 1.1, 
 
 The bottom switcher and left/right arrow keys move between variants. The user can drag the route joint, commit a proposed minimum, request progressive hints, and reveal the geometric solution. State is deliberately kept in memory; developer telemetry is available only with `debug=1` in the URL.
 
-## Run
+## Live prototype
+
+[Open the GitHub Pages prototype](https://tommytoolman.github.io/perplexing-problems-prototype/)
+
+## Run locally
 
 From the workspace root:
 
