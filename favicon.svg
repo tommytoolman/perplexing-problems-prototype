@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>Red and blue pi symbol</title>
+  <rect width="64" height="64" rx="8" fill="#fff"/>
   <path d="M7 13H32M22 14v20c0 11-4 17-12 22" fill="none" stroke="#164a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
   <path d="M32 13h25M43 14v41" fill="none" stroke="#c51f30" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
 </svg>
