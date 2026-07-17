@@ -132,6 +132,11 @@ const chapterCatalog = {
     title: "Calculus, sequences and series",
     problems: Array.from({ length: 6 }, (_, index) => `24.${index + 1}`),
   },
+  "25": {
+    number: "25",
+    title: "Differential equations and dynamical systems",
+    problems: Array.from({ length: 6 }, (_, index) => `25.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

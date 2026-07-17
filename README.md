@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–24 are live and Chapters 25–26 are planned.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–25 are live and Chapter 26 is planned.
 
 ## Live prototype
 
@@ -35,8 +35,9 @@ Original extension — not in the source book:
 - [Chapter 22 · Statistics and inference contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=22)
 - [Chapter 23 · Linear algebra and transformations contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=23)
 - [Chapter 24 · Calculus, sequences and series contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=24)
+- [Chapter 25 · Differential equations and dynamical systems contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=25)
 
-Planned original chapters, shown as non-clickable cards on the master index: differential equations and dynamical systems; multivariable calculus and fields.
+Planned original chapter, shown as a non-clickable card on the master index: multivariable calculus and fields.
 
 Review individual problems:
 
@@ -285,6 +286,15 @@ Chapters 15–26 are created for this project. They do not appear in *Professor 
 - [24.5 The Pocket Calculator’s Cosine](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=24.5)
 - [24.6 The Square Wave Built from Sines](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=24.6)
 
+### Chapter 25 · Differential equations and dynamical systems
+
+- [25.1 The Vanishing Tracer](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.1)
+- [25.2 Chasing a Moving Temperature](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.2)
+- [25.3 The Two Safe Levels](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.3)
+- [25.4 Two Modes in One Motion](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.4)
+- [25.5 The Predator–Prey Carousel](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.5)
+- [25.6 The Step That Explodes](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.6)
+
 ## Run locally
 
 ```sh
@@ -325,6 +335,6 @@ Chapter 13 contains eight independently written buoyancy and hydrostatics activi
 
 Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
 
-Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–24 are live; Chapters 25–26 remain visibly marked as planned until built.
+Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–25 are live; Chapter 26 remains visibly marked as planned until built.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.
