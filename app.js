@@ -137,6 +137,11 @@ const chapterCatalog = {
     title: "Differential equations and dynamical systems",
     problems: Array.from({ length: 6 }, (_, index) => `25.${index + 1}`),
   },
+  "26": {
+    number: "26",
+    title: "Multivariable calculus and fields",
+    problems: Array.from({ length: 6 }, (_, index) => `26.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

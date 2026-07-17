@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–25 are live and Chapter 26 is planned.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; all twelve extension chapters, Chapters 15–26, are live.
 
 ## Live prototype
 
@@ -36,8 +36,9 @@ Original extension — not in the source book:
 - [Chapter 23 · Linear algebra and transformations contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=23)
 - [Chapter 24 · Calculus, sequences and series contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=24)
 - [Chapter 25 · Differential equations and dynamical systems contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=25)
+- [Chapter 26 · Multivariable calculus and fields contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=26)
 
-Planned original chapter, shown as a non-clickable card on the master index: multivariable calculus and fields.
+All twelve original-extension chapters are live.
 
 Review individual problems:
 
@@ -194,7 +195,7 @@ Review individual problems:
 
 ## Original extension — not in the book
 
-Chapters 15–26 are created for this project. They do not appear in *Professor Povey's Perplexing Problems*. See [ORIGINAL_EXTENSION.md](ORIGINAL_EXTENSION.md) for the complete live and planned curriculum and labeling contract.
+Chapters 15–26 are created for this project. They do not appear in *Professor Povey's Perplexing Problems*. See [ORIGINAL_EXTENSION.md](ORIGINAL_EXTENSION.md) for the complete curriculum and labeling contract.
 
 ### Chapter 15 · Probability and randomness
 
@@ -295,6 +296,15 @@ Chapters 15–26 are created for this project. They do not appear in *Professor 
 - [25.5 The Predator–Prey Carousel](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.5)
 - [25.6 The Step That Explodes](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=25.6)
 
+### Chapter 26 · Multivariable calculus and fields
+
+- [26.1 The Steepest Step](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=26.1)
+- [26.2 The Largest Rectangle on an Ellipse](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=26.2)
+- [26.3 Counting What Escapes](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=26.3)
+- [26.4 The Turning Field](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=26.4)
+- [26.5 Three Roads, One Work Bill](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=26.5)
+- [26.6 Green’s Ledger](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=26.6)
+
 ## Run locally
 
 ```sh
@@ -335,6 +345,6 @@ Chapter 13 contains eight independently written buoyancy and hydrostatics activi
 
 Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
 
-Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–25 are live; Chapter 26 remains visibly marked as planned until built.
+Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. All twelve chapters are live.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

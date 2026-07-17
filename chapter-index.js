@@ -388,7 +388,16 @@
     { number: "25.6", title: "The Step That Explodes", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Change an Euler step until a rapidly decaying stiff mode either settles or explodes numerically.", motif: "euler-explosion", source: "extension" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems, ...chapterSixteenProblems, ...chapterSeventeenProblems, ...chapterEighteenProblems, ...chapterNineteenProblems, ...chapterTwentyProblems, ...chapterTwentyOneProblems, ...chapterTwentyTwoProblems, ...chapterTwentyThreeProblems, ...chapterTwentyFourProblems, ...chapterTwentyFiveProblems];
+  const chapterTwentySixProblems = [
+    { number: "26.1", title: "The Steepest Step", stars: "★", difficulty: "One star difficulty", teaser: "Turn a direction arrow on a contour map until its directional derivative reaches the gradient’s full length.", motif: "steepest-step", source: "extension" },
+    { number: "26.2", title: "The Largest Rectangle on an Ellipse", stars: "★★", difficulty: "Two star difficulty", teaser: "Move a feasible rectangle until its objective contour becomes tangent to an ellipse constraint.", motif: "ellipse-rectangle", source: "extension" },
+    { number: "26.3", title: "Counting What Escapes", stars: "★★", difficulty: "Two star difficulty", teaser: "Audit outward flux edge by edge and compare the boundary total with accumulated divergence inside.", motif: "escaping-flux", source: "extension" },
+    { number: "26.4", title: "The Turning Field", stars: "★★★", difficulty: "Three star difficulty", teaser: "Carry a tangent probe around a rotational field and accumulate oriented circulation along the loop.", motif: "turning-field", source: "extension" },
+    { number: "26.5", title: "Three Roads, One Work Bill", stars: "★★★", difficulty: "Three star difficulty", teaser: "Compare three paths through a conservative field and let a potential function settle every work bill.", motif: "three-roads", source: "extension" },
+    { number: "26.6", title: "Green’s Ledger", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Reconcile a circulation ledger around a rectangle with a curl ledger spread across its area.", motif: "greens-ledger", source: "extension" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems, ...chapterSixteenProblems, ...chapterSeventeenProblems, ...chapterEighteenProblems, ...chapterNineteenProblems, ...chapterTwentyProblems, ...chapterTwentyOneProblems, ...chapterTwentyTwoProblems, ...chapterTwentyThreeProblems, ...chapterTwentyFourProblems, ...chapterTwentyFiveProblems, ...chapterTwentySixProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -416,7 +425,7 @@
     { number: "23", title: "Linear algebra and transformations", count: 6, live: true, extension: true, summary: "Systems, matrices, determinants, eigenvectors, iteration and least squares" },
     { number: "24", title: "Calculus, sequences and series", count: 6, live: true, extension: true, summary: "Derivatives, optimisation, integration, convergence, Taylor and Fourier series" },
     { number: "25", title: "Differential equations and dynamical systems", count: 6, live: true, extension: true, summary: "Decay, forcing, stability, modes, phase portraits and numerical stiffness" },
-    { number: "26", title: "Multivariable calculus and fields", count: 6, live: false, extension: true, summary: "Gradients, constraints, flux, circulation, conservative fields and Green’s theorem" },
+    { number: "26", title: "Multivariable calculus and fields", count: 6, live: true, extension: true, summary: "Gradients, constraints, flux, circulation, conservative fields and Green’s theorem" },
   ];
 
   const chapterDetails = {
@@ -606,6 +615,14 @@
       heroClass: "is-differential-equations",
       extension: true,
     },
+    "26": {
+      title: "Multivariable calculus and fields",
+      count: 6,
+      status: "6 original-extension activities",
+      introduction: "Move from slopes along one line to change across a field. Gradients, flux, circulation and Green’s theorem connect local structure to global ledgers.",
+      heroClass: "is-multivariable",
+      extension: true,
+    },
   };
 
   function problemHref(number) {
@@ -789,6 +806,12 @@
       'two-modes': '<path d="M12 78h136M22 78V14M27 72 132 18M30 20l98 54"/><path class="index-accent" d="M27 72 132 18"/><circle class="index-dot" cx="80" cy="48" r="5"/>',
       'predator-prey': '<path d="M12 78h136M22 78V14"/><ellipse cx="82" cy="47" rx="43" ry="25"/><ellipse cx="82" cy="47" rx="27" ry="15"/><path class="index-accent" d="M39 47c0-14 19-25 43-25s43 11 43 25"/><circle class="index-dot" cx="125" cy="47" r="5"/>',
       'euler-explosion': '<path d="M12 48h136M22 17v62"/><path d="M22 22c20 22 39 36 58 44s39 10 60 11"/><path class="index-accent" d="M22 22 38 72 54 17 70 78 86 13 102 82 118 9 140 87"/>',
+      'steepest-step': '<ellipse cx="80" cy="48" rx="58" ry="34"/><ellipse cx="80" cy="48" rx="38" ry="22"/><ellipse cx="80" cy="48" rx="19" ry="11"/><path class="index-accent" d="M80 48 125 22m-4 12 4-12-12 4"/><circle class="index-dot" cx="80" cy="48" r="5"/>',
+      'ellipse-rectangle': '<ellipse cx="80" cy="48" rx="61" ry="34"/><path d="M80 48 122 72M80 48 122 24M80 48 38 72M80 48 38 24"/><rect class="index-accent index-fill" x="38" y="24" width="84" height="48"/><circle class="index-dot" cx="122" cy="24" r="5"/>',
+      'escaping-flux': '<rect x="33" y="20" width="94" height="56"/><path d="M48 48h22m-8-8 8 8-8 8M92 48h22m-8-8 8 8-8 8"/><path class="index-accent" d="M127 36h20m-8-8 8 8-8 8M74 20V7m-8 8 8-8 8 8"/>',
+      'turning-field': '<circle cx="80" cy="48" r="34"/><path d="M80 14c22 0 34 12 34 34s-12 34-34 34"/><path class="index-accent" d="M107 28c10 9 10 31 0 40m-1-10 1 10 9-5"/><circle class="index-dot" cx="114" cy="48" r="5"/>',
+      'three-roads': '<circle cx="22" cy="48" r="6"/><circle cx="138" cy="48" r="6"/><path d="M28 48h104M27 44c31-41 74-41 106 0M27 52c31 41 74 41 106 0"/><path class="index-accent" d="M28 48h104"/>',
+      'greens-ledger': '<rect x="29" y="18" width="102" height="60"/><path d="M46 35h68M46 48h68M46 61h68M55 28v40M80 28v40M105 28v40"/><path class="index-accent" d="M29 18h102v60H29z"/><circle class="index-dot" cx="131" cy="18" r="5"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -818,8 +841,9 @@
     const chapterTwentyThree = problem.number.startsWith("23.");
     const chapterTwentyFour = problem.number.startsWith("24.");
     const chapterTwentyFive = problem.number.startsWith("25.");
+    const chapterTwentySix = problem.number.startsWith("26.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""} ${chapterSixteen ? "is-chapter-sixteen" : ""} ${chapterSeventeen ? "is-chapter-seventeen" : ""} ${chapterEighteen ? "is-chapter-eighteen" : ""} ${chapterNineteen ? "is-chapter-nineteen" : ""} ${chapterTwenty ? "is-chapter-twenty" : ""} ${chapterTwentyOne ? "is-chapter-twenty-one" : ""} ${chapterTwentyTwo ? "is-chapter-twenty-two" : ""} ${chapterTwentyThree ? "is-chapter-twenty-three" : ""} ${chapterTwentyFour ? "is-chapter-twenty-four" : ""} ${chapterTwentyFive ? "is-chapter-twenty-five" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""} ${chapterSixteen ? "is-chapter-sixteen" : ""} ${chapterSeventeen ? "is-chapter-seventeen" : ""} ${chapterEighteen ? "is-chapter-eighteen" : ""} ${chapterNineteen ? "is-chapter-nineteen" : ""} ${chapterTwenty ? "is-chapter-twenty" : ""} ${chapterTwentyOne ? "is-chapter-twenty-one" : ""} ${chapterTwentyTwo ? "is-chapter-twenty-two" : ""} ${chapterTwentyThree ? "is-chapter-twenty-three" : ""} ${chapterTwentyFour ? "is-chapter-twenty-four" : ""} ${chapterTwentyFive ? "is-chapter-twenty-five" : ""} ${chapterTwentySix ? "is-chapter-twenty-six" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -862,8 +886,9 @@
     const linearAlgebra = chapter === "23";
     const calculus = chapter === "24";
     const differentialEquations = chapter === "25";
+    const multivariable = chapter === "26";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""} ${proof ? "chapter-index-proof" : ""} ${combinatorics ? "chapter-index-combinatorics" : ""} ${waves ? "chapter-index-waves" : ""} ${magnetism ? "chapter-index-magnetism" : ""} ${relativity ? "chapter-index-relativity" : ""} ${stochastic ? "chapter-index-stochastic" : ""} ${statistics ? "chapter-index-statistics" : ""} ${linearAlgebra ? "chapter-index-linear-algebra" : ""} ${calculus ? "chapter-index-calculus" : ""} ${differentialEquations ? "chapter-index-differential-equations" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""} ${proof ? "chapter-index-proof" : ""} ${combinatorics ? "chapter-index-combinatorics" : ""} ${waves ? "chapter-index-waves" : ""} ${magnetism ? "chapter-index-magnetism" : ""} ${relativity ? "chapter-index-relativity" : ""} ${stochastic ? "chapter-index-stochastic" : ""} ${statistics ? "chapter-index-statistics" : ""} ${linearAlgebra ? "chapter-index-linear-algebra" : ""} ${calculus ? "chapter-index-calculus" : ""} ${differentialEquations ? "chapter-index-differential-equations" : ""} ${multivariable ? "chapter-index-multivariable" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -878,11 +903,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=25">Open Differential Equations <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=26">Open Multivariable Calculus <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 11 extension chapters live</span>
+        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 12 extension chapters live</span>
         ${action}
       </header>`;
   }
@@ -916,7 +941,7 @@
         <strong>${chapter.live ? "Open chapter →" : chapter.extension ? "Original chapter planned" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""} ${chapter.number === "19" ? "is-magnetism" : ""} ${chapter.number === "20" ? "is-relativity" : ""} ${chapter.number === "21" ? "is-stochastic" : ""} ${chapter.number === "22" ? "is-statistics" : ""} ${chapter.number === "23" ? "is-linear-algebra" : ""} ${chapter.number === "24" ? "is-calculus" : ""} ${chapter.number === "25" ? "is-differential-equations" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""} ${chapter.number === "19" ? "is-magnetism" : ""} ${chapter.number === "20" ? "is-relativity" : ""} ${chapter.number === "21" ? "is-stochastic" : ""} ${chapter.number === "22" ? "is-statistics" : ""} ${chapter.number === "23" ? "is-linear-algebra" : ""} ${chapter.number === "24" ? "is-calculus" : ""} ${chapter.number === "25" ? "is-differential-equations" : ""} ${chapter.number === "26" ? "is-multivariable" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future ${chapter.extension ? "is-original-extension" : ""}" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -929,18 +954,18 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book · plus an original extension</div>
-            <h1>The book is complete.<br><em>The extension keeps growing.</em></h1>
-            <p>All 109 indexed source-book problems remain together and complete. Eleven chapters of a visibly separate original curriculum are now live, with one more planned; none of Chapters 15–26 comes from the original book.</p>
+            <h1>The book is complete.<br><em>The expanded extension is complete.</em></h1>
+            <p>All 109 indexed source-book problems remain together and complete. Twelve chapters of a visibly separate original curriculum are now live; none of Chapters 15–26 comes from the original book.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=25">Open Differential Equations →</a>
+              <a href="?view=chapter&amp;chapter=26">Open Multivariable Calculus →</a>
             </div>
           </div>
           ${heroFigure("01 → 26")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>source-book chapters complete</dd></div>
             <div><dt>109</dt><dd>source-book problems interactive</dd></div>
-            <div><dt>175</dt><dd>total interactive routes</dd></div>
+            <div><dt>181</dt><dd>total interactive routes</dd></div>
           </dl>
         </section>
 
@@ -960,15 +985,15 @@
         <section class="master-chapters master-original-extension" id="original-extension" aria-labelledby="original-extension-title">
           <header class="master-chapters-heading">
             <div><div class="eyebrow">Beyond the source book</div><h2 id="original-extension-title">Original extension</h2></div>
-            <p><strong>Chapters 15–26 do not appear in <em>Professor Povey's Perplexing Problems</em>.</strong> Their chapter names, problem titles, scenarios, diagrams and solutions are original work created for this project. Live and planned chapters are labelled separately.</p>
+            <p><strong>Chapters 15–26 do not appear in <em>Professor Povey's Perplexing Problems</em>.</strong> Their chapter names, problem titles, scenarios, diagrams and solutions are original work created for this project. All twelve original-extension chapters are now live.</p>
           </header>
-          <div class="original-extension-boundary"><strong>Not from the original book</strong><span>An expanding curriculum from probability and proof to stochastic processes, analysis, algebra and dynamical systems.</span></div>
+          <div class="original-extension-boundary"><strong>Not from the original book</strong><span>A twelve-chapter curriculum from probability and proof to stochastic processes, analysis, algebra, dynamical systems and vector fields.</span></div>
           <div class="master-chapter-grid">${extensionChapters.map(masterChapterCard).join("")}</div>
         </section>
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Chapters 15–26 are original extensions and are not part of the source book.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a><a href="?view=chapter&amp;chapter=19">Magnetism →</a><a href="?view=chapter&amp;chapter=20">Relativity →</a><a href="?view=chapter&amp;chapter=21">Stochastic →</a><a href="?view=chapter&amp;chapter=22">Statistics →</a><a href="?view=chapter&amp;chapter=23">Linear algebra →</a><a href="?view=chapter&amp;chapter=24">Calculus →</a><a href="?view=chapter&amp;chapter=25">Differential equations →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a><a href="?view=chapter&amp;chapter=19">Magnetism →</a><a href="?view=chapter&amp;chapter=20">Relativity →</a><a href="?view=chapter&amp;chapter=21">Stochastic →</a><a href="?view=chapter&amp;chapter=22">Statistics →</a><a href="?view=chapter&amp;chapter=23">Linear algebra →</a><a href="?view=chapter&amp;chapter=24">Calculus →</a><a href="?view=chapter&amp;chapter=25">Differential equations →</a><a href="?view=chapter&amp;chapter=26">Multivariable calculus →</a></div>
         </footer>
       </main>`;
   }
@@ -1026,7 +1051,9 @@
                                                   ? sectionMarkup({ chapter: "23", source: "extension", eyebrow: "Original extension · Problems 23.1–23.6", title: "Linear algebra beyond the source book", copy: "Chapter 23 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-three-extension" })
                                                   : chapter === "24"
                                                     ? sectionMarkup({ chapter: "24", source: "extension", eyebrow: "Original extension · Problems 24.1–24.6", title: "Calculus beyond the source book", copy: "Chapter 24 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-four-extension" })
-                                                    : sectionMarkup({ chapter: "25", source: "extension", eyebrow: "Original extension · Problems 25.1–25.6", title: "Differential equations beyond the source book", copy: "Chapter 25 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-five-extension" });
+                                                    : chapter === "25"
+                                                      ? sectionMarkup({ chapter: "25", source: "extension", eyebrow: "Original extension · Problems 25.1–25.6", title: "Differential equations beyond the source book", copy: "Chapter 25 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-five-extension" })
+                                                      : sectionMarkup({ chapter: "26", source: "extension", eyebrow: "Original extension · Problems 26.1–26.6", title: "Multivariable calculus beyond the source book", copy: "Chapter 26 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-six-extension" });
     const sourceCount = details.extension ? details.count : chapter === "1" ? "10" : details.count;
     const sourceLabel = details.extension ? "original-extension activities" : chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = details.extension ? "0" : chapter === "1" ? "7" : "1";

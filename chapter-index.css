@@ -941,6 +941,23 @@
   fill: #397f8d;
 }
 
+.chapter-index-card.is-chapter-twenty-six::before {
+  background: #8a6a2f;
+}
+
+.chapter-index-card.is-chapter-twenty-six .chapter-index-number,
+.chapter-index-card.is-chapter-twenty-six .chapter-index-stars {
+  color: #6f5425;
+}
+
+.chapter-index-card.is-chapter-twenty-six .index-motif-svg .index-accent {
+  stroke: #8a6a2f;
+}
+
+.chapter-index-card.is-chapter-twenty-six .index-motif-svg .index-dot {
+  fill: #8a6a2f;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -1036,6 +1053,10 @@
 
 .chapter-index-differential-equations {
   background: #dbe9eb;
+}
+
+.chapter-index-multivariable {
+  background: #eee6d6;
 }
 
 .chapter-index-footer {
@@ -1217,6 +1238,10 @@
 
 .master-chapter-card.is-live.is-differential-equations {
   background: #244f5a;
+}
+
+.master-chapter-card.is-live.is-multivariable {
+  background: #4f3918;
 }
 
 .master-chapter-card.is-original-extension {
@@ -1710,6 +1735,19 @@
 .chapter-landing-hero.is-differential-equations h1 em,
 .chapter-contents-heading.is-differential-equations span {
   color: #2d6773;
+}
+
+.chapter-landing-hero.is-multivariable .chapter-index-hero-figure {
+  background: #4f3918;
+}
+
+.chapter-landing-hero.is-multivariable .chapter-index-stats {
+  background: #8a6a2f;
+}
+
+.chapter-landing-hero.is-multivariable h1 em,
+.chapter-contents-heading.is-multivariable span {
+  color: #6f5425;
 }
 
 .chapter-contents-heading {
