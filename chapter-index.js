@@ -909,7 +909,7 @@
       : '<nav class="master-browse-nav" aria-label="Entry-page navigation"><a href="#book-contents">Book contents</a><a href="#chapters">Chapter cards</a></nav>';
     return `
       <header class="chapter-index-header ${chapter ? "" : "master-index-header"}">
-        <a class="chapter-index-brand" href="./"><strong>Povey × Sol</strong><span>Problems · solutions</span></a>
+        <a class="chapter-index-brand" href="./"><strong>Povey × Sol</strong><span>Problems · stumpers</span></a>
         ${middle}
         ${action}
       </header>`;
@@ -972,7 +972,7 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">An unofficial interactive companion</div>
-            <h1><span class="master-title-owner">Povey’s</span><span class="master-title-primary">Perplexing Problems</span><em class="master-title-secondary">&amp; Sol’s Surprising Solutions</em></h1>
+            <h1><span class="master-title-owner">Povey’s</span><span class="master-title-primary">Perplexing Problems</span><em class="master-title-secondary">&amp; Sol’s Surprising Stumpers</em></h1>
             <p>Explore the complete 109-title source-book map alongside 72 clearly labelled original activities: move the diagrams, test a conjecture, and reveal the reasoning when you are ready.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Browse chapter cards</a>
