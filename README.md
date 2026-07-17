@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–21 are live and Chapters 22–26 are planned.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–22 are live and Chapters 23–26 are planned.
 
 ## Live prototype
 
@@ -32,8 +32,9 @@ Original extension — not in the source book:
 - [Chapter 19 · Magnetism and fields contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=19)
 - [Chapter 20 · Relativity and spacetime contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=20)
 - [Chapter 21 · Stochastic processes contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=21)
+- [Chapter 22 · Statistics and inference contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=22)
 
-Planned original chapters, shown as non-clickable cards on the master index: statistics and inference; linear algebra and transformations; calculus, sequences and series; differential equations and dynamical systems; multivariable calculus and fields.
+Planned original chapters, shown as non-clickable cards on the master index: linear algebra and transformations; calculus, sequences and series; differential equations and dynamical systems; multivariable calculus and fields.
 
 Review individual problems:
 
@@ -255,6 +256,15 @@ Chapters 15–26 are created for this project. They do not appear in *Professor 
 - [21.5 A Fair Game with a Wild Path](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.5)
 - [21.6 Stop While You’re Ahead?](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.6)
 
+### Chapter 22 · Statistics and inference
+
+- [22.1 The Shape Hidden in the Averages](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.1)
+- [22.2 Ninety-Five Nets](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.2)
+- [22.3 The Coin’s Best-Fitting Bias](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.3)
+- [22.4 A Result at the Edge](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.4)
+- [22.5 Belief After Ten Tosses](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.5)
+- [22.6 The Line That Pays for Its Misses](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.6)
+
 ## Run locally
 
 ```sh
@@ -295,6 +305,6 @@ Chapter 13 contains eight independently written buoyancy and hydrostatics activi
 
 Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
 
-Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–21 are live; Chapters 22–26 remain visibly marked as planned until built.
+Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–22 are live; Chapters 23–26 remain visibly marked as planned until built.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

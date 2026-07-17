@@ -873,6 +873,23 @@
   fill: #b45b3f;
 }
 
+.chapter-index-card.is-chapter-twenty-two::before {
+  background: #2c7772;
+}
+
+.chapter-index-card.is-chapter-twenty-two .chapter-index-number,
+.chapter-index-card.is-chapter-twenty-two .chapter-index-stars {
+  color: #22615d;
+}
+
+.chapter-index-card.is-chapter-twenty-two .index-motif-svg .index-accent {
+  stroke: #2c7772;
+}
+
+.chapter-index-card.is-chapter-twenty-two .index-motif-svg .index-dot {
+  fill: #2c7772;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -952,6 +969,10 @@
 
 .chapter-index-stochastic {
   background: #f0ded8;
+}
+
+.chapter-index-statistics {
+  background: #dcebea;
 }
 
 .chapter-index-footer {
@@ -1117,6 +1138,10 @@
 
 .master-chapter-card.is-live.is-stochastic {
   background: #6d3022;
+}
+
+.master-chapter-card.is-live.is-statistics {
+  background: #194d4a;
 }
 
 .master-chapter-card.is-original-extension {
@@ -1558,6 +1583,19 @@
 .chapter-landing-hero.is-stochastic h1 em,
 .chapter-contents-heading.is-stochastic span {
   color: #893f2c;
+}
+
+.chapter-landing-hero.is-statistics .chapter-index-hero-figure {
+  background: #194d4a;
+}
+
+.chapter-landing-hero.is-statistics .chapter-index-stats {
+  background: #2c7772;
+}
+
+.chapter-landing-hero.is-statistics h1 em,
+.chapter-contents-heading.is-statistics span {
+  color: #22615d;
 }
 
 .chapter-contents-heading {
