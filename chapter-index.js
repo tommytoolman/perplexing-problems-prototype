@@ -972,7 +972,7 @@
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">An unofficial interactive companion</div>
-            <h1><span class="master-title-owner">Povey’s</span><span class="master-title-primary">Perplexing Problems</span><em class="master-title-secondary">&amp; Sol’s Surprising Stumpers</em></h1>
+            <h1><span class="master-title-owner">Povey’s</span><span class="master-title-primary">Perplexing Problems</span><em class="master-title-secondary">&amp; Sol’s Supplementary Stumpers</em></h1>
             <p>Explore the complete 109-title source-book map alongside 72 clearly labelled original activities: move the diagrams, test a conjecture, and reveal the reasoning when you are ready.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Browse chapter cards</a>
