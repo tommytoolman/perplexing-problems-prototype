@@ -122,6 +122,11 @@ const chapterCatalog = {
     title: "Statistics and inference",
     problems: Array.from({ length: 6 }, (_, index) => `22.${index + 1}`),
   },
+  "23": {
+    number: "23",
+    title: "Linear algebra and transformations",
+    problems: Array.from({ length: 6 }, (_, index) => `23.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

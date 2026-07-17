@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–22 are live and Chapters 23–26 are planned.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–23 are live and Chapters 24–26 are planned.
 
 ## Live prototype
 
@@ -33,8 +33,9 @@ Original extension — not in the source book:
 - [Chapter 20 · Relativity and spacetime contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=20)
 - [Chapter 21 · Stochastic processes contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=21)
 - [Chapter 22 · Statistics and inference contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=22)
+- [Chapter 23 · Linear algebra and transformations contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=23)
 
-Planned original chapters, shown as non-clickable cards on the master index: linear algebra and transformations; calculus, sequences and series; differential equations and dynamical systems; multivariable calculus and fields.
+Planned original chapters, shown as non-clickable cards on the master index: calculus, sequences and series; differential equations and dynamical systems; multivariable calculus and fields.
 
 Review individual problems:
 
@@ -265,6 +266,15 @@ Chapters 15–26 are created for this project. They do not appear in *Professor 
 - [22.5 Belief After Ten Tosses](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.5)
 - [22.6 The Line That Pays for Its Misses](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=22.6)
 
+### Chapter 23 · Linear algebra and transformations
+
+- [23.1 The Three-Lantern Switchboard](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=23.1)
+- [23.2 The Logo Through the Matrix Gate](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=23.2)
+- [23.3 The Carpet That Turns Inside Out](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=23.3)
+- [23.4 The Directions the Machine Cannot Turn](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=23.4)
+- [23.5 The Two-Colour Migration Engine](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=23.5)
+- [23.6 The Crooked Calibration Line](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=23.6)
+
 ## Run locally
 
 ```sh
@@ -305,6 +315,6 @@ Chapter 13 contains eight independently written buoyancy and hydrostatics activi
 
 Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
 
-Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–22 are live; Chapters 23–26 remain visibly marked as planned until built.
+Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–23 are live; Chapters 24–26 remain visibly marked as planned until built.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

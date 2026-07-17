@@ -361,7 +361,16 @@
     { number: "22.6", title: "The Line That Pays for Its Misses", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Move a regression line while its vertical residual squares expose the least-squares optimum.", motif: "regression-misses", source: "extension" },
   ];
 
-  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems, ...chapterSixteenProblems, ...chapterSeventeenProblems, ...chapterEighteenProblems, ...chapterNineteenProblems, ...chapterTwentyProblems, ...chapterTwentyOneProblems, ...chapterTwentyTwoProblems];
+  const chapterTwentyThreeProblems = [
+    { number: "23.1", title: "The Three-Lantern Switchboard", stars: "★", difficulty: "One star difficulty", teaser: "Use legal row operations to expose the one setting shared by three linear constraints.", motif: "lantern-system", source: "extension" },
+    { number: "23.2", title: "The Logo Through the Matrix Gate", stars: "★★", difficulty: "Two star difficulty", teaser: "Send points, basis vectors and a whole logo through a matrix map on linked coordinate grids.", motif: "matrix-logo", source: "extension" },
+    { number: "23.3", title: "The Carpet That Turns Inside Out", stars: "★★", difficulty: "Two star difficulty", teaser: "Warp an oriented triangle and let the determinant track area scaling and reversal.", motif: "determinant-carpet", source: "extension" },
+    { number: "23.4", title: "The Directions the Machine Cannot Turn", stars: "★★★", difficulty: "Three star difficulty", teaser: "Rotate an input vector until its matrix image preserves direction and reveals an eigenvalue.", motif: "eigen-directions", source: "extension" },
+    { number: "23.5", title: "The Two-Colour Migration Engine", stars: "★★★", difficulty: "Three star difficulty", teaser: "Iterate a two-state population map and separate its stationary and decaying eigenmodes.", motif: "migration-engine", source: "extension" },
+    { number: "23.6", title: "The Crooked Calibration Line", stars: "★★★★", difficulty: "Four star difficulty", teaser: "Fit an inconsistent system by projecting its data vector onto the model’s column space.", motif: "calibration-projection", source: "extension" },
+  ];
+
+  const problems = [...chapterOneProblems, ...chapterTwoProblems, ...chapterThreeProblems, ...chapterFourProblems, ...chapterFiveProblems, ...chapterSixProblems, ...chapterSevenProblems, ...chapterEightProblems, ...chapterNineProblems, ...chapterTenProblems, ...chapterElevenProblems, ...chapterTwelveProblems, ...chapterThirteenProblems, ...chapterFourteenProblems, ...chapterFifteenProblems, ...chapterSixteenProblems, ...chapterSeventeenProblems, ...chapterEighteenProblems, ...chapterNineteenProblems, ...chapterTwentyProblems, ...chapterTwentyOneProblems, ...chapterTwentyTwoProblems, ...chapterTwentyThreeProblems];
 
   const bookChapters = [
     { number: "1", title: "Geometry", count: 17, page: 19, live: true, summary: "Constructions, loci and optimisation" },
@@ -386,7 +395,7 @@
     { number: "20", title: "Relativity and spacetime", count: 6, live: true, extension: true, summary: "Time, simultaneity, velocity, Doppler shift and four-momentum" },
     { number: "21", title: "Stochastic processes", count: 6, live: true, extension: true, summary: "Poisson arrivals, Markov chains, stationarity, martingales and stopping times" },
     { number: "22", title: "Statistics and inference", count: 6, live: true, extension: true, summary: "Sampling, intervals, likelihood, testing, Bayesian updating and regression" },
-    { number: "23", title: "Linear algebra and transformations", count: 6, live: false, extension: true, summary: "Systems, matrices, determinants, eigenvectors, iteration and least squares" },
+    { number: "23", title: "Linear algebra and transformations", count: 6, live: true, extension: true, summary: "Systems, matrices, determinants, eigenvectors, iteration and least squares" },
     { number: "24", title: "Calculus, sequences and series", count: 6, live: false, extension: true, summary: "Derivatives, optimisation, integration, convergence, Taylor and Fourier series" },
     { number: "25", title: "Differential equations and dynamical systems", count: 6, live: false, extension: true, summary: "Decay, forcing, stability, modes, phase portraits and numerical stiffness" },
     { number: "26", title: "Multivariable calculus and fields", count: 6, live: false, extension: true, summary: "Gradients, constraints, flux, circulation, conservative fields and Green’s theorem" },
@@ -555,6 +564,14 @@
       heroClass: "is-statistics",
       extension: true,
     },
+    "23": {
+      title: "Linear algebra and transformations",
+      count: 6,
+      status: "6 original-extension activities",
+      introduction: "Treat matrices as actions, not arrays. Row operations, area, invariant directions and projections turn linear algebra into visible geometry.",
+      heroClass: "is-linear-algebra",
+      extension: true,
+    },
   };
 
   function problemHref(number) {
@@ -720,6 +737,12 @@
       'edge-result': '<path d="M12 76h136M20 76c15 0 20-58 60-58s45 58 60 58"/><path class="index-accent" d="M20 76c7 0 11-10 15-23M140 76c-7 0-11-10-15-23"/><circle class="index-dot" cx="125" cy="53" r="5"/>',
       'bayes-tosses': '<path d="M12 76h136M20 76c14-2 20-48 42-48s28 46 38 48M41 76c12-1 16-59 39-59s29 58 39 59"/><path class="index-accent" d="M41 76c12-1 16-59 39-59s29 58 39 59"/><circle class="index-dot" cx="80" cy="17" r="5"/>',
       'regression-misses': '<path d="M14 78h132M23 78V14M31 69 132 22"/><path d="M43 59v9M64 51v8M86 36v13M111 31v3"/><circle cx="43" cy="59" r="4"/><circle cx="64" cy="51" r="4"/><circle cx="86" cy="36" r="4"/><circle cx="111" cy="31" r="4"/><path class="index-accent" d="M31 69 132 22"/>',
+      'lantern-system': '<path d="M17 22h126M17 48h126M17 74h126M45 13v70M80 13v70M115 13v70"/><path class="index-accent" d="M25 22h82M51 48h78M36 74h92"/><circle class="index-dot" cx="80" cy="48" r="5"/>',
+      'matrix-logo': '<path d="M12 82h64M44 10v76M84 82h64M116 10v76"/><path d="m27 63 18-32 17 32z"/><path class="index-accent" d="m99 70 25-46 14 28z"/><circle class="index-dot" cx="124" cy="24" r="5"/>',
+      'determinant-carpet': '<path d="M13 78h61M26 16v68M86 78h61M99 16v68"/><path d="m29 67 32-9-19-31z"/><path class="index-accent index-fill" d="m94 67 43-38-22-8z"/>',
+      'eigen-directions': '<circle cx="80" cy="48" r="35"/><path d="M80 9v78M41 48h78"/><path class="index-accent" d="M54 74 106 22M54 22l52 52"/><circle class="index-dot" cx="106" cy="22" r="5"/>',
+      'migration-engine': '<rect x="15" y="25" width="48" height="47" rx="8"/><rect x="97" y="25" width="48" height="47" rx="8"/><path d="M63 38h34m-9-8 9 8-9 8M97 59H63m9-8-9 8 9 8"/><path class="index-accent" d="M25 62h27M108 62h26"/><circle class="index-dot" cx="80" cy="38" r="5"/>',
+      'calibration-projection': '<path d="M16 80h128M28 80V13"/><path d="M38 67 126 23"/><circle cx="42" cy="61" r="4"/><circle cx="66" cy="57" r="4"/><circle cx="92" cy="34" r="4"/><circle cx="119" cy="31" r="4"/><path class="index-accent" d="M42 61v3M66 57v-5M92 34v7M119 31v-4"/>',
     };
     return `<svg class="index-motif-svg" viewBox="0 0 160 96" aria-hidden="true">${drawings[type]}</svg>`;
   }
@@ -746,8 +769,9 @@
     const chapterTwenty = problem.number.startsWith("20.");
     const chapterTwentyOne = problem.number.startsWith("21.");
     const chapterTwentyTwo = problem.number.startsWith("22.");
+    const chapterTwentyThree = problem.number.startsWith("23.");
     return `
-      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""} ${chapterSixteen ? "is-chapter-sixteen" : ""} ${chapterSeventeen ? "is-chapter-seventeen" : ""} ${chapterEighteen ? "is-chapter-eighteen" : ""} ${chapterNineteen ? "is-chapter-nineteen" : ""} ${chapterTwenty ? "is-chapter-twenty" : ""} ${chapterTwentyOne ? "is-chapter-twenty-one" : ""} ${chapterTwentyTwo ? "is-chapter-twenty-two" : ""}" href="${problemHref(problem.number)}">
+      <a class="chapter-index-card ${problem.source === "reconstructed" ? "is-reconstructed" : ""} ${problem.source === "extension" ? "is-extension" : ""} ${chapterTwo ? "is-chapter-two" : ""} ${chapterThree ? "is-chapter-three" : ""} ${chapterFour ? "is-chapter-four" : ""} ${chapterFive ? "is-chapter-five" : ""} ${chapterSix ? "is-chapter-six" : ""} ${chapterSeven ? "is-chapter-seven" : ""} ${chapterEight ? "is-chapter-eight" : ""} ${chapterNine ? "is-chapter-nine" : ""} ${chapterTen ? "is-chapter-ten" : ""} ${chapterEleven ? "is-chapter-eleven" : ""} ${chapterTwelve ? "is-chapter-twelve" : ""} ${chapterThirteen ? "is-chapter-thirteen" : ""} ${chapterFourteen ? "is-chapter-fourteen" : ""} ${chapterFifteen ? "is-chapter-fifteen" : ""} ${chapterSixteen ? "is-chapter-sixteen" : ""} ${chapterSeventeen ? "is-chapter-seventeen" : ""} ${chapterEighteen ? "is-chapter-eighteen" : ""} ${chapterNineteen ? "is-chapter-nineteen" : ""} ${chapterTwenty ? "is-chapter-twenty" : ""} ${chapterTwentyOne ? "is-chapter-twenty-one" : ""} ${chapterTwentyTwo ? "is-chapter-twenty-two" : ""} ${chapterTwentyThree ? "is-chapter-twenty-three" : ""}" href="${problemHref(problem.number)}">
         <div class="chapter-index-card-top">
           <span class="chapter-index-number">${problem.number}</span>
           <span class="chapter-index-stars" aria-label="${problem.difficulty}">${problem.stars}${problem.extra ? `<small>${problem.extra}</small>` : ""}</span>
@@ -787,8 +811,9 @@
     const relativity = chapter === "20";
     const stochastic = chapter === "21";
     const statistics = chapter === "22";
+    const linearAlgebra = chapter === "23";
     return `
-      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""} ${proof ? "chapter-index-proof" : ""} ${combinatorics ? "chapter-index-combinatorics" : ""} ${waves ? "chapter-index-waves" : ""} ${magnetism ? "chapter-index-magnetism" : ""} ${relativity ? "chapter-index-relativity" : ""} ${stochastic ? "chapter-index-stochastic" : ""} ${statistics ? "chapter-index-statistics" : ""}" aria-labelledby="${id}">
+      <section class="chapter-index-section ${source === "reconstructed" ? "chapter-index-reconstructed" : ""} ${source === "extension" ? "chapter-index-original-extension" : ""} ${mathematics ? "chapter-index-mathematics" : ""} ${statics ? "chapter-index-statics" : ""} ${dynamics ? "chapter-index-dynamics" : ""} ${circular ? "chapter-index-circular" : ""} ${oscillation ? "chapter-index-oscillation" : ""} ${inventions ? "chapter-index-inventions" : ""} ${kinematics ? "chapter-index-kinematics" : ""} ${electricity ? "chapter-index-electricity" : ""} ${gravity ? "chapter-index-gravity" : ""} ${optics ? "chapter-index-optics" : ""} ${heat ? "chapter-index-heat" : ""} ${buoyancy ? "chapter-index-buoyancy" : ""} ${estimation ? "chapter-index-estimation" : ""} ${probability ? "chapter-index-probability" : ""} ${proof ? "chapter-index-proof" : ""} ${combinatorics ? "chapter-index-combinatorics" : ""} ${waves ? "chapter-index-waves" : ""} ${magnetism ? "chapter-index-magnetism" : ""} ${relativity ? "chapter-index-relativity" : ""} ${stochastic ? "chapter-index-stochastic" : ""} ${statistics ? "chapter-index-statistics" : ""} ${linearAlgebra ? "chapter-index-linear-algebra" : ""}" aria-labelledby="${id}">
         <header class="chapter-index-section-header">
           <div>
             <div class="eyebrow">${eyebrow}</div>
@@ -803,11 +828,11 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=22">Open Statistics <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=23">Open Linear Algebra <span aria-hidden="true">→</span></a>';
     return `
       <header class="chapter-index-header">
         <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 8 extension chapters live</span>
+        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 9 extension chapters live</span>
         ${action}
       </header>`;
   }
@@ -841,7 +866,7 @@
         <strong>${chapter.live ? "Open chapter →" : chapter.extension ? "Original chapter planned" : "Source outline only"}</strong>
       </div>`;
     return chapter.live
-      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""} ${chapter.number === "19" ? "is-magnetism" : ""} ${chapter.number === "20" ? "is-relativity" : ""} ${chapter.number === "21" ? "is-stochastic" : ""} ${chapter.number === "22" ? "is-statistics" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
+      ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""} ${chapter.number === "19" ? "is-magnetism" : ""} ${chapter.number === "20" ? "is-relativity" : ""} ${chapter.number === "21" ? "is-stochastic" : ""} ${chapter.number === "22" ? "is-statistics" : ""} ${chapter.number === "23" ? "is-linear-algebra" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future ${chapter.extension ? "is-original-extension" : ""}" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
   }
 
@@ -855,17 +880,17 @@
           <div class="chapter-index-hero-copy">
             <div class="eyebrow">The complete book · plus an original extension</div>
             <h1>The book is complete.<br><em>The extension keeps growing.</em></h1>
-            <p>All 109 indexed source-book problems remain together and complete. Eight chapters of a visibly separate original curriculum are now live, with four more planned; none of Chapters 15–26 comes from the original book.</p>
+            <p>All 109 indexed source-book problems remain together and complete. Nine chapters of a visibly separate original curriculum are now live, with three more planned; none of Chapters 15–26 comes from the original book.</p>
             <div class="chapter-index-hero-actions">
               <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=22">Open Statistics →</a>
+              <a href="?view=chapter&amp;chapter=23">Open Linear Algebra →</a>
             </div>
           </div>
           ${heroFigure("01 → 26")}
           <dl class="chapter-index-stats">
             <div><dt>14</dt><dd>source-book chapters complete</dd></div>
             <div><dt>109</dt><dd>source-book problems interactive</dd></div>
-            <div><dt>157</dt><dd>total interactive routes</dd></div>
+            <div><dt>163</dt><dd>total interactive routes</dd></div>
           </dl>
         </section>
 
@@ -893,7 +918,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Chapters 15–26 are original extensions and are not part of the source book.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a><a href="?view=chapter&amp;chapter=19">Magnetism →</a><a href="?view=chapter&amp;chapter=20">Relativity →</a><a href="?view=chapter&amp;chapter=21">Stochastic →</a><a href="?view=chapter&amp;chapter=22">Statistics →</a></div>
+          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a><a href="?view=chapter&amp;chapter=19">Magnetism →</a><a href="?view=chapter&amp;chapter=20">Relativity →</a><a href="?view=chapter&amp;chapter=21">Stochastic →</a><a href="?view=chapter&amp;chapter=22">Statistics →</a><a href="?view=chapter&amp;chapter=23">Linear algebra →</a></div>
         </footer>
       </main>`;
   }
@@ -945,7 +970,9 @@
                                             ? sectionMarkup({ chapter: "20", source: "extension", eyebrow: "Original extension · Problems 20.1–20.6", title: "Relativity beyond the source book", copy: "Chapter 20 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-extension" })
                                             : chapter === "21"
                                               ? sectionMarkup({ chapter: "21", source: "extension", eyebrow: "Original extension · Problems 21.1–21.6", title: "Stochastic processes beyond the source book", copy: "Chapter 21 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-one-extension" })
-                                              : sectionMarkup({ chapter: "22", source: "extension", eyebrow: "Original extension · Problems 22.1–22.6", title: "Statistics beyond the source book", copy: "Chapter 22 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-two-extension" });
+                                              : chapter === "22"
+                                                ? sectionMarkup({ chapter: "22", source: "extension", eyebrow: "Original extension · Problems 22.1–22.6", title: "Statistics beyond the source book", copy: "Chapter 22 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-two-extension" })
+                                                : sectionMarkup({ chapter: "23", source: "extension", eyebrow: "Original extension · Problems 23.1–23.6", title: "Linear algebra beyond the source book", copy: "Chapter 23 and all six activities were created for this project. They do not appear in Professor Povey's Perplexing Problems and make no claim to reconstruct missing book content.", id: "index-chapter-twenty-three-extension" });
     const sourceCount = details.extension ? details.count : chapter === "1" ? "10" : details.count;
     const sourceLabel = details.extension ? "original-extension activities" : chapter === "1" ? "source-backed adaptations" : "reconstructed activities";
     const thirdCount = details.extension ? "0" : chapter === "1" ? "7" : "1";
