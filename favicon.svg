@@ -1,13 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>Povey and Sol mathematical favicon</title>
-  <defs>
-    <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-      <path d="M8 0H0V8" fill="none" stroke="#b9cee7" stroke-width="0.8"/>
-    </pattern>
-  </defs>
-  <rect width="64" height="64" rx="10" fill="#fbfaf2"/>
-  <rect width="64" height="64" rx="10" fill="url(#grid)"/>
-  <path d="M13 18h38" fill="none" stroke="#c51f30" stroke-linecap="round" stroke-width="4"/>
-  <text x="32" y="49" fill="#164a8a" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" text-anchor="middle">π</text>
-  <circle cx="51" cy="51" r="4" fill="#c51f30"/>
+  <title>Red and blue pi symbol</title>
+  <path d="M7 13H32M22 14v20c0 11-4 17-12 22" fill="none" stroke="#164a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
+  <path d="M32 13h25M43 14v41" fill="none" stroke="#c51f30" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
 </svg>
