@@ -1,4 +1,4 @@
-# Perplexing Problems — interactive problem library
+# Povey’s Perplexing Problems & Sol’s Surprising Solutions
 
 A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; all twelve extension chapters, Chapters 15–26, are live.
 

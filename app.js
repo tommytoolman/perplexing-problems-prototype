@@ -953,8 +953,8 @@ function render() {
   if (shouldRenderChapterIndex()) {
     const chapter = requestedChapterIndex();
     document.title = chapter
-      ? `Chapter ${chapter} · ${chapterCatalog[chapter].title} — Perplexing Problems`
-      : "All chapters — Perplexing Problems";
+      ? `Chapter ${chapter} · ${chapterCatalog[chapter].title} — Povey × Sol`
+      : "Povey’s Perplexing Problems & Sol’s Surprising Solutions";
     document.getElementById("app").innerHTML = window.poveyChapterIndex.render({ chapter });
     document.getElementById("prototype-switcher").innerHTML = "";
     return;

@@ -903,11 +903,14 @@
   function siteHeader(chapter) {
     const action = chapter
       ? '<a class="problem-nav-link chapter-index-start" href="./"><span aria-hidden="true">←</span> All chapters</a>'
-      : '<a class="problem-nav-link chapter-index-start" href="?view=chapter&amp;chapter=26">Open Multivariable Calculus <span aria-hidden="true">→</span></a>';
+      : '<a class="problem-nav-link chapter-index-start" href="?variant=A&amp;problem=1.1">Start with 1.1 <span aria-hidden="true">→</span></a>';
+    const middle = chapter
+      ? '<span class="chapter-index-complete"><i></i> 14 source chapters · 12 original chapters</span>'
+      : '<nav class="master-browse-nav" aria-label="Entry-page navigation"><a href="#book-contents">Book contents</a><a href="#chapters">Chapter cards</a></nav>';
     return `
-      <header class="chapter-index-header">
-        <a class="chapter-index-brand" href="./"><strong>Perplexing Problems</strong><span>Interactive edition</span></a>
-        <span class="chapter-index-complete"><i></i> 14 source chapters complete · 12 extension chapters live</span>
+      <header class="chapter-index-header ${chapter ? "" : "master-index-header"}">
+        <a class="chapter-index-brand" href="./"><strong>Povey × Sol</strong><span>Problems · solutions</span></a>
+        ${middle}
         ${action}
       </header>`;
   }
@@ -930,19 +933,34 @@
     const number = chapter.number.padStart(2, "0");
     const body = `
       <div class="master-chapter-card-top">
-        <span class="master-chapter-number">${number}</span>
-        <span class="master-chapter-status">${chapter.extension ? chapter.live ? "Original extension" : "Planned extension" : "Interactive now"}</span>
+        <span class="master-chapter-number">Chapter ${number}</span>
+        <span class="master-chapter-status">${chapter.extension ? "Original · Sol" : "Source-book map"}</span>
       </div>
       <h2>${chapter.title}</h2>
       ${chapter.summary ? `<p>${chapter.summary}</p>` : '<p>Mapped from the full book contents.</p>'}
       <div class="master-chapter-card-footer">
         <span>${chapter.count} problems</span>
         <span>${chapter.extension ? "Not in the source book" : `Book p. ${chapter.page}`}</span>
-        <strong>${chapter.live ? "Open chapter →" : chapter.extension ? "Original chapter planned" : "Source outline only"}</strong>
+        <strong>Open contents →</strong>
       </div>`;
     return chapter.live
       ? `<a class="master-chapter-card is-live ${chapter.extension ? "is-original-extension" : ""} ${chapter.number === "2" ? "is-mathematics" : ""} ${chapter.number === "3" ? "is-statics" : ""} ${chapter.number === "4" ? "is-dynamics" : ""} ${chapter.number === "5" ? "is-circular" : ""} ${chapter.number === "6" ? "is-oscillation" : ""} ${chapter.number === "7" ? "is-inventions" : ""} ${chapter.number === "8" ? "is-kinematics" : ""} ${chapter.number === "9" ? "is-electricity" : ""} ${chapter.number === "10" ? "is-gravity" : ""} ${chapter.number === "11" ? "is-optics" : ""} ${chapter.number === "12" ? "is-heat" : ""} ${chapter.number === "13" ? "is-buoyancy" : ""} ${chapter.number === "14" ? "is-estimation" : ""} ${chapter.number === "15" ? "is-probability" : ""} ${chapter.number === "16" ? "is-proof" : ""} ${chapter.number === "17" ? "is-combinatorics" : ""} ${chapter.number === "18" ? "is-waves" : ""} ${chapter.number === "19" ? "is-magnetism" : ""} ${chapter.number === "20" ? "is-relativity" : ""} ${chapter.number === "21" ? "is-stochastic" : ""} ${chapter.number === "22" ? "is-statistics" : ""} ${chapter.number === "23" ? "is-linear-algebra" : ""} ${chapter.number === "24" ? "is-calculus" : ""} ${chapter.number === "25" ? "is-differential-equations" : ""} ${chapter.number === "26" ? "is-multivariable" : ""}" href="?view=chapter&amp;chapter=${chapter.number}">${body}</a>`
       : `<article class="master-chapter-card is-future ${chapter.extension ? "is-original-extension" : ""}" aria-label="Chapter ${chapter.number}, ${chapter.title}, not yet interactive">${body}</article>`;
+  }
+
+  function masterContentsList(chapters) {
+    return `
+      <ol class="master-contents-list">
+        ${chapters.map((chapter) => `
+          <li>
+            <a href="?view=chapter&amp;chapter=${chapter.number}">
+              <span class="master-contents-number">${chapter.number}</span>
+              <strong>${chapter.title}</strong>
+              <span class="master-contents-dots" aria-hidden="true"></span>
+              <span class="master-contents-meta">${chapter.extension ? `${chapter.count} activities` : chapter.page}</span>
+            </a>
+          </li>`).join("")}
+      </ol>`;
   }
 
   function renderMaster() {
@@ -953,25 +971,42 @@
         ${siteHeader(null)}
         <section class="chapter-index-hero master-index-hero">
           <div class="chapter-index-hero-copy">
-            <div class="eyebrow">The complete book · plus an original extension</div>
-            <h1>The book is complete.<br><em>The expanded extension is complete.</em></h1>
-            <p>All 109 indexed source-book problems remain together and complete. Twelve chapters of a visibly separate original curriculum are now live; none of Chapters 15–26 comes from the original book.</p>
+            <div class="eyebrow">An unofficial interactive companion</div>
+            <h1><span class="master-title-owner">Povey’s</span><span class="master-title-primary">Perplexing Problems</span><em class="master-title-secondary">&amp; Sol’s Surprising Solutions</em></h1>
+            <p>Explore the complete 109-title source-book map alongside 72 clearly labelled original activities: move the diagrams, test a conjecture, and reveal the reasoning when you are ready.</p>
             <div class="chapter-index-hero-actions">
-              <a class="primary-button chapter-index-primary" href="#chapters">Explore all chapters</a>
-              <a href="?view=chapter&amp;chapter=26">Open Multivariable Calculus →</a>
+              <a class="primary-button chapter-index-primary" href="#chapters">Browse chapter cards</a>
+              <a href="#book-contents">Read the book-style contents ↓</a>
             </div>
           </div>
-          ${heroFigure("01 → 26")}
+          ${heroFigure("109 + 72 = 181")}
           <dl class="chapter-index-stats">
-            <div><dt>14</dt><dd>source-book chapters complete</dd></div>
-            <div><dt>109</dt><dd>source-book problems interactive</dd></div>
-            <div><dt>181</dt><dd>total interactive routes</dd></div>
+            <div><dt>109</dt><dd>source-book titles mapped</dd></div>
+            <div><dt>72</dt><dd>original Sol activities</dd></div>
+            <div><dt>181</dt><dd>interactive problems</dd></div>
           </dl>
+        </section>
+
+        <section class="master-book-contents" id="book-contents" aria-labelledby="master-book-contents-title">
+          <header class="master-book-contents-heading">
+            <div><div class="eyebrow">Browse as a book</div><h2 id="master-book-contents-title">Contents</h2></div>
+            <p>The dotted lists preserve the printed chapter order. Source-book rows end with their original start page; Sol’s rows show the number of new interactive activities.</p>
+          </header>
+          <div class="master-contents-columns">
+            <article class="master-contents-volume">
+              <header><div><span>Professor Povey’s chapters</span><h3>Source-book map</h3></div><small>Book page</small></header>
+              ${masterContentsList(sourceChapters)}
+            </article>
+            <article class="master-contents-volume is-sol">
+              <header><div><span>Not in the original book</span><h3>Sol’s original chapters</h3></div><small>Activities</small></header>
+              ${masterContentsList(extensionChapters)}
+            </article>
+          </div>
         </section>
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
-            <div><div class="eyebrow">The complete source book</div><h2 id="master-chapters-title">Chapters 1–14</h2></div>
+            <div><div class="eyebrow">Visual navigation</div><h2 id="master-chapters-title">Povey’s chapters</h2></div>
             <p>Every chapter opens into an interactive contents page. Problems 1.1–1.10 adapt the available sample; all remaining routes are clearly labelled independent reconstructions.</p>
           </header>
           <div class="master-chapter-grid">${sourceChapters.map(masterChapterCard).join("")}</div>
@@ -984,7 +1019,7 @@
 
         <section class="master-chapters master-original-extension" id="original-extension" aria-labelledby="original-extension-title">
           <header class="master-chapters-heading">
-            <div><div class="eyebrow">Beyond the source book</div><h2 id="original-extension-title">Original extension</h2></div>
+            <div><div class="eyebrow">Beyond the source book</div><h2 id="original-extension-title">Sol’s chapters</h2></div>
             <p><strong>Chapters 15–26 do not appear in <em>Professor Povey's Perplexing Problems</em>.</strong> Their chapter names, problem titles, scenarios, diagrams and solutions are original work created for this project. All twelve original-extension chapters are now live.</p>
           </header>
           <div class="original-extension-boundary"><strong>Not from the original book</strong><span>A twelve-chapter curriculum from probability and proof to stochastic processes, analysis, algebra, dynamical systems and vector fields.</span></div>
@@ -993,7 +1028,7 @@
 
         <footer class="chapter-index-footer">
           <p><strong>An unofficial educational prototype.</strong> Chapters 15–26 are original extensions and are not part of the source book.</p>
-          <div><a href="?view=chapter&amp;chapter=1">Source book →</a><a href="?view=chapter&amp;chapter=15">Probability →</a><a href="?view=chapter&amp;chapter=16">Proof →</a><a href="?view=chapter&amp;chapter=17">Networks →</a><a href="?view=chapter&amp;chapter=18">Waves →</a><a href="?view=chapter&amp;chapter=19">Magnetism →</a><a href="?view=chapter&amp;chapter=20">Relativity →</a><a href="?view=chapter&amp;chapter=21">Stochastic →</a><a href="?view=chapter&amp;chapter=22">Statistics →</a><a href="?view=chapter&amp;chapter=23">Linear algebra →</a><a href="?view=chapter&amp;chapter=24">Calculus →</a><a href="?view=chapter&amp;chapter=25">Differential equations →</a><a href="?view=chapter&amp;chapter=26">Multivariable calculus →</a></div>
+          <div><a href="#book-contents">Contents ↑</a><a href="#chapters">Povey’s chapters ↑</a><a href="#original-extension">Sol’s chapters ↑</a><a href="?variant=A&amp;problem=1.1">Start 1.1 →</a></div>
         </footer>
       </main>`;
   }
