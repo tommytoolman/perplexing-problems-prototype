@@ -1006,7 +1006,7 @@
 
         <section class="master-chapters" id="chapters" aria-labelledby="master-chapters-title">
           <header class="master-chapters-heading">
-            <div><div class="eyebrow">Visual navigation</div><h2 id="master-chapters-title">Povey’s chapters</h2></div>
+            <div><div class="eyebrow">Visual navigation</div><h2 id="master-chapters-title">Perplexing Problems</h2></div>
             <p>Every chapter opens into an interactive contents page. Problems 1.1–1.10 adapt the available sample; all remaining routes are clearly labelled independent reconstructions.</p>
           </header>
           <div class="master-chapter-grid">${sourceChapters.map(masterChapterCard).join("")}</div>
