@@ -1,6 +1,6 @@
-# Original extension — Chapters 15–20
+# Original extension — Chapters 15–26
 
-Chapters 15–20 are created for this interactive project. They do **not** appear in Thomas Povey's *Professor Povey's Perplexing Problems*, and their chapter names, problem titles, scenarios, diagrams, interactions and solutions are wholly original.
+Chapters 15–26 are created for this interactive project. They do **not** appear in Thomas Povey's *Professor Povey's Perplexing Problems*, and their chapter names, problem titles, scenarios, diagrams, interactions and solutions are wholly original.
 
 The extension deliberately begins only after the complete 14-chapter, 109-problem source index. Every extension chapter index and every extension problem page must repeat that boundary prominently.
 
@@ -70,7 +70,73 @@ Vector fields lead into torque, induction and energy, charged-particle selection
 - 20.5 The Red Echo ★★★
 - 20.6 The Price of Standing Still ★★★★
 
-Light clocks introduce Lorentz factors before survival, simultaneity, velocity addition, two-way Doppler shift and invariant-mass collision thresholds.
+Light clocks introduce Lorentz factors before survival, simultaneity, velocity addition, two-way Doppler shift, relativistic kinetic energy and four-momentum.
+
+### 21 · Stochastic processes
+
+- 21.1 The Silent Switchboard ★
+- 21.2 Tomorrow's Weather, One Step at a Time ★★
+- 21.3 The Three-Room Shuffle ★★
+- 21.4 Traffic in Both Directions ★★★
+- 21.5 A Fair Game with a Wild Path ★★★
+- 21.6 Stop While You're Ahead? ★★★★
+
+Waiting times lead into Markov chains, convergence, reversible stationary flows, martingales and the conditions behind optional stopping.
+
+### 22 · Statistics and inference
+
+- 22.1 The Shape Hidden in the Averages ★
+- 22.2 Ninety-Five Nets ★★
+- 22.3 The Coin's Best-Fitting Bias ★★
+- 22.4 A Result at the Edge ★★★
+- 22.5 Belief After Ten Tosses ★★★
+- 22.6 The Line That Pays for Its Misses ★★★★
+
+Sampling distributions and confidence intervals are kept distinct from likelihood, significance tests and posterior probability before the chapter closes with least-squares regression.
+
+### 23 · Linear algebra and transformations
+
+- 23.1 The Three-Lantern Switchboard ★
+- 23.2 The Logo Through the Matrix Gate ★★
+- 23.3 The Carpet That Turns Inside Out ★★
+- 23.4 The Directions the Machine Cannot Turn ★★★
+- 23.5 The Two-Colour Migration Engine ★★★
+- 23.6 The Crooked Calibration Line ★★★★
+
+Systems and matrix maps become geometric before determinants, eigenvectors, repeated transformations and projection-based least squares.
+
+### 24 · Calculus, sequences and series
+
+- 24.1 The Camera Car at One Instant ★
+- 24.2 The River Pen with One Missing Side ★★
+- 24.3 The Reservoir's Uneven Inflow ★★
+- 24.4 The Infinitely Long Paint Strip ★★★
+- 24.5 The Pocket Calculator's Cosine ★★★
+- 24.6 The Square Wave Built from Sines ★★★★
+
+Local rates and optimisation lead into signed accumulation, improper convergence, Taylor remainder bounds and Fourier approximation.
+
+### 25 · Differential equations and dynamical systems
+
+- 25.1 The Vanishing Tracer ★
+- 25.2 Chasing a Moving Temperature ★★
+- 25.3 The Two Safe Levels ★★
+- 25.4 Two Modes in One Motion ★★★
+- 25.5 The Predator–Prey Carousel ★★★
+- 25.6 The Step That Explodes ★★★★
+
+Closed-form decay and forced response give way to phase-line stability, eigenmodes, nonlinear phase portraits and the numerical stability problem posed by stiff systems.
+
+### 26 · Multivariable calculus and fields
+
+- 26.1 The Steepest Step ★
+- 26.2 The Largest Rectangle on an Ellipse ★★
+- 26.3 Counting What Escapes ★★
+- 26.4 The Turning Field ★★★
+- 26.5 Three Roads, One Work Bill ★★★
+- 26.6 Green's Ledger ★★★★
+
+Gradients and constrained optimisation lead into flux, circulation, conservative fields and Green's theorem as two equivalent global ledgers.
 
 ## Page contract
 

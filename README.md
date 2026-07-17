@@ -1,6 +1,6 @@
 # Perplexing Problems — interactive problem library
 
-A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original six-chapter extension begins at Chapter 15.
+A browser-native prototype exploring how a printed mathematics and physics problem book can become an active reading experience. All fourteen indexed source-book chapters contain 109 interactive problems. A clearly separated, wholly original extension begins at Chapter 15; Chapters 15–21 are live and Chapters 22–26 are planned.
 
 ## Live prototype
 
@@ -31,6 +31,9 @@ Original extension — not in the source book:
 - [Chapter 18 · Waves and sound contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=18)
 - [Chapter 19 · Magnetism and fields contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=19)
 - [Chapter 20 · Relativity and spacetime contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=20)
+- [Chapter 21 · Stochastic processes contents](https://tommytoolman.github.io/perplexing-problems-prototype/?view=chapter&chapter=21)
+
+Planned original chapters, shown as non-clickable cards on the master index: statistics and inference; linear algebra and transformations; calculus, sequences and series; differential equations and dynamical systems; multivariable calculus and fields.
 
 Review individual problems:
 
@@ -187,7 +190,7 @@ Review individual problems:
 
 ## Original extension — not in the book
 
-Chapters 15–20 are created for this project. They do not appear in *Professor Povey's Perplexing Problems*. See [ORIGINAL_EXTENSION.md](ORIGINAL_EXTENSION.md) for the complete curriculum and labeling contract.
+Chapters 15–26 are created for this project. They do not appear in *Professor Povey's Perplexing Problems*. See [ORIGINAL_EXTENSION.md](ORIGINAL_EXTENSION.md) for the complete live and planned curriculum and labeling contract.
 
 ### Chapter 15 · Probability and randomness
 
@@ -243,6 +246,15 @@ Chapters 15–20 are created for this project. They do not appear in *Professor 
 - [20.5 The Red Echo](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.5)
 - [20.6 The Price of Standing Still](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=20.6)
 
+### Chapter 21 · Stochastic processes
+
+- [21.1 The Silent Switchboard](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.1)
+- [21.2 Tomorrow’s Weather, One Step at a Time](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.2)
+- [21.3 The Three-Room Shuffle](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.3)
+- [21.4 Traffic in Both Directions](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.4)
+- [21.5 A Fair Game with a Wild Path](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.5)
+- [21.6 Stop While You’re Ahead?](https://tommytoolman.github.io/perplexing-problems-prototype/?variant=A&problem=21.6)
+
 ## Run locally
 
 ```sh
@@ -283,6 +295,6 @@ Chapter 13 contains eight independently written buoyancy and hydrostatics activi
 
 Chapter 14 contains six independently written estimation activities reconstructed from the recovered titles and difficulty ratings.
 
-Chapters 15–20 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project.
+Chapters 15–26 are outside the source-book boundary. Their chapter names, problem titles, scenarios, interactions and solutions are wholly original extensions created for this project. Chapters 15–21 are live; Chapters 22–26 remain visibly marked as planned until built.
 
 This is an unofficial educational prototype, not a facsimile or an official edition. Rights in the original book remain with their respective holder.

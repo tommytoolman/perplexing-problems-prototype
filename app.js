@@ -112,6 +112,11 @@ const chapterCatalog = {
     title: "Relativity and spacetime",
     problems: Array.from({ length: 6 }, (_, index) => `20.${index + 1}`),
   },
+  "21": {
+    number: "21",
+    title: "Stochastic processes",
+    problems: Array.from({ length: 6 }, (_, index) => `21.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);
