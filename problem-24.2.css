@@ -1,0 +1,155 @@
+.p242-shell {
+  --p242-ink: #18232d;
+  --p242-night: #152532;
+  --p242-paper: #fffdf5;
+  --p242-teal: #70c8bc;
+  --p242-gold: #efcb79;
+  --p242-coral: #ef8f73;
+  --p242-violet: #a88dcc;
+  background: #e7eeea;
+}
+
+.p242-spread { grid-template-columns: minmax(230px, .67fr) minmax(610px, 1.55fr) minmax(275px, .78fr); }
+.p242-problem-page,
+.p242-stage,
+.p242-coach { min-width: 0; }
+.p242-title { font-size: clamp(2rem, 3.05vw, 4rem); line-height: .92; overflow-wrap: normal; word-break: normal; }
+.p242-extension-note { border-left: 3px solid rgba(111, 87, 137, .35); color: rgba(24, 35, 45, .7); font-size: .72rem; line-height: 1.45; margin: 1rem 0; padding-left: .72rem; }
+.p242-question-card { background: rgba(112, 200, 188, .1); border: 1px solid rgba(35, 89, 84, .16); border-radius: 13px; margin-top: 1.1rem; padding: .82rem; }
+.p242-question-card strong { display: block; margin-bottom: .35rem; }
+.p242-question-card p { font-size: .82rem; line-height: 1.5; margin: 0; }
+
+.p242-stage { overflow: hidden; }
+.p242-stage-controls { display: grid; gap: .45rem; grid-template-columns: repeat(3, 1fr); margin-bottom: .65rem; }
+.p242-stage-controls button { align-items: center; display: flex; gap: .42rem; justify-content: center; min-width: 0; }
+.p242-stage-controls button span { align-items: center; background: rgba(24, 35, 45, .1); border-radius: 999px; display: inline-flex; flex: 0 0 1.35rem; height: 1.35rem; justify-content: center; }
+.p242-stage-controls button.active { background: var(--p242-ink); color: #fff; }
+.p242-stage-controls button.active span { background: rgba(255, 255, 255, .16); }
+.p242-stage-heading { align-items: end; display: flex; gap: 1rem; justify-content: space-between; margin-bottom: .65rem; }
+.p242-stage-heading h2 { font-size: clamp(1.15rem, 1.8vw, 1.7rem); margin: .1rem 0 0; }
+.p242-stage-heading p { color: rgba(24, 35, 45, .68); font-size: .77rem; line-height: 1.45; margin: 0; max-width: 31rem; }
+.p242-optimization { display: block; max-height: 55vh; min-height: 355px; touch-action: none; width: 100%; }
+.p242-board { fill: url(#p242-board-gradient); }
+.p242-board-kicker,
+.p242-panel-title,
+.p242-river-label,
+.p242-dimension-label,
+.p242-drag-label,
+.p242-ledger-kicker,
+.p242-constraint,
+.p242-grid text,
+.p242-current-label,
+.p242-axis-label,
+.p242-endpoint-label,
+.p242-stationary-label,
+.p242-derivative-card text,
+.p242-curve-status { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+.p242-board-kicker { fill: rgba(255, 255, 255, .66); font-size: 7.4px; font-weight: 900; letter-spacing: .07em; }
+.p242-pen-panel > rect:first-child,
+.p242-curve-panel > rect:first-child { fill: rgba(8, 21, 29, .31); stroke: rgba(255, 255, 255, .08); }
+.p242-panel-title { fill: rgba(255, 255, 255, .81); font-size: 8px; font-weight: 900; letter-spacing: .055em; }
+.p242-river { fill: rgba(62, 132, 153, .28); stroke: rgba(145, 220, 226, .25); }
+.p242-river-pattern { fill: url(#p242-water-lines); opacity: .42; }
+#p242-water-lines path { fill: none; stroke: #9ad8dc; stroke-width: 1; }
+.p242-river-label { fill: rgba(210, 246, 245, .68); font-size: 6.7px; font-weight: 900; letter-spacing: .055em; }
+.p242-area-fill { fill: rgba(112, 200, 188, .14); }
+.p242-fence { fill: none; stroke: var(--p242-gold); stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+.p242-width-bracket,
+.p242-length-bracket { fill: none; stroke: rgba(255, 255, 255, .48); stroke-width: 1; }
+.p242-dimension-label { fill: rgba(255, 255, 255, .79); font-size: 7px; font-weight: 900; paint-order: stroke; stroke: var(--p242-night); stroke-width: 4px; }
+.p242-drag-handle { fill: var(--p242-coral); stroke: #ffe0d6; stroke-width: 2; }
+.p242-drag-hit { cursor: grab; fill: transparent; pointer-events: all; }
+.p242-drag-hit:active { cursor: grabbing; }
+.p242-drag-label { fill: #ffc5b2; font-size: 6.5px; font-weight: 900; paint-order: stroke; stroke: var(--p242-night); stroke-width: 4px; }
+.p242-constraint-ledger > line { stroke: rgba(255, 255, 255, .12); }
+.p242-ledger-kicker { fill: rgba(255, 255, 255, .48); font-size: 6.5px; font-weight: 900; letter-spacing: .06em; }
+.p242-constraint { fill: rgba(255, 255, 255, .77); font-family: Georgia, "Times New Roman", serif; font-size: 10px; }
+.p242-constraint tspan { fill: var(--p242-gold); font-weight: 900; }
+.p242-curve-group,
+.p242-certificate { opacity: .12; transition: opacity .2s ease; }
+.p242-curve-group.is-visible,
+.p242-certificate.is-visible { opacity: 1; }
+.p242-grid line { stroke: rgba(255, 255, 255, .09); stroke-width: .8; }
+.p242-grid text,
+.p242-axis-label { fill: rgba(255, 255, 255, .48); font-size: 6.6px; }
+.p242-area-curve { fill: none; stroke: var(--p242-teal); stroke-linecap: round; stroke-width: 3; }
+.p242-current-guide { stroke: rgba(239, 203, 121, .52); stroke-dasharray: 3 3; stroke-width: 1.5; }
+.p242-current-point { fill: var(--p242-gold); stroke: #fff0c0; stroke-width: 2; }
+.p242-current-label { fill: #fff0c0; font-size: 7.3px; font-weight: 900; paint-order: stroke; stroke: var(--p242-night); stroke-width: 4px; }
+.p242-endpoint { fill: var(--p242-coral); stroke: #ffe0d5; stroke-width: 1.5; }
+.p242-endpoint-label { fill: #ffc4b0; font-size: 6.7px; font-weight: 900; paint-order: stroke; stroke: var(--p242-night); stroke-width: 4px; }
+.p242-stationary-mark { fill: none; stroke: var(--p242-gold); stroke-width: 2.2; }
+.p242-stationary-label { fill: var(--p242-gold); font-size: 7px; font-weight: 900; paint-order: stroke; stroke: var(--p242-night); stroke-width: 4px; }
+.p242-derivative-card rect { fill: rgba(21, 37, 50, .93); stroke: rgba(112, 200, 188, .4); }
+.p242-derivative-card text { fill: rgba(255, 255, 255, .78); font-family: Georgia, "Times New Roman", serif; font-size: 9px; }
+.p242-derivative-card .p242-card-kicker { fill: #b9eee6; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 6.3px; font-weight: 900; letter-spacing: .055em; }
+.p242-curve-status { fill: rgba(255, 255, 255, .64); font-size: 6.7px; }
+
+.p242-controls { background: rgba(255, 253, 245, .98); border: 1px solid rgba(24, 35, 45, .14); border-radius: 0 0 15px 15px; margin: -2px 10px 0; padding: .72rem; }
+.p242-controls > label { color: rgba(24, 35, 45, .8); display: grid; font-size: .76rem; font-weight: 800; gap: .28rem; }
+.p242-controls > label span { display: flex; justify-content: space-between; }
+.p242-controls output { color: var(--p242-ink); font-family: Georgia, "Times New Roman", serif; font-size: .95rem; }
+.p242-controls input[type="range"] { accent-color: #3b7977; cursor: pointer; min-height: 26px; touch-action: pan-x; width: 100%; }
+.p242-control-actions { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .55rem; }
+.p242-controls > p { color: rgba(24, 35, 45, .68); font-size: .71rem; line-height: 1.4; margin: .5rem 0 0; }
+.p242-metrics { display: grid; gap: .55rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: .65rem; }
+.p242-metrics article { background: rgba(255, 255, 255, .52); border: 1px solid rgba(24, 35, 45, .11); border-radius: 11px; min-width: 0; padding: .58rem .65rem; }
+.p242-metrics span,
+.p242-metrics small { color: rgba(24, 35, 45, .6); display: block; font-size: .64rem; line-height: 1.35; }
+.p242-metrics strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: .98rem; margin: .15rem 0; overflow-wrap: anywhere; }
+.p242-global-check { border-left: 3px solid #8f73ad; color: rgba(24, 35, 45, .72); display: grid; font-size: .72rem; gap: .23rem; line-height: 1.4; margin-top: .62rem; padding: .15rem 0 .15rem .68rem; }
+.p242-global-check strong { color: var(--p242-ink); }
+.p242-stage-caption { align-items: center; background: rgba(255, 255, 255, .45); border-radius: 12px; display: flex; gap: .8rem; justify-content: space-between; margin-top: .7rem; padding: .65rem .72rem; }
+.p242-stage-caption strong { display: block; font-size: .82rem; }
+.p242-stage-caption p { color: rgba(24, 35, 45, .67); font-size: .69rem; line-height: 1.4; margin: .18rem 0 0; max-width: 44rem; }
+.p242-stage-caption button { flex: 0 0 auto; }
+
+.p242-answer-form { display: grid; gap: .62rem; }
+.p242-answer-form label { display: grid; font-size: .72rem; font-weight: 800; gap: .25rem; }
+.p242-answer-form input { box-sizing: border-box; width: 100%; }
+.p242-answer-form small { color: rgba(255, 255, 255, .62); font-size: .67rem; line-height: 1.4; }
+.p242-help-row { flex-wrap: wrap; }
+.p242-hints { margin-top: .7rem; }
+.p242-solution { border-top: 1px solid rgba(255, 255, 255, .14); margin-top: 1rem; padding-top: .8rem; }
+.p242-solution h3 { font-size: 1.02rem; line-height: 1.25; }
+.p242-solution p { color: rgba(255, 255, 255, .77); font-size: .72rem; line-height: 1.5; }
+.p242-equation { background: rgba(112, 200, 188, .09); border-left: 3px solid var(--p242-teal); color: #c8eee9; font-family: Georgia, "Times New Roman", serif; font-size: .8rem; line-height: 1.55; margin: .6rem 0; padding: .62rem .68rem; }
+.p242-equation.is-answer { border-left-color: var(--p242-gold); color: #f3d486; font-size: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p242-curve-group,
+  .p242-certificate { transition: none; }
+}
+
+@media (max-width: 1360px) {
+  .p242-spread { grid-template-columns: minmax(230px, .67fr) minmax(585px, 1.5fr); }
+  .p242-coach { grid-column: 1 / -1; }
+  .p242-answer-form { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .p242-answer-form small,
+  .p242-answer-form button { grid-column: 1 / -1; }
+}
+
+@media (max-width: 940px) {
+  .p242-spread { display: block; }
+  .p242-optimization { max-height: none; }
+}
+
+@media (max-width: 680px) {
+  .p242-stage-heading,
+  .p242-stage-caption { align-items: stretch; flex-direction: column; }
+  .p242-stage-caption button { align-self: flex-start; }
+  .p242-optimization { min-height: 0; }
+  .p242-controls { margin-left: 0; margin-right: 0; }
+  .p242-metrics,
+  .p242-answer-form { grid-template-columns: 1fr; }
+  .p242-answer-form small,
+  .p242-answer-form button { grid-column: 1; }
+  .p242-stage-controls button { font-size: .7rem; padding-inline: .4rem; }
+}
+
+@media (max-width: 450px) {
+  .p242-stage-controls { grid-template-columns: 1fr; }
+  .p242-control-actions { display: grid; }
+  .p242-control-actions button { width: 100%; }
+  .p242-title { font-size: 2.35rem; }
+}

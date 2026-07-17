@@ -127,6 +127,11 @@ const chapterCatalog = {
     title: "Linear algebra and transformations",
     problems: Array.from({ length: 6 }, (_, index) => `23.${index + 1}`),
   },
+  "24": {
+    number: "24",
+    title: "Calculus, sequences and series",
+    problems: Array.from({ length: 6 }, (_, index) => `24.${index + 1}`),
+  },
 };
 
 const chapterProblems = Object.values(chapterCatalog).flatMap((chapter) => chapter.problems);

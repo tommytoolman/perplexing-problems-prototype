@@ -907,6 +907,23 @@
   fill: #5865ad;
 }
 
+.chapter-index-card.is-chapter-twenty-four::before {
+  background: #a34e65;
+}
+
+.chapter-index-card.is-chapter-twenty-four .chapter-index-number,
+.chapter-index-card.is-chapter-twenty-four .chapter-index-stars {
+  color: #813c50;
+}
+
+.chapter-index-card.is-chapter-twenty-four .index-motif-svg .index-accent {
+  stroke: #a34e65;
+}
+
+.chapter-index-card.is-chapter-twenty-four .index-motif-svg .index-dot {
+  fill: #a34e65;
+}
+
 .chapter-index-mathematics {
   background: #dedff0;
 }
@@ -994,6 +1011,10 @@
 
 .chapter-index-linear-algebra {
   background: #e1e3f1;
+}
+
+.chapter-index-calculus {
+  background: #eedde3;
 }
 
 .chapter-index-footer {
@@ -1167,6 +1188,10 @@
 
 .master-chapter-card.is-live.is-linear-algebra {
   background: #303968;
+}
+
+.master-chapter-card.is-live.is-calculus {
+  background: #682d3f;
 }
 
 .master-chapter-card.is-original-extension {
@@ -1634,6 +1659,19 @@
 .chapter-landing-hero.is-linear-algebra h1 em,
 .chapter-contents-heading.is-linear-algebra span {
   color: #46528f;
+}
+
+.chapter-landing-hero.is-calculus .chapter-index-hero-figure {
+  background: #682d3f;
+}
+
+.chapter-landing-hero.is-calculus .chapter-index-stats {
+  background: #a34e65;
+}
+
+.chapter-landing-hero.is-calculus h1 em,
+.chapter-contents-heading.is-calculus span {
+  color: #813c50;
 }
 
 .chapter-contents-heading {
